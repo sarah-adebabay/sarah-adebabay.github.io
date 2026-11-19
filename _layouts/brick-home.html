@@ -21,7 +21,7 @@
             {% if g.kind == 'asl' %}<span class="hands">{% for c in g.letters %}<img src="{{ base_path }}/assets/asl/{{ c }}.png" alt="" style="--n: {{ forloop.index0 }}">{% endfor %}</span>{{ g.after }}
             {% elsif g.kind == 'amharic' %}<span class="am">{{ g.text }}</span>
             {% else %}{{ g.text }}{% endif %}
-            {% if forloop.first %}<span class="wave">👋</span>{% endif %}
+            {% if forloop.first %}<span class="wave">👋🏽</span>{% endif %}
           </span>
           {% endfor %}
         </button>
@@ -39,7 +39,7 @@
       <p class="role">{{ h.role }}</p>
       <div class="actions">
         <a class="btn primary" href="{{ base_path }}/files/Sarah-Adebabay-CV.pdf">Download CV</a>
-        <a class="btn say" href="#contact">Say hello <span class="w" aria-hidden="true">👋</span></a>
+        <a class="btn say" href="#contact">Say hello <span class="w" aria-hidden="true">👋🏽</span></a>
       </div>
     </div>
 
