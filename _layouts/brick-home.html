@@ -200,12 +200,12 @@
       <h2>Awards</h2>
       <h3 class="sub">Awards and honors</h3>
       <ul class="plain two-col">
-        {% for r in site.data.awards.honors %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
+        {% for r in site.data.awards.honors %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}{% if r.about %}<p class="li-about">{{ r.about }}</p>{% endif %}</li>
         {% endfor %}
       </ul>
-      <h3 class="sub">Fellowships and scholarships</h3>
+      <h3 class="sub">Fellowships</h3>
       <ul class="plain two-col">
-        {% for r in site.data.awards.fellowships %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
+        {% for r in site.data.awards.fellowships %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}{% if r.about %}<p class="li-about">{{ r.about }}</p>{% endif %}</li>
         {% endfor %}
       </ul>
     </section>
