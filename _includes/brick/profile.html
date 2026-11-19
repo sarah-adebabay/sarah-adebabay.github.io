@@ -1,0 +1,18 @@
+{% comment %}Left profile column on the home page: photo, name, short bio, place, school and links. Sticks while you scroll; hidden below 1024px, where the hero shows the same things.{% endcomment %}
+{% include base_path %}
+{% assign h = site.data.home %}
+{% assign a = site.author %}
+<aside class="profile" aria-label="About Sarah">
+  <img class="profile-photo" src="{{ base_path }}{{ h.photo }}" alt="{{ h.photo_alt }}">
+  <div>
+    <p class="profile-name">{{ a.name }}</p>
+    {% if h.profile.bio %}<p class="profile-bio">{{ h.profile.bio }}</p>{% endif %}
+  </div>
+  <ul class="profile-list">
+    {% if a.location %}<li class="t-red"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0113 0c0 5-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg></span><span><span class="sr-only">Location: </span>{{ a.location }}</span></li>{% endif %}
+    {% if h.profile.education %}<li class="t-yellow"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5z M5 10.5v7 M9.7 10.5v7 M14.3 10.5v7 M19 10.5v7 M3 20.5h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span><span class="sr-only">Education: </span>{% for e in h.profile.education %}<span class="line">{{ e }}</span>{% endfor %}</span></li>{% endif %}
+    {% if a.linkedin %}<li class="t-blue"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="currentColor"/><path d="M8 10.5v6.5 M8 7.2v.1 M11.5 17v-6.5 M11.5 13.5c0-1.9 1.1-3 2.6-3s2.4 1 2.4 3V17" fill="none" stroke="#0055BF" stroke-width="2.2" stroke-linecap="round"/></svg></span><a href="https://www.linkedin.com/in/{{ a.linkedin }}/">LinkedIn</a></li>{% endif %}
+    {% if a.github %}<li class="t-green"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 4.5l-3 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a href="https://github.com/{{ a.github }}">GitHub</a></li>{% endif %}
+    <li class="t-ink"><span class="tile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8.5l4.5 4.5v14.5H6z M14 2.5V7.5h5 M9 13h7 M9 17h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><a href="{{ base_path }}/files/Sarah-Adebabay-CV.pdf">CV (PDF)</a></li>
+  </ul>
+</aside>
