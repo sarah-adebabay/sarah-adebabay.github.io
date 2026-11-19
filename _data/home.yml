@@ -1,0 +1,82 @@
+# Text for the home page. Edit freely; the layout lives in _layouts/brick-home.html.
+# The hero sticker. Visitors tap it to switch languages; the first one shows by default.
+# kind: text (plain words), amharic (Ge'ez script), or asl (fingerspelled with assets/asl/ hands)
+hero_greetings:
+  - kind: text
+    text: "Hello, I'm Sarah"
+    label: "Hello, I'm Sarah"
+  - kind: amharic
+    text: "ሰላም፣ ሳራ ነኝ"
+    label: "Selam, I'm Sarah, in Amharic"
+  - kind: asl
+    letters: [h, e, l, l, o]
+    after: ", I'm Sarah"
+    label: "H-E-L-L-O fingerspelled in ASL, I'm Sarah"
+  - kind: text
+    text: "Hola, soy Sarah"
+    label: "Hola, soy Sarah, in Spanish"
+thesis: "I design learning technologies that help K&#8209;12 students in under-resourced communities build epistemic agency in STEM, and I partner with schools so those tools last."
+role: "Software engineer (LinkedIn, 2022 to 2026) working on APIs, backend systems, and LLM-powered features. UC Berkeley Computer Science, minor in Education."
+
+about:
+  - "I work where software engineering meets the learning sciences. I spent four years as a backend engineer at LinkedIn, building APIs and LLM-powered features used at scale. My longer arc is education: designing generative AI tools that help young people ask their own questions, test their own ideas, and use data to speak up about their world, and working with schools so those tools are adopted and sustained."
+  - "That interest started in classrooms. I have taught algebra through calculus to middle school and college students, including as a Breakthrough Teaching Fellow, co-founded an ethics-centered data science program for K&#8209;12 students in the Bay Area, and studied equity-oriented teaching with UC Berkeley's Design for Equity Lab. I earned a B.A. in Computer Science with a minor in Education from UC Berkeley as a Regents' and Chancellor's Scholar, and spent a year at King's College London studying HCI and youth education."
+
+interests:
+  - Learning sciences
+  - Generative AI in education
+  - Human-computer interaction
+  - Epistemic agency
+  - Critical consciousness
+  - Education equity
+
+contact: "I love talking about learning technologies, AI in education, and building tools with schools."
+
+# Your headshot. Put a square photo in images/ (for example images/sarah.jpg) and change this path.
+photo: "/images/headshot-placeholder.svg"
+photo_alt: "Sarah Adebabay"
+# Where the hero photo sits: "left" (beside your name) or "stack" (top brick of the stack)
+photo_spot: left
+
+# The photo brick on top of the stack; tapping it opens this card.
+me:
+  label: "That's me!"
+  text: "Software engineer turned learning technologist, building tools for and with young people."
+  link: "#about"
+  link_text: "More about me"
+
+# Hero bricks, listed from the bottom of the stack (the foundation) to the top.
+# color: red, blue, green, or yellow. link: where "Read more" goes.
+bricks:
+  - label: "Teaching"
+    color: red
+    text: "Where it started. I've taught algebra through calculus and co-designed Data Science Day with K-12 students."
+    link: "#projects"
+    link_text: "See Data Science Day"
+  - label: "Engineering"
+    color: blue
+    text: "Four years at LinkedIn building APIs and LLM-powered features used at scale."
+    link: "#experience"
+    link_text: "See my experience"
+  - label: "Research"
+    color: green
+    text: "Equity-oriented teaching in CS classrooms, and why teachers hesitate to adopt STEM EdTech."
+    link: "#research"
+    link_text: "See my research"
+  - label: "Community"
+    color: yellow
+    text: "NSBE External VP, residence hall president, and mentor to scholars entering tech."
+    link: "#leadership"
+    link_text: "See leadership"
+
+# Greetings that rotate in the contact block. The first one shows when motion is reduced.
+greetings:
+  - text: "Say hello!"
+    note: ""
+  - text: "ሰላም!"
+    note: "Selam, hello in Amharic"
+  - text: "HELLO"
+    fingerspell: [h, e, l, l, o]   # shown as ASL handshapes from assets/asl/
+    note: "H-E-L-L-O, fingerspelled in ASL"
+  - text: "¡Hola!"
+    note: "hello in Spanish"

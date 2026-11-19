@@ -1,0 +1,20 @@
+# Experience timeline on the home page, newest first.
+- title: "Software Engineer, LinkedIn"
+  when: "Aug 2022 to Sept 2026"
+  bullets:
+    - "Built APIs and backend services for large-scale profile features."
+    - "Worked on Resume to Profile, an LLM-based feature that extracts skills from uploaded resumes, and expanded it to more parts of the site."
+    - "Delivered the backend for LinkedIn Profile's first third-party integration (Duolingo), plus a data takeout service for the new partner data."
+    - "Evaluated features through A/B experiments, using SQL to analyze results, and kept GDPR and data compliance standards current."
+- title: "Software Engineering Intern, Machine Learning Engineering, SurveyMonkey"
+  when: "June to Aug 2020"
+  bullets:
+    - "Implemented a pull-based metrics monitoring system for ML models (Python, Pyramid, Docker, Prometheus) and integrated Grafana dashboards."
+- title: "Tech Solutions Consultant, Haas School of Business, UC Berkeley"
+  when: "[Dates]"
+  bullets:
+    - "Resolved client issues with technology equipment and supported software, and provided AV support for classrooms, conferences, and events."
+- title: "Math Teacher"
+  when: "[Years]"
+  bullets:
+    - "Taught algebra through calculus at the middle school and college levels, including as a Breakthrough Teaching Fellow."

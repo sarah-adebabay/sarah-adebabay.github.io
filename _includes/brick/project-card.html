@@ -1,0 +1,23 @@
+{% include base_path %}
+{% assign item = include.item %}
+{% if include.feature %}
+<article class="card feature">
+  {% if item.badge %}<span class="badge" aria-hidden="true">{{ item.badge }}</span>{% endif %}
+  <h3><a class="card-link" href="{{ base_path }}{{ item.url }}">{{ item.title }}</a></h3>
+  <p class="meta">{{ item.role }}{% if item.when %}, {{ item.when }}{% endif %}</p>
+  <p>{{ item.excerpt | strip_html }}</p>
+  {% if item.facts %}
+  <div class="facts">
+    {% for f in item.facts %}<div><strong>{{ f.label }}</strong><span>{{ f.text }}</span></div>{% endfor %}
+  </div>
+  {% endif %}
+  <p class="more"><a href="{{ base_path }}{{ item.url }}">Read the full story</a></p>
+</article>
+{% else %}
+<article class="card{% if item.todo %} todo{% endif %}">
+  <h3><a class="card-link" href="{{ base_path }}{{ item.url }}">{{ item.title }}</a></h3>
+  <p class="meta">{{ item.role }}{% if item.when %}, {{ item.when }}{% endif %}</p>
+  <p>{{ item.excerpt | strip_html }}</p>
+  {% if item.topics %}<ul class="stickers small" aria-label="Topics">{% for t in item.topics %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+</article>
+{% endif %}
