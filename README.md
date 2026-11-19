@@ -49,11 +49,6 @@ topics: ["Topic one", "Topic two"]
 The full write-up goes here, in Markdown.
 ```
 
-## Previewing on your computer (optional)
-
-With Docker installed: `docker compose up`, then open `http://localhost:4000`.
-Or with Ruby: `bundle install` then `bundle exec jekyll serve -l -H localhost`.
-
 ## Credits
 
 - Site engine: [Academic Pages](https://github.com/academicpages/academicpages.github.io), MIT License.
