@@ -377,15 +377,16 @@ footer .hand { font-size: 1.3rem; }
 .contact { overflow: visible; }
 .contact::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 49 14'%3E%3Crect x='1.25' y='1.25' width='30' height='14' rx='2' fill='%230055BF' stroke='%2305131D' stroke-width='2.5'/%3E%3C/svg%3E"); }
 .contact .doodle { right: 6px; bottom: 6px; }
-.contact { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 28px; align-items: center; }
+.contact { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: center; }
+/* 4:5 portrait beside the text; a wide banner above it on phones. */
 .contact-photo {
-  width: 132px; height: 132px; border-radius: 6px; object-fit: cover; display: block;
+  width: 200px; height: 250px; border-radius: 6px; object-fit: cover; display: block;
   border: 3px solid #05131D; box-shadow: 5px 5px 0 #05131D; background: #C9D3DE;
 }
 .contact-body { min-width: 0; }
 @media (max-width: 560px) {
   .contact { grid-template-columns: 1fr; gap: 16px; }
-  .contact-photo { width: 96px; height: 96px; }
+  .contact-photo { width: 100%; height: auto; aspect-ratio: 4 / 3; object-position: 50% 30%; }
   .brick.photo-brick { width: 46%; }
 }
 .stud-strip {
