@@ -349,6 +349,7 @@ p { margin: 0 0 16px; }
 }
 .plain strong { font-family: var(--display); font-weight: 700; font-size: 1.05rem; display: block; line-height: 1.35; }
 .plain small { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.plain .li-about { margin: 6px 0 0; font-size: 0.95rem; line-height: 1.5; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .contact {

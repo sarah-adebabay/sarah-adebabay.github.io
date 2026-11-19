@@ -58,17 +58,17 @@ redirect_from:
 * **President**, Putnam-Freeborn Residence Hall Association <span class="cv-when">2017 to 2018</span>
 * **SWENext National Youth Advisory Board Member**, Society of Women Engineers
 
-## Honors and fellowships
+## Awards and honors
 
-* The Achievement Award Program (TAAP) Scholar, Cal Alumni Association (2017 to 2022)
-* BESSA Leadership Award (2021)
-* Grace Hopper Celebration Scholarship (2021)
-* Rewriting the Code Fellow (2020 to 2021)
-* Third Place, a16z x MLT Pitch Competition (2020)
-* Accel Scholar, UC Berkeley EECS (2019 to 2020)
-* Koret Undergraduate Research Scholar, UC Berkeley (2017)
-* NCWIT Aspirations in Computing National Honorable Mention (2017); SWENext Award (2016)
-* MLT Career Prep Fellow
+{% for r in site.data.awards.honors %}* **{{ r.title }}** <span class="cv-when">{{ r.detail }}</span>
+  * {{ r.about }}
+{% endfor %}
+
+## Fellowships
+
+{% for r in site.data.awards.fellowships %}* **{{ r.title }}** <span class="cv-when">{{ r.detail }}</span>
+  * {{ r.about }}
+{% endfor %}
 
 ## Talks and panels
 
