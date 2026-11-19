@@ -52,6 +52,11 @@ skills:
 
 # Where the section navigation sits: side (left column), top (sticky bar), or bottom (bar fixed to the bottom of the screen)
 nav_style: top
+# How the top bar behaves on phones (under 768px wide):
+#   follow  - the tab row slides so the section you're reading stays in view, with CV and LinkedIn pinned on the right
+#   current - one "Research (2 of 6)" button that follows you and opens the full list when tapped
+#   bottom  - the six tabs move to a tab bar along the bottom of the screen
+mobile_nav: follow
 
 contact: "I love talking about learning technologies, AI in education, and building tools with schools."
 

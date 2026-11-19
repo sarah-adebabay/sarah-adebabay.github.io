@@ -96,17 +96,60 @@
   setTimeout(next, HOLD_MS);
 })();
 
-// Highlight the section tab for whatever is on screen.
+// Highlight the section tab for whatever is on screen, show how far through it you are,
+// and keep the active tab visible in the phone top bar.
 (function () {
+  var bar = document.querySelector('.bar-top, .bar-bottom, nav.side');
   var links = Array.prototype.slice.call(document.querySelectorAll('.sectionnav .tabs a[data-tab]'));
-  if (!links.length || !('IntersectionObserver' in window)) return;
-  var sections = links.map(function (a) { return document.getElementById(a.dataset.tab); }).filter(Boolean);
-  if (!sections.length) return;
-  function mark(id) {
-    links.forEach(function (a) { if (a.dataset.tab === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+  if (!bar || !links.length) return;
+  var sections = links.map(function (a) { return document.getElementById(a.dataset.tab); });
+  if (sections.some(function (s) { return !s; })) return;
+  var row = bar.querySelector('.tabs');
+  var toggle = bar.querySelector('.cur-toggle');
+  var label = toggle && toggle.querySelector('.cur-label');
+  var num = toggle && toggle.querySelector('.cur-n');
+  var current = null, ticking = false;
+
+  function update() {
+    ticking = false;
+    var line = window.innerHeight * 0.35, idx = 0;
+    sections.forEach(function (s, i) { if (s.getBoundingClientRect().top <= line) idx = i; });
+    var r = sections[idx].getBoundingClientRect();
+    var p = Math.min(1, Math.max(0, (line - r.top) / Math.max(1, r.height)));
+    var doc = document.documentElement;
+    var start = sections[0].getBoundingClientRect().top + window.scrollY - line;
+    var page = Math.min(1, Math.max(0, (window.scrollY - start) / Math.max(1, doc.scrollHeight - window.innerHeight - start)));
+    if (sections[0].getBoundingClientRect().top > line) { idx = -1; p = 0; }
+    bar.style.setProperty('--page-p', page.toFixed(3));
+    var id = idx < 0 ? null : sections[idx].id;
+    links.forEach(function (a) {
+      if (a.dataset.tab === id) { a.setAttribute('aria-current', 'true'); a.style.setProperty('--sec-p', p.toFixed(3)); }
+      else { a.removeAttribute('aria-current'); a.style.removeProperty('--sec-p'); }
+    });
+    if (toggle) {
+      toggle.style.setProperty('--sec-p', p.toFixed(3));
+      var a = links[Math.max(0, idx)];
+      label.textContent = a.textContent; num.textContent = Math.max(0, idx) + 1;
+    }
+    if (id !== current) {
+      current = id;
+      // Slide the tab row so the active tab sits in the middle (only matters when the row overflows).
+      if (id && row && row.scrollWidth > row.clientWidth + 2) {
+        var link = links[idx];
+        row.scrollTo({ left: link.offsetLeft - row.offsetLeft - (row.clientWidth - link.offsetWidth) / 2, behavior: 'smooth' });
+      }
+    }
   }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
-  }, { rootMargin: '-35% 0px -60% 0px' });
-  sections.forEach(function (s) { io.observe(s); });
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  if (toggle) {
+    function setOpen(open) { bar.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); }
+    toggle.addEventListener('click', function () { setOpen(!bar.classList.contains('open')); });
+    links.forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+    document.addEventListener('click', function (e) { if (!bar.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  }
 })();

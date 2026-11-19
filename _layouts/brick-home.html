@@ -8,7 +8,7 @@
 <head>
 {% include brick/head.html %}
 </head>
-<body class="nav-{{ h.nav_style | default: 'side' }}{% if h.nav_style == 'top' %} has-profile{% endif %}">
+<body class="nav-{{ h.nav_style | default: 'side' }}{% if h.nav_style == 'top' %} has-profile mnav-{{ h.mobile_nav | default: 'follow' }}{% endif %}">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="hero">
