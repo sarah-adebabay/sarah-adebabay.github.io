@@ -41,7 +41,16 @@ with base_path so the result is always absolute.
     {% assign seo_image_abs = page.header.overlay_image | prepend: "/images/" | prepend: base_path %}
   {% endif %}
 {% elsif site.og_image %}
-  {% assign seo_image_abs = site.og_image | prepend: "/images/" | prepend: base_path %}
+  {% comment %} Per-page previews are generated at build time by scripts/og-images.mjs. {% endcomment %}
+  {% assign og_name = site.og_image %}
+  {% if page.collection == 'portfolio' %}
+    {% assign og_name = "og/portfolio-" | append: page.slug | append: ".png" %}
+  {% elsif page.url == '/cv/' %}
+    {% assign og_name = "og/cv.png" %}
+  {% endif %}
+  {% comment %} A new address on each build makes apps fetch the fresh image instead of a cached one. {% endcomment %}
+  {% assign og_version = site.time | date: "%s" %}
+  {% assign seo_image_abs = og_name | prepend: "/images/" | prepend: base_path | append: "?v=" | append: og_version %}
 {% else %}
   {% assign seo_image_abs = "/images/og-image.png" | prepend: base_path %}
 {% endif %}
@@ -149,7 +158,7 @@ Twitter username (site.twitter.username), matching upstream behavior.
 {% endif %}
 {% if seo_image_abs %}
   <meta property="og:image" content="{{ seo_image_abs }}">
-  {% if seo_image_abs contains "og-image.png" %}
+  {% if seo_image_abs contains "/images/og" %}
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
