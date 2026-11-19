@@ -241,6 +241,6 @@
 </div>
 
 {% include brick/footer.html %}
-<script src="{{ base_path }}/assets/js/brick-site.js" defer></script>
+<script src="{{ base_path }}/assets/js/brick-site.js?v={{ site.time | date: "%s" }}" defer></script>
 </body>
 </html>
