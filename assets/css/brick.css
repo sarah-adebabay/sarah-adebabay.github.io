@@ -356,6 +356,22 @@ p { margin: 0 0 16px; }
 .plain .li-about { margin: 6px 0 0; font-size: 0.95rem; line-height: 1.5; }
 .see-all { margin: 30px 0 0; }
 .see-all .btn { display: inline-block; text-decoration: none; }
+/* "See all N things" link under each home subsection, underlined in the section's stud color. */
+#about, #service { --acc: var(--pink); } #research { --acc: var(--mint); } #work, #awards { --acc: var(--sky); } #teaching { --acc: var(--sun); }
+.sub-more { margin: 16px 0 0; }
+.timeline + .sub-more { margin-top: 4px; }
+.sub-more a { font: 700 .98rem var(--display); color: var(--ink); text-decoration: none; border-bottom: 3px solid var(--acc); padding-bottom: 1px; }
+.sub-more a:hover, .sub-more a:focus-visible { border-bottom-width: 5px; }
+.sub-more .arw { display: inline-block; margin-left: 5px; transition: transform .15s ease; }
+.sub-more a:hover .arw, .sub-more a:focus-visible .arw { transform: translateX(3px); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #about, :root:not([data-theme="light"]) #service { --acc: #FF7A6B; }
+  :root:not([data-theme="light"]) #research { --acc: #6FCB8D; }
+  :root:not([data-theme="light"]) #work, :root:not([data-theme="light"]) #awards { --acc: #6FA8FF; }
+}
+:root[data-theme="dark"] #about, :root[data-theme="dark"] #service { --acc: #FF7A6B; }
+:root[data-theme="dark"] #research { --acc: #6FCB8D; }
+:root[data-theme="dark"] #work, :root[data-theme="dark"] #awards { --acc: #6FA8FF; }
 .page-main > .section-body { max-width: none; margin-top: 12px; }
 .section-body > h3.sub:first-child, .section-body > .kicker:first-child { margin-top: 0; }
 .section-body [id] { scroll-margin-top: 96px; }
