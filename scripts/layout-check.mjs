@@ -75,10 +75,10 @@ function measure() {
     }
   }
 
-  // 4. The hero, nav bar and page content share the same left edge.
-  const edges = ['.hero-inner > :first-child', '.bar-inner', 'main', '.page-main', '.topbar-inner']
-    .map((s) => [s, document.querySelector(s)])
-    .filter(([, el]) => el && box(el).width > 0)
+  // 4. The hero, nav bar and page content share the same left edge (the profile column, when shown, sits on it).
+  const edges = ['.hero-inner > :first-child', '.bar-inner', '.profile, main', '.page-main', '.topbar-inner']
+    .map((s) => [s, [...document.querySelectorAll(s)].find((el) => box(el).width > 0)])
+    .filter(([, el]) => el)
     .map(([s, el]) => {
       const b = box(el), pad = parseFloat(getComputedStyle(el).paddingLeft) || 0;
       return [s, Math.round(b.left + pad)];

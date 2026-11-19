@@ -580,3 +580,33 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   .bar-top .tabs a { padding: 4px 7px; font-size: 0.86rem; }
   .bar-top .nav-btn { padding: 4px 10px; font-size: 0.86rem; }
 }
+
+/* ---------- Profile column (home, top nav) ----------
+   From 1024px a sticky column left of the text holds photo, name, bio, place, school and links,
+   so the top bar drops its CV/Contact buttons. Below 1024px the column hides (the hero shows the same things)
+   and the top bar keeps CV and gains a LinkedIn button. */
+.profile { display: none; }
+.nav-btn.li-btn { display: none; }
+.nav-btn.li-btn svg { width: 18px; height: 18px; display: block; }
+.profile-photo { display: block; width: 176px; height: 176px; object-fit: cover; border-radius: 50%; border: 3px solid var(--line); box-shadow: 5px 5px 0 var(--line); background: #fff; }
+.profile-name { font-family: var(--display); font-weight: 800; font-size: 1.45rem; line-height: 1.15; letter-spacing: -.01em; margin: 0; }
+.profile-bio { margin: 6px 0 0; font-size: .95rem; line-height: 1.5; color: var(--muted); }
+.profile-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: .95rem; line-height: 1.35; }
+.profile-list li { display: flex; align-items: flex-start; gap: 12px; }
+.profile-list li > span:last-child, .profile-list li > a { padding-top: 5px; }
+.profile-list .line { display: block; }
+.profile-list .tile { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border: 2px solid var(--line); border-radius: 6px; background: var(--t); color: var(--tc, #fff); }
+.profile-list .tile svg { width: 17px; height: 17px; }
+.profile-list .t-red { --t: #C91A09; } .profile-list .t-yellow { --t: #F2CD37; --tc: #05131D; } .profile-list .t-blue { --t: #0055BF; }
+.profile-list .t-green { --t: #237841; } .profile-list .t-ink { --t: var(--ink); --tc: var(--paper); }
+.profile-list a { color: var(--ink); text-decoration-color: var(--soft); }
+.profile-list a:hover { text-decoration-color: var(--sun); }
+@media (min-width: 1024px) {
+  .has-profile .wrap.no-side { grid-template-columns: 264px minmax(0, 1fr); gap: 48px; }
+  .has-profile .profile { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 92px; align-self: start; margin-top: 80px; }
+  .has-profile .bar-top .nav-buttons { display: none; }
+}
+@media (max-width: 1023px) {
+  .bar-top .nav-btn.li-btn { display: inline-flex; align-items: center; padding-left: 8px; padding-right: 8px; }
+}
+@media print { .profile { display: none; } }

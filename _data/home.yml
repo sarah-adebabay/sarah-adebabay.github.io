@@ -103,3 +103,12 @@ greetings:
     note: "H-E-L-L-O, fingerspelled in ASL"
   - text: "¡Hola!"
     note: "hello in Spanish"
+
+# Profile column on the left of the homepage (screens 1024px and wider). Location, LinkedIn and GitHub come from
+# site.author in _config.yml; the photo is `photo` above. Each education line shows on its own row.
+profile:
+  bio: "Learning technologies, generative AI, and education equity."
+  education:
+    - "University of California, Berkeley"
+    - "B.A. in Computer Science"
+    - "Minor in Education"
