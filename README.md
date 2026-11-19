@@ -1,4 +1,4 @@
-# Sarah Adebabay: personal site
+# Sarah Adebabay: Personal Site
 
 Built on the [Academic Pages](https://github.com/academicpages/academicpages.github.io) Jekyll template
 (MIT license), restyled with a custom "brick" theme: toy-brick primaries, stud motifs, sticker tags,
