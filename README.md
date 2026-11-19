@@ -49,53 +49,6 @@ topics: ["Topic one", "Topic two"]
 The full write-up goes here, in Markdown.
 ```
 
-## Before you publish: fill in the placeholders
-
-Search the repo for `[` and `YOUR-` to find every one.
-
-- [ ] CV PDF: add `files/Sarah-Adebabay-CV.pdf`
-- [x] `_config.yml`: `linkedin` set; `email` intentionally left blank so no Email link shows (url, repository, and GitHub are already set)
-- [ ] `_portfolio/data-science-day.md`: optionally link the findings report
-- [ ] `_portfolio/name-recognition-audit.md`: year, method, findings, and a report link
-- [ ] `_talks/`: year and a one-line description for each panel
-- [ ] `_pages/cv.md` and `_data/experience.yml`: dates for Haas and Breakthrough or teaching
-- [ ] Confirm you are comfortable naming the Duolingo integration publicly
-
-## Publishing
-
-**The website is always public. A private repo only hides the source code.**
-
-### Option A: GitHub Pages (needs GitHub Pro for a private repo)
-
-1. Create a new **private** repository named `sarah-adebabay.github.io`.
-2. Upload these files (drag the unzipped folder's contents into "Add file > Upload files"),
-   or push from a terminal:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/sarah-adebabay/sarah-adebabay.github.io.git
-   git push -u origin main
-   ```
-3. In the repo, open **Settings > Pages** and set **Source** to **GitHub Actions**.
-   The included workflow (`.github/workflows/jekyll.yml`) builds and deploys on every push.
-4. Watch the **Actions** tab; when it turns green, visit `https://sarah-adebabay.github.io`.
-
-### Option B: free, with a private repo (Cloudflare Pages)
-
-1. Push to a private repo as above (any name).
-2. In Cloudflare Pages, connect the repo and use:
-   - Build command: `bundle exec jekyll build`
-   - Output directory: `_site`
-   - Environment variable: `RUBY_VERSION = 3.3.6`
-3. Update `url` in `_config.yml` to the address Cloudflare gives you.
-
-## Previewing on your computer (optional)
-
-With Docker installed: `docker compose up`, then open http://localhost:4000.
-Or with Ruby: `bundle install` then `bundle exec jekyll serve -l -H localhost`.
-
 ## Credits
 
 - Site engine: [Academic Pages](https://github.com/academicpages/academicpages.github.io), MIT License.
