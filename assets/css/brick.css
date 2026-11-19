@@ -102,7 +102,10 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
   .hello .hands img { height: 26px; }
   .hello .am { font-size: 1.15rem; }
 }
-.tap-hint { font-family: var(--hand); font-size: 1.35rem; color: var(--ink); opacity: .75; transform: rotate(-3deg); }
+.tap-hint { font-family: var(--hand); font-size: 1.35rem; color: var(--ink); opacity: .75; transform: rotate(-3deg); position: relative; }
+.tap-hint svg { position: absolute; left: -16px; top: calc(100% - 4px); pointer-events: none; }
+/* The hint wraps under the widest greeting on narrow phones, so the arrow would point at nothing */
+@media (max-width: 369px) { .tap-hint svg { display: none; } }
 /* Wave on the Say hello button */
 .btn.say .w { display: inline-block; transform-origin: 70% 80%; margin-left: 2px; }
 .btn.say:hover .w, .btn.say:focus-visible .w { animation: wave .9s ease-in-out; }
