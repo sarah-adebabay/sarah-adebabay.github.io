@@ -565,7 +565,6 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   nav.side .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
   nav.side .nav-buttons { flex-direction: row; margin-top: 12px; }
   .bar-inner { padding-top: 8px; padding-bottom: 8px; }
-  .bar-top .tabs { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); mask-image: linear-gradient(to right, #000 88%, transparent); padding-right: 24px; }
   .bar-top .nav-buttons .contact-btn { display: none; }
   .bar-top .tabs a, .bar-bottom .tabs a { padding: 4px 9px; font-size: 0.92rem; }
 }
@@ -610,3 +609,68 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   .bar-top .nav-btn.li-btn { display: inline-flex; align-items: center; padding-left: 8px; padding-right: 8px; }
 }
 @media print { .profile { display: none; } }
+
+/* ---------- Top bar on phones ----------
+   mobile_nav in _data/home.yml picks follow, current, or bottom (body class mnav-*).
+   The script sets --page-p (how far down the page) on the bar and --sec-p (how far through
+   the section on screen) on the active tab, and keeps the active tab in view. */
+.cur-toggle { display: none; }
+.bar-top::after {
+  content: ""; position: absolute; left: 0; bottom: -3px; height: 3px; width: calc(var(--page-p, 0) * 100%);
+  background: var(--sun); transition: width .1s linear;
+}
+@media (max-width: 767px) {
+  .bar-top .bar-inner { gap: 0; padding-right: 0; }
+  .bar-top .tabs { flex: 1 1 auto; min-width: 0; padding: 4px 28px 4px 0 !important; }
+  .bar-top .nav-buttons { flex: none; padding: 0 var(--gutter) 0 12px; border-left: 2.5px solid var(--soft); align-self: stretch; align-items: center; background: var(--surface); }
+
+  /* follow: the row scrolls by itself so the section you're reading is always on screen */
+  .mnav-follow .bar-top .tabs {
+    overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10px, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to right, transparent 0, #000 10px, #000 calc(100% - 28px), transparent);
+  }
+  .mnav-follow .bar-top .tabs::-webkit-scrollbar { display: none; }
+  .mnav-follow .bar-top .tabs a[aria-current="true"] {
+    background: linear-gradient(var(--sun), var(--sun)) left bottom / calc(var(--sec-p, 0) * 100%) 4px no-repeat, var(--ink);
+    color: var(--paper);
+  }
+
+  /* current: one button names the section; tapping it opens all six */
+  .mnav-current .bar-top .cur-toggle {
+    display: flex; align-items: center; gap: 10px; flex: 1 1 auto; min-width: 0; margin: 0 12px 0 0;
+    font: 700 1rem var(--display); color: var(--ink); background: var(--surface); text-align: left; cursor: pointer;
+    border: 2.5px solid var(--line); border-radius: 999px; padding: 6px 14px; position: relative; overflow: hidden;
+  }
+  .mnav-current .bar-top .cur-toggle::before {
+    content: ""; position: absolute; inset: 0 auto 0 0; width: calc(var(--sec-p, 0) * 100%); background: var(--sun); opacity: .45; z-index: 0;
+  }
+  .mnav-current .cur-toggle > * { position: relative; z-index: 1; }
+  .mnav-current .cur-count { font-family: var(--hand); font-size: 1.2rem; font-weight: 700; color: var(--muted); line-height: 1; }
+  .mnav-current .cur-caret { width: 12px; height: 8px; margin-left: auto; transition: transform .2s ease; }
+  .mnav-current .cur-toggle[aria-expanded="true"] .cur-caret { transform: rotate(180deg); }
+  .mnav-current .bar-top .tabs {
+    display: none !important; position: absolute; top: 100%; left: var(--gutter); right: var(--gutter); margin-top: 6px !important;
+    flex-direction: column; gap: 2px; background: var(--surface); border: 3px solid var(--line); border-radius: 12px;
+    box-shadow: 6px 6px 0 var(--line); padding: 8px !important;
+  }
+  .mnav-current .bar-top.open .tabs { display: flex !important; }
+  .mnav-current .bar-top .tabs a { display: block; padding: 10px 14px; font-size: 1.02rem; }
+  .mnav-current .bar-top .bar-inner { padding-top: 10px; padding-bottom: 10px; }
+
+  /* bottom: the tabs become a phone tab bar; CV and LinkedIn stay in the hero and Contact */
+  .mnav-bottom .bar-top {
+    position: fixed; top: auto; bottom: 0; left: 0; right: 0;
+    border-bottom: 0; border-top: 3px solid var(--line); padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mnav-bottom .bar-top::after { top: -3px; bottom: auto; }
+  .mnav-bottom .bar-top .nav-buttons { display: none; }
+  .mnav-bottom .bar-top .bar-inner { padding-left: 0; }
+  .mnav-bottom .bar-top .tabs { display: grid !important; grid-template-columns: repeat(6, minmax(0, 1fr)); padding: 6px 4px !important; gap: 0 !important; }
+  .mnav-bottom .bar-top .tabs a { display: block; text-align: center; padding: 9px 0; font-size: 0.78rem; border-radius: 8px; }
+  .mnav-bottom .bar-top .tabs a[aria-current="true"] {
+    background: linear-gradient(var(--sun), var(--sun)) left bottom / calc(var(--sec-p, 0) * 100%) 4px no-repeat, var(--ink); color: var(--paper);
+  }
+  .mnav-bottom footer { padding-bottom: 64px; }
+  .mnav-bottom section { scroll-margin-top: 0; }
+}
