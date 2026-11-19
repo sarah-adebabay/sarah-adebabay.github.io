@@ -1,6 +1,7 @@
 {% assign projects = site.portfolio | sort: "order" %}
 <h3 class="sub"{% if include.full %} id="leadership"{% endif %}>Leadership</h3>
 {% include brick/timeline.html items=site.data.leadership.leadership full=include.full %}
+{% include brick/see-more.html full=include.full anchor="leadership" count=site.data.leadership.leadership.size noun="roles" %}
 <h3 class="sub"{% if include.full %} id="other-leadership"{% endif %}>Other leadership</h3>
 <ul class="plain two-col">
   {% for r in site.data.leadership.other %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
@@ -9,6 +10,7 @@
 <div class="projects one">
   {% for item in projects %}{% if item.tab == 'service' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
 </div>
+{% assign n = projects | where: "tab", "service" | size %}{% assign n = site.data.leadership.other.size | plus: n %}{% include brick/see-more.html full=include.full anchor="other-leadership" count=n noun="roles" %}
 <span class="anchor" id="talks"></span>
 <h3 class="sub"{% if include.full %} id="speaking"{% endif %}>Speaking</h3>
 <ul class="plain">
@@ -16,3 +18,4 @@
   {% for t in talks %}{% if include.full or t.top %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
   {% endif %}{% endfor %}
 </ul>
+{% include brick/see-more.html full=include.full anchor="speaking" count=talks.size noun="talks" %}

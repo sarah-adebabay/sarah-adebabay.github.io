@@ -1,0 +1,3 @@
+{% comment %} Home page only: a "See all N things" link under a subsection, to its spot on the CV.
+include.anchor = CV anchor, include.count = total entries, include.noun = plural noun ("experiences"). {% endcomment %}{% unless include.full %}{% include base_path %}
+<p class="sub-more"><a href="{{ base_path }}/cv/#{{ include.anchor }}">See all {{ include.count }} {{ include.noun }}<span class="arw" aria-hidden="true">→</span></a></p>{% endunless %}
