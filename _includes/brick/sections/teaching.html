@@ -1,0 +1,13 @@
+{% assign projects = site.portfolio | sort: "order" %}
+<p class="kicker">Teaching, curriculum development, and mentorship</p>
+{% for item in projects %}{% if item.tab == 'teaching' and item.featured %}{% if include.full or item.top %}{% include brick/project-card.html item=item feature=true %}{% endif %}{% endif %}{% endfor %}
+<ol class="timeline">
+  {% for job in site.data.teaching %}{% if include.full or job.top %}
+  <li>
+    <h3>{{ job.title }}</h3>
+    <p class="when">{{ job.when }}</p>
+    <ul>{% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+  </li>
+  {% endif %}{% endfor %}
+</ol>
+{% for item in projects %}{% if item.tab == 'teaching' %}{% unless item.featured %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endunless %}{% endif %}{% endfor %}

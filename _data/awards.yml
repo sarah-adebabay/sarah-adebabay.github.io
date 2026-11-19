@@ -1,13 +1,17 @@
 # Awards and fellowships, newest first. Shown in the Awards section of the
 # home page and on the CV. detail = dates, about = one-line description.
+# Entries marked "top: true" show on the home page (up to 6 per section); the rest are on the section page.
 honors:
   - title: "Regents’ and Chancellor’s Scholar, University of California, Berkeley"
+    top: true
     detail: "2017 to 2022"
     about: "Most prestigious merit award, given to approximately the top 2% of incoming undergraduates, covering full need"
   - title: "The Achievement Award Program (TAAP) Scholar, Cal Alumni Association"
+    top: true
     detail: "2017 to 2022"
     about: "One of 25 high-achieving, community-minded students from low-income and first-generation backgrounds selected"
   - title: "Benjamin A. Gilman International Scholar, U.S. Department of State"
+    top: true
     detail: "2021"
     about: "Nationally competitive scholarship for high-financial-need undergraduates to study abroad as citizen diplomats"
   - title: "Grace Hopper Celebration Scholar, UC Berkeley EECS"
@@ -29,13 +33,16 @@ honors:
     detail: "2017"
     about: "Recognized for aspirations in computing, demonstrated through computing experience, leadership, and persistence; also named Los Angeles and Orange County affiliate winner"
   - title: "SWENext Award, Society of Women Engineers"
+    top: true
     detail: "2016"
     about: "One of five national recipients in the award’s inaugural year, recognizing exceptional work in building a community for students to explore engineering and STEM; invited to join the SWENext National Youth Advisory Board"
 fellowships:
   - title: "Career Prep Fellow - Software Engineering Track, Management Leadership for Tomorrow"
+    top: true
     detail: "2020 to 2022"
     about: "Selected for a career development program for Black, Latinx, and Indigenous student leaders, building skills in user needs analysis, application development, and project management"
   - title: "Accel Scholar, UC Berkeley EECS"
+    top: true
     detail: "2019 to 2022"
     about: "One of 30 selected from 500+ applicants for EECS’s program with venture capital firm Accel, offering mentorship from startup leaders and training in engineering careers and startups"
   - title: "Computer Science Scholar, UC Berkeley EECS Center for Student Affairs"

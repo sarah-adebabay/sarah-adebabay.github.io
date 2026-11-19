@@ -1,5 +1,7 @@
 # Experience timeline on the home page, newest first.
+# Entries marked "top: true" show on the home page (up to 6 per section); the rest are on the section page.
 - title: "Software Engineer, LinkedIn"
+  top: true
   when: "Aug 2022 to Sept 2026"
   bullets:
     - "Built APIs and backend services for large-scale profile features."
@@ -7,6 +9,7 @@
     - "Delivered the backend for LinkedIn Profile's first third-party integration (Duolingo), plus a data takeout service for the new partner data."
     - "Evaluated features through A/B experiments, using SQL to analyze results, and kept GDPR and data compliance standards current."
 - title: "Software Engineering Intern, Machine Learning Engineering, SurveyMonkey"
+  top: true
   when: "June to Aug 2020"
   bullets:
     - "Implemented a pull-based metrics monitoring system for ML models (Python, Pyramid, Docker, Prometheus) and integrated Grafana dashboards."

@@ -1,5 +1,6 @@
 ---
 title: "Tech Trek"
+top: true
 collection: talks
 order: 2
 color: red

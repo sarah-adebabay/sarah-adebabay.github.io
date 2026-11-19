@@ -1,5 +1,6 @@
 ---
 title: "Black Engineer Week"
+top: true
 collection: talks
 order: 3
 color: blue

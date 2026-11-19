@@ -1,6 +1,7 @@
 ---
 title: "First third-party profile integration"
 collection: portfolio
+top: true
 tab: work
 order: 3
 color: green
