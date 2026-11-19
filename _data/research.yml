@@ -1,11 +1,44 @@
-# Research and fellowships list on the home page.
+# Research experience and research programs, newest first.
 # Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
-- title: "Educational Data Science and Learning Engineering Fellow"
-  top: true
-  detail: "UC Berkeley x Schmidt Futures, Jan to May 2021. One of 30 undergraduate fellows selected nationwide."
-- title: "Google CS Research Mentorship Program"
-  top: true
-  detail: "Jan to May 2021. Weekly cohort with a Google HCI researcher discussing CHI papers on HCI and education innovation."
-- title: "AEP Researcher and Consultant, Design for Equity Lab"
-  top: true
-  detail: "UC Berkeley, Aug 2018 to May 2019. Studied Adaptive Equity-Oriented Pedagogy in CS classrooms through field notes, interview coding, and analysis in Stata."
+experience:
+  - title: "Co-Lead Organizer and Curriculum Designer"
+    org: "Education Research Capstone - All About STEM: Data Science Day"
+    where: "Berkeley, California"
+    when: "November 2020 to May 2021"
+    note: "Advisor: Professor Erin Murphy-Graham"
+    bullets:
+      - "Launched and co-led a K-12 outreach event teaching 98 Black students data science and machine learning through a justice-centered curriculum, including Hidden Figures and Coded Bias screenings, guided discussions, and an undergraduate and industry panel"
+      - "Designed workshops, inspired by UCLA’s Introduction to Data Science (IDS) curriculum and Computer Science Teachers Association (CSTA) K-12 CS Standards and built on CODAP and Code.org"
+      - "Co-designed with two high school students prior to the event: an original activity using US Census data to visualize income inequalities faced by marginalized communities"
+      - "Surveyed students before and after the event: many did not know what STEM stood for beforehand, and higher percentages reported excitement about pursuing STEM careers and higher education; parents shared it was the first time their children were exposed to people who looked like them in STEM"
+      - "Raised over $36,000 in grants and sponsorships for Chromebooks, hotspots, and care packages, with over $10,000 left to fund two future events"
+      - "Recruited, trained, and managed 16 volunteers to facilitate workshops"
+  - title: "Adaptive Equity-Oriented Pedagogy (AEP) Researcher and Consultant"
+    top: true
+    org: "Design for Equity (D4E) Lab, UC Berkeley"
+    where: "Berkeley, California"
+    when: "August 2018 to May 2019"
+    bullets:
+      - "Researched AEP’s effectiveness in reducing stereotype threat and boosting academic achievement in undergraduate STEM courses; advised EECS faculty on applying AEP"
+      - "Recorded qualitative field notes in classes and coded them for student-instructor interactions and student engagement"
+      - "Conducted statistical analyses in Stata comparing AEP and control classroom test scores"
+      - "Translated mixed-methods findings, including student surveys, into weekly feedback to adapt instruction"
+programs:
+  - title: "Educational Data Science and Learning Engineering Fellow"
+    top: true
+    org: "UC Berkeley Computational Approaches to Human Learning Lab x Schmidt Futures"
+    where: "Berkeley, California"
+    when: "January 2021 to August 2021"
+    bullets:
+      - "One of 30 undergraduate students selected nationwide; participated in virtual cohort sessions on equitable AI, NLP and cognitive learning sciences, HCI, and intelligent tutoring systems"
+      - "Capstone: Pitched YedTech, a teacher review and recommendation platform for edtech products and companies, to Schmidt Futures, on a team of three"
+      - "Built market strategy and competitive analysis drawing on user interviews with K-12 teachers and administrators on STEM edtech hesitancy"
+  - title: "CS Research Mentorship Program (CSRMP)"
+    top: true
+    org: "Google"
+    where: "Mountain View, California"
+    when: "January 2021 to April 2021"
+    bullets:
+      - "Selected for Google’s initiative expanding computing research access for underrepresented students"
+      - "Analyzed CHI publications on HCI and education innovation in a weekly three-person cohort with a Google HCI researcher"
+      - "Built strategy for graduate program applications through career panels and 1:1 mentorship with a Google research mentor"

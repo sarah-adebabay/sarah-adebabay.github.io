@@ -1,0 +1,13 @@
+{% comment %} One timeline list. include.items = entries with title, org, where, when, note, bullets.
+On the home page (include.full not set) only entries marked top: true show, with their first two bullets. {% endcomment %}
+<ol class="timeline">
+  {% for job in include.items %}{% if include.full or job.top %}
+  <li>
+    <h3>{{ job.title }}</h3>
+    {% if job.org %}<p class="org">{{ job.org }}{% if job.where %}<span>{{ job.where }}</span>{% endif %}</p>{% endif %}
+    <p class="when">{{ job.when }}</p>
+    {% if job.note and include.full %}<p class="tl-note">{{ job.note }}</p>{% endif %}
+    {% if job.bullets %}<ul>{% for b in job.bullets %}{% if include.full or forloop.index <= 2 %}<li>{{ b }}</li>{% endif %}{% endfor %}</ul>{% endif %}
+  </li>
+  {% endif %}{% endfor %}
+</ol>

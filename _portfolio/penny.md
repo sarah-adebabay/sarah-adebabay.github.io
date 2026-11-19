@@ -4,8 +4,8 @@ collection: portfolio
 top: true
 tab: work
 order: 8
-role: "Facebook University (FBU), team of three"
-when: "Summer 2019"
+role: "Facebook University (FBU) Software Engineering Intern, team project"
+when: "June 2019 to August 2019"
 excerpt: "An Android app that helps young people set realistic savings goals, with a parent portal for approvals and allowances."
 topics: ["Android", "Financial literacy", "Youth learning"]
 ---

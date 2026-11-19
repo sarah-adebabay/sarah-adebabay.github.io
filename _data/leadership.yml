@@ -1,18 +1,43 @@
-# Leadership and community (one combined list), shown in the Service section.
-# Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
-- title: "External Vice President and Region 6 Senator, NSBE / BESSA at Berkeley"
-  top: true
-  detail: "2020 to 2021. Partnered with Google and Genentech on professional development, and built a sponsorship package that raised over $45k."
-- title: "ASUC Staff Member, Diversity in STEM"
-  top: true
-  detail: "UC Berkeley, 2019 to 2020"
-- title: "Treasurer, Somali, Ethiopian, Eritrean, South Sudanese, Sudanese Association"
-  detail: "UC Berkeley, 2018 to 2019"
-- title: "President, Putnam-Freeborn Residence Hall Association"
-  detail: "UC Berkeley, 2017 to 2018"
-- title: "SWENext National Youth Advisory Board Member, Society of Women Engineers"
-  detail: ""
-- title: "Mentorship and representation"
-  detail: "LinkedIn Possibilities in Tech Scholarship mentor, Society of Women Engineers, AfroTech, and MLT Tech Trek."
-- title: "Community organizing"
-  detail: "K-12 outreach, grant writing, and co-hosting community events."
+# Leadership experience and other leadership, newest first. Shown in the Service section.
+# Entries marked "top: true" show on the home page (up to 6 per section, first two bullets); every entry is on the CV page.
+leadership:
+  - title: "External Vice President and NSBE Region 6 Senator"
+    top: true
+    org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
+    where: "Berkeley, California"
+    when: "May 2020 to May 2021"
+    bullets:
+      - "Created a sponsorship packet and raised over $16,000 from 12 companies, including Microsoft, Salesforce, Goldman Sachs, and Disney; hosted professional development and recruiting events with sponsors"
+      - "Served as point of contact for NSBE Region 6 and Berkeley’s Black graduate and alumni organizations, representing the chapter and voting on regional decisions as a Region 6 Senator"
+  - title: "Events Chair"
+    org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
+    where: "Berkeley, California"
+    when: "May 2019 to May 2020"
+    bullets:
+      - "Organized social, academic, and professional development events supporting BESSA members’ success and retention, including Dinners of the Month with Black STEM faculty and study jams"
+      - "Assisted Pre-Collegiate Initiative Chairs with Bay Area K-12 community outreach events"
+  - title: "Pre-Collegiate Initiative Chair"
+    org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
+    where: "Berkeley, California"
+    when: "May 2018 to May 2019"
+    bullets:
+      - "Coordinated an outreach event per semester for Bay Area K-12 students, exposing them to higher education and STEM fields"
+      - "Advised Berkeley High School’s NSBE Jr. chapter and arranged academic support such as after-school tutoring and mentorship from UC Berkeley students"
+other:
+  - title: "Games Production Assistant, SUPERB Productions"
+    detail: "2019 to 2021"
+  - title: "Staff Member (Diversity in STEM), Associated Students of the University of California (ASUC)"
+    top: true
+    detail: "2019 to 2020"
+  - title: "Treasurer, Somali, Ethiopian, Eritrean, South Sudanese, and Sudanese Association (SEESSA)"
+    detail: "2018 to 2019"
+  - title: "President, Putnam-Freeborn Residence Hall Association"
+    detail: "2017 to 2018"
+  - title: "Media and Marketing Committee Member, Regents’ and Chancellor’s Student Association"
+    detail: "2017 to 2018"
+  - title: "SWENext National Youth Advisory Board Member, Society of Women Engineers"
+    detail: ""
+  - title: "Mentorship and representation"
+    detail: "LinkedIn Possibilities in Tech Scholarship mentor, Society of Women Engineers, AfroTech, and MLT Tech Trek."
+  - title: "Community organizing"
+    detail: "K-12 outreach, grant writing, and co-hosting community events."

@@ -1,7 +1,9 @@
 {% assign projects = site.portfolio | sort: "order" %}
 <h3 class="sub"{% if include.full %} id="leadership"{% endif %}>Leadership</h3>
+{% include brick/timeline.html items=site.data.leadership.leadership full=include.full %}
+<h3 class="sub"{% if include.full %} id="other-leadership"{% endif %}>Other leadership</h3>
 <ul class="plain two-col">
-  {% for r in site.data.leadership %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
+  {% for r in site.data.leadership.other %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
   {% endif %}{% endfor %}
 </ul>
 <div class="projects one">

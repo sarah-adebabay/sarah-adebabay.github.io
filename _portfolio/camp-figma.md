@@ -5,13 +5,13 @@ top: true
 tab: service
 order: 6
 color: red
-role: "Figma Inaugural Student Fellow"
-when: "July to Sept 2020"
-excerpt: "Helped organize and host Figma's first global design jam for its Virtual Campus, and built a database of North American hackathons for Figma's education team."
+role: "Inaugural Student Fellow, Figma for Education Team"
+when: "July 2020 to September 2020"
+excerpt: "Organized and hosted Camp Figma, the first global design jam on using design to spark joy and improve accessibility, with 260 attendees from 8+ countries."
 topics: ["Design education", "Community", "Events"]
 ---
 
-As one of five undergraduates in Figma's inaugural student fellowship, I helped build Figma's education presence.
+I was invited as one of five undergraduate students to build the foundation of Figma’s education presence.
 
-- Organized and hosted Camp Figma, Figma's first global design jam for its Virtual Campus, where I ran the hackathon area
-- Built a database of North American hackathons for Figma's educational outreach team
+- Organized and hosted Camp Figma, the first global design jam on using design to spark joy and improve accessibility, with 260 attendees from 8+ countries, growing Virtual Campus by 20% to 1,195 members
+- Co-led hackathon partnerships; compiled a CRM of 100 North American hackathons and created principles, strategy, and budget allocation for the upcoming cycle
