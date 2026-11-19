@@ -33,12 +33,12 @@ redirect_from:
 
 ## Research
 
-* **AEP Researcher and Consultant**, Design for Equity Lab, UC Berkeley <span class="cv-when">Aug 2018 to May 2019</span>
-  * Advised CS professors on Adaptive Equity-Oriented Pedagogy; collected and coded classroom field notes and student interviews; tested AEP against control classrooms in Stata
 * **Fellow**, UC Berkeley x Schmidt Futures Educational Data Science and Learning Engineering Fellowship <span class="cv-when">Jan to May 2021</span>
   * One of 30 undergraduate fellows nationwide; capstone research on teacher hesitancy toward STEM EdTech
 * **Participant**, Google CS Research Mentorship Program <span class="cv-when">Jan to May 2021</span>
   * Weekly cohort with a Google HCI researcher discussing CHI papers on HCI and education innovation
+* **AEP Researcher and Consultant**, Design for Equity Lab, UC Berkeley <span class="cv-when">Aug 2018 to May 2019</span>
+  * Advised CS professors on Adaptive Equity-Oriented Pedagogy; collected and coded classroom field notes and student interviews; tested AEP against control classrooms in Stata
 
 ## Teaching and curriculum
 
@@ -49,25 +49,26 @@ redirect_from:
 
 ## Leadership and service
 
+* **Mentor**, LinkedIn Possibilities in Tech Scholarship <span class="cv-when">since 2024</span>
 * **External Vice President and NSBE Region 6 Senator**, Black Engineering and Science Student Association (NSBE) at UC Berkeley <span class="cv-when">2020 to 2021</span>
   * Raised over $45k in sponsorships and grants; partnered with Google and Genentech on professional development
 * **Figma Inaugural Student Fellow** <span class="cv-when">July to Sept 2020</span>
-* **President**, Putnam-Freeborn Residence Hall Association <span class="cv-when">2017 to 2018</span>
-* **Treasurer**, Somali, Ethiopian, Eritrean, South Sudanese, Sudanese Association <span class="cv-when">2018 to 2019</span>
 * **ASUC Staff Member**, Diversity in STEM <span class="cv-when">2019 to 2020</span>
-* **Mentor**, LinkedIn Possibilities in Tech Scholarship <span class="cv-when">since 2024</span>
+* **Treasurer**, Somali, Ethiopian, Eritrean, South Sudanese, Sudanese Association <span class="cv-when">2018 to 2019</span>
+* **President**, Putnam-Freeborn Residence Hall Association <span class="cv-when">2017 to 2018</span>
 * **SWENext National Youth Advisory Board Member**, Society of Women Engineers
 
 ## Honors and fellowships
 
-* Accel Scholar, UC Berkeley EECS (2019 to 2020)
-* BESSA Leadership Award (2021)
-* Third Place, a16z x MLT Pitch Competition (2020)
-* Grace Hopper Celebration Scholarship (2021)
-* Koret Undergraduate Research Scholar, UC Berkeley (2017)
 * The Achievement Award Program (TAAP) Scholar, Cal Alumni Association (2017 to 2022)
-* Rewriting the Code Fellow (2020 to 2021); MLT Career Prep Fellow
+* BESSA Leadership Award (2021)
+* Grace Hopper Celebration Scholarship (2021)
+* Rewriting the Code Fellow (2020 to 2021)
+* Third Place, a16z x MLT Pitch Competition (2020)
+* Accel Scholar, UC Berkeley EECS (2019 to 2020)
+* Koret Undergraduate Research Scholar, UC Berkeley (2017)
 * NCWIT Aspirations in Computing National Honorable Mention (2017); SWENext Award (2016)
+* MLT Career Prep Fellow
 
 ## Talks and panels
 
