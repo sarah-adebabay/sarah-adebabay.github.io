@@ -1,6 +1,7 @@
 ---
 title: "Auditing name recognition technology"
 collection: portfolio
+tab: research
 order: 9
 color: black
 role: "UC Berkeley CS 194-100, group project"

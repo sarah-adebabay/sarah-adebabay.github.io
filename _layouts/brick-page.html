@@ -12,18 +12,15 @@
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="{{ base_path }}/">Sarah Adebabay</a>
-    <nav aria-label="Site">
-      <a href="{{ base_path }}/#projects">Projects</a>
-      <a href="{{ base_path }}/#talks">Talks</a>
-      <a href="{{ base_path }}/cv/"{% if page.url == '/cv/' %} aria-current="page"{% endif %}>CV</a>
-      <a href="{{ base_path }}/#contact">Contact</a>
+    <nav class="sectionnav" aria-label="Site">
+      {% capture root %}{{ base_path }}/{% endcapture %}{% include brick/section-nav.html prefix=root %}
     </nav>
   </div>
 </header>
 <div class="stud-strip" aria-hidden="true"></div>
 
 <main id="main" class="page-main">
-  {% if page.collection == 'portfolio' %}<p class="crumb"><a href="{{ base_path }}/#projects">All projects</a></p>{% endif %}
+  {% if page.collection == 'portfolio' %}<p class="crumb"><a href="{{ base_path }}/#{{ page.tab | default: 'research' }}">Back to {{ page.tab | default: 'research' | capitalize }}</a></p>{% endif %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% if page.role %}<p class="meta">{{ page.role }}</p>{% endif %}
   {% if page.when %}<p class="when">{{ page.when }}</p>{% endif %}

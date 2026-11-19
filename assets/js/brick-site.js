@@ -95,3 +95,18 @@
   }
   setTimeout(next, HOLD_MS);
 })();
+
+// Highlight the section tab for whatever is on screen.
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.sectionnav .tabs a[data-tab]'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  var sections = links.map(function (a) { return document.getElementById(a.dataset.tab); }).filter(Boolean);
+  if (!sections.length) return;
+  function mark(id) {
+    links.forEach(function (a) { if (a.dataset.tab === id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  sections.forEach(function (s) { io.observe(s); });
+})();

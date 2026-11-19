@@ -1,6 +1,7 @@
 ---
 title: "Resume to Profile"
 collection: portfolio
+tab: work
 order: 2
 color: blue
 role: "Software Engineer, LinkedIn"

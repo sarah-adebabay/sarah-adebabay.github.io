@@ -1,0 +1,13 @@
+# The six sections in the site navigation, in order. id is the anchor on the home page.
+- id: about
+  label: "About"
+- id: research
+  label: "Research"
+- id: work
+  label: "Work"
+- id: teaching
+  label: "Teaching"
+- id: service
+  label: "Service"
+- id: awards
+  label: "Awards"
