@@ -191,7 +191,7 @@
       <h3 class="sub">Speaking</h3>
       <ul class="plain">
         {% assign talks = site.talks | sort: "order" %}
-        {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% if t.excerpt %}. {{ t.excerpt | strip_html }}{% endif %}</small></li>
+        {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
         {% endfor %}
       </ul>
     </section>
