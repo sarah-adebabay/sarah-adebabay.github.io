@@ -1,0 +1,51 @@
+# Screenshots the site at phone, tablet, laptop and desktop widths on every pull request,
+# and fails if the layout breaks (sideways scrolling, off-center hero, misaligned edges).
+# Screenshots are attached to the run as the "layout-shots" artifact.
+name: Layout check
+
+on:
+  pull_request:
+    paths:
+      - "assets/css/**"
+      - "_layouts/**"
+      - "_includes/**"
+      - "_data/**"
+      - "_pages/**"
+      - "_config.yml"
+      - "scripts/layout-check.mjs"
+      - ".github/workflows/layout-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  layout:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+      - uses: ruby/setup-ruby@v1.328.0
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          cache-version: 0
+      - name: Build the site
+        run: bundle exec jekyll build
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: Screenshot and check each width
+        run: node scripts/layout-check.mjs _site layout-shots
+      - name: Add results to the run summary
+        if: always()
+        run: cat layout-shots/report.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: layout-shots
+          path: layout-shots/
