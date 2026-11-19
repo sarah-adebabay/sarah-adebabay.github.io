@@ -30,7 +30,7 @@ author:
   location         : "California"
   employer         : 
   uri              : # URL
-  email            : "YOUR-EMAIL@example.com" # TODO
+  email            : # left blank on purpose (no public email)
 
   # Academic websites
   academia         : # URL
