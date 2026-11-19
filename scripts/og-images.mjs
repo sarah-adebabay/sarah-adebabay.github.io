@@ -55,8 +55,13 @@ if (fs.existsSync(portfolio)) {
 fs.mkdirSync(path.join(SITE, 'images/og'), { recursive: true });
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1, reducedMotion: 'reduce', colorScheme: 'light' });
-// Links in the built pages point at the live address; send those requests to this build instead.
-await context.route(`${LIVE}/**`, (route) => route.continue({ url: route.request().url().replace(LIVE, LOCAL) }));
+// Links in the built pages point at the live address; answer those requests from this build instead.
+// (route.continue can't switch https to http, so the files are served directly.)
+await context.route(`${LIVE}/**`, (route) => {
+  const f = fileFor(new URL(route.request().url()).pathname);
+  if (!f) return route.fulfill({ status: 404, body: '' });
+  return route.fulfill({ status: 200, contentType: TYPES[path.extname(f)] || 'application/octet-stream', body: fs.readFileSync(f) });
+});
 
 let made = 0, failed = 0;
 for (const [urlPath, out, css] of jobs) {
@@ -81,3 +86,4 @@ for (const [urlPath, out, css] of jobs) {
 await browser.close();
 server.close();
 console.log(`Preview images: ${made} captured, ${failed} fell back to the home image.`);
+if (made === 0) process.exit(1);
