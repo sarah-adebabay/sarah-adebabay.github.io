@@ -1,5 +1,5 @@
 # Research and fellowships list on the home page.
-# Entries marked "top: true" show on the home page (up to 6 per section); the rest are on the section page.
+# Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
 - title: "Educational Data Science and Learning Engineering Fellow"
   top: true
   detail: "UC Berkeley x Schmidt Futures, Jan to May 2021. One of 30 undergraduate fellows selected nationwide."

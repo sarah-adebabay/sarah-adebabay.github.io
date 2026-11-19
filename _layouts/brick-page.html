@@ -20,7 +20,7 @@
 <div class="stud-strip" aria-hidden="true"></div>
 
 <main id="main" class="page-main">
-  {% if page.section %}<p class="crumb"><a href="{{ base_path }}/{% if page.section != 'all' %}#{{ page.section }}{% endif %}">Back to home</a></p>{% endif %}
+  {% if page.section %}<p class="crumb"><a href="{{ base_path }}/{% if page.section != 'cv' %}#{{ page.section }}{% endif %}">Back to home</a></p>{% endif %}
   {% if page.collection == 'portfolio' %}<p class="crumb"><a href="{{ base_path }}/#{{ page.tab | default: 'research' }}">Back to {{ page.tab | default: 'research' | capitalize }}</a></p>{% endif %}
   <h1 class="page-title">{{ page.title }}</h1>
   {% if page.role %}<p class="meta">{{ page.role }}</p>{% endif %}
