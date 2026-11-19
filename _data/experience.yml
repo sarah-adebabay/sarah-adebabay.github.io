@@ -1,5 +1,5 @@
 # Experience timeline on the home page, newest first.
-# Entries marked "top: true" show on the home page (up to 6 per section); the rest are on the section page.
+# Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
 - title: "Software Engineer, LinkedIn"
   top: true
   when: "Aug 2022 to Sept 2026"
@@ -7,7 +7,9 @@
     - "Built APIs and backend services for large-scale profile features."
     - "Worked on Resume to Profile, an LLM-based feature that extracts skills from uploaded resumes, and expanded it to more parts of the site."
     - "Delivered the backend for LinkedIn Profile's first third-party integration (Duolingo), plus a data takeout service for the new partner data."
-    - "Evaluated features through A/B experiments, using SQL to analyze results, and kept GDPR and data compliance standards current."
+    - "Evaluated features through A/B experiments, using SQL to analyze results."
+    - "Handled PII and sensitive data and kept GDPR and data compliance standards current."
+    - "Improved the on-call triage process."
 - title: "Software Engineering Intern, Machine Learning Engineering, SurveyMonkey"
   top: true
   when: "June to Aug 2020"

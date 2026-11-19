@@ -2,84 +2,53 @@
 layout: brick-page
 title: "CV"
 permalink: /cv/
+section: cv
+pdf: /files/Sarah-Adebabay-CV.pdf
 redirect_from:
   - /resume
+  - /all/
 ---
 
 {% include base_path %}
+{% assign secs = site.data.tabs | where_exp: "t", "t.id != 'about'" %}
+<div class="cv-grid">
+<nav class="cv-index" aria-label="On this page">
+  <p class="lbl">On this page</p>
+  <ul>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#research">Research</a><ul><li><a href="#research-experience">Experience</a></li><li><a href="#research-programs">Programs</a></li></ul></li>
+    <li><a href="#work">Work</a><ul><li><a href="#industry-experience">Industry experience</a></li><li><a href="#projects">Projects</a></li></ul></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#service">Service</a><ul><li><a href="#leadership">Leadership</a></li><li><a href="#speaking">Speaking</a></li></ul></li>
+    <li><a href="#awards">Awards</a><ul><li><a href="#awards-and-honors">Awards and honors</a></li><li><a href="#fellowships">Fellowships</a></li></ul></li>
+    <li><a href="#skills">Skills and languages</a></li>
+  </ul>
+</nav>
+<div class="cv-flow">
 
-<p><a class="btn primary" href="{{ base_path }}/files/Sarah-Adebabay-CV.pdf">Download the full CV (PDF)</a></p>
+<section class="record" id="education">
+  <h2>Education</h2>
+  <ul class="plain">
+    <li><strong>University of California, Berkeley</strong><small>B.A. in Computer Science, minor in Education, August 2017 to May 2022</small><p class="li-about">Regents’ and Chancellor’s Scholarship, awarded to approximately the top 2% of incoming undergraduate students</p></li>
+    <li><strong>King’s College London</strong><small>University of California Education Abroad Program, August 2021 to June 2022</small><p class="li-about">Selected as a Benjamin A. Gilman Scholar</p></li>
+  </ul>
+</section>
 
-## Education
-
-* **University of California, Berkeley**, B.A. in Computer Science, minor in Education <span class="cv-when">August 2017 - May 2022</span>
-  * Regents’ and Chancellor’s Scholarship - awarded to approximately the top 2% of incoming undergraduate students
-* **King’s College London**, University of California Education Abroad Program <span class="cv-when">August 2021 - June 2022</span>
-  * Selected as a Benjamin A. Gilman Scholar
-
-## Experience
-
-* **Software Engineer**, LinkedIn <span class="cv-when">Aug 2022 to Sept 2026</span>
-  * Built APIs and backend services for large-scale profile features
-  * Worked on Resume to Profile, an LLM-based feature that extracts skills from uploaded resumes, and expanded it to more parts of the site
-  * Delivered the backend for LinkedIn Profile's first third-party integration (Duolingo) and built a data takeout service for the new partner data
-  * Evaluated features through A/B experiments, using SQL to analyze results
-  * Handled PII and sensitive data and kept GDPR and data compliance standards current
-  * Improved the on-call triage process; mentored a summer intern and wrote the team's first API intern onboarding guide
-* **Software Engineering Intern**, Machine Learning Engineering team, SurveyMonkey <span class="cv-when">June to Aug 2020</span>
-  * Implemented a pull-based metrics monitoring system for ML models (Python, Pyramid, Docker, Prometheus) and integrated Grafana dashboards
-* **Tech Solutions Consultant**, Haas School of Business, UC Berkeley <span class="cv-when">[Dates]</span>
-  * Resolved client issues with technology equipment and supported software, and provided AV support for classrooms, conferences, and events
-
-## Research
-
-* **Fellow**, UC Berkeley x Schmidt Futures Educational Data Science and Learning Engineering Fellowship <span class="cv-when">Jan to May 2021</span>
-  * One of 30 undergraduate fellows nationwide; capstone research on teacher hesitancy toward STEM EdTech
-* **Participant**, Google CS Research Mentorship Program <span class="cv-when">Jan to May 2021</span>
-  * Weekly cohort with a Google HCI researcher discussing CHI papers on HCI and education innovation
-* **AEP Researcher and Consultant**, Design for Equity Lab, UC Berkeley <span class="cv-when">Aug 2018 to May 2019</span>
-  * Advised CS professors on Adaptive Equity-Oriented Pedagogy; collected and coded classroom field notes and student interviews; tested AEP against control classrooms in Stata
-
-## Teaching and curriculum
-
-* **Co-Lead and Curriculum Designer**, Data Science Day <span class="cv-when">Jan to May 2021</span>
-  * Co-designed an ethics-centered data science curriculum with students and delivered it to 98 K-12 students, with a pre/post study and findings report
-* **Teaching Fellow**, Breakthrough <span class="cv-when">[Dates]</span>
-* Taught algebra through calculus at the middle school and college levels
-
-## Leadership and service
-
-* **Mentor**, LinkedIn Possibilities in Tech Scholarship <span class="cv-when">since 2024</span>
-* **External Vice President and NSBE Region 6 Senator**, Black Engineering and Science Student Association (NSBE) at UC Berkeley <span class="cv-when">2020 to 2021</span>
-  * Raised over $45k in sponsorships and grants; partnered with Google and Genentech on professional development
-* **Figma Inaugural Student Fellow** <span class="cv-when">July to Sept 2020</span>
-* **ASUC Staff Member**, Diversity in STEM <span class="cv-when">2019 to 2020</span>
-* **Treasurer**, Somali, Ethiopian, Eritrean, South Sudanese, Sudanese Association <span class="cv-when">2018 to 2019</span>
-* **President**, Putnam-Freeborn Residence Hall Association <span class="cv-when">2017 to 2018</span>
-* **SWENext National Youth Advisory Board Member**, Society of Women Engineers
-
-## Awards and honors
-
-{% for r in site.data.awards.honors %}* **{{ r.title }}** <span class="cv-when">{{ r.detail }}</span>
-  * {{ r.about }}
+{% for s in secs %}
+<section class="record" id="{{ s.id }}">
+  <h2>{{ s.label }}</h2>
+  {% capture inc %}brick/sections/{{ s.id }}.html{% endcapture %}{% include {{ inc }} full=true %}
+</section>
 {% endfor %}
 
-## Fellowships
-
-{% for r in site.data.awards.fellowships %}* **{{ r.title }}** <span class="cv-when">{{ r.detail }}</span>
-  * {{ r.about }}
-{% endfor %}
-
-## Talks and panels
-
-{% assign talks = site.talks | sort: "order" %}
-{% for t in talks %}* **{{ t.title }}**, {{ t.role }} <span class="cv-when">{{ t.when }}</span>
-{% endfor %}
-
-## Skills and languages
-
-* **Data & Analytics:** Pandas, NumPy, scikit-learn, PyTorch, Stata, Jupyter, matplotlib, seaborn, Spark, Kafka, Grafana
-* **Programming & Design:** Python, SQL, Java, JavaScript, REST APIs, Docker, Git, Figma
-* **AI Tools:** Claude Code, Cursor, Windsurf, Replit
-* **Languages:** American Sign Language (Intermediate), Amharic (Intermediate), Spanish (Beginner)
-
+<section class="record" id="skills">
+  <h2>Skills and languages</h2>
+  <ul class="plain two-col">
+    <li><strong>Data and analytics</strong><small>Pandas, NumPy, scikit-learn, PyTorch, Stata, Jupyter, matplotlib, seaborn, Spark, Kafka, Grafana</small></li>
+    <li><strong>Programming and design</strong><small>Python, SQL, Java, JavaScript, REST APIs, Docker, Git, Figma</small></li>
+    <li><strong>AI tools</strong><small>Claude Code, Cursor, Windsurf, Replit</small></li>
+    <li><strong>Languages</strong><small>American Sign Language (Intermediate), Amharic (Intermediate), Spanish (Beginner)</small></li>
+  </ul>
+</section>
+</div>
+</div>

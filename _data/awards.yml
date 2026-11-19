@@ -1,6 +1,6 @@
 # Awards and fellowships, newest first. Shown in the Awards section of the
 # home page and on the CV. detail = dates, about = one-line description.
-# Entries marked "top: true" show on the home page (up to 6 per section); the rest are on the section page.
+# Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
 honors:
   - title: "Regents’ and Chancellor’s Scholar, University of California, Berkeley"
     top: true

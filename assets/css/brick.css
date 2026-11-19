@@ -355,12 +355,30 @@ p { margin: 0 0 16px; }
 .page-main > .section-body { max-width: none; margin-top: 12px; }
 .section-body > h3.sub:first-child, .section-body > .kicker:first-child { margin-top: 0; }
 .section-body [id] { scroll-margin-top: 96px; }
+/* Page title with an action button beside it (CV). */
+.page-main > .page-head { max-width: none; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 16px 24px; }
+.page-head .page-title { margin-bottom: 0; }
+.page-head .btn { margin-top: 8px; text-decoration: none; }
+/* CV contents: a row of chips on phones and tablets, a sticky column on laptops. */
+.cv-index { margin: 22px 0 8px; }
+.cv-index ul { list-style: none; margin: 0; padding: 0; }
+.cv-index > ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.cv-index > ul > li > a { display: inline-block; padding: 6px 12px; border: 2px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); text-decoration: none; font: 700 .92rem var(--display); }
+.cv-index ul ul, .cv-index .lbl { display: none; }
+.cv-flow { min-width: 0; }
+@media (min-width: 1024px) {
+  .cv-grid { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: start; }
+  .cv-index { position: sticky; top: 96px; margin: 40px 0 0; padding-left: 16px; border-left: 3px solid var(--soft); }
+  .cv-index .lbl { display: block; font: 700 .8rem var(--display); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 10px; }
+  .cv-index > ul { display: grid; gap: 12px; }
+  .cv-index > ul > li > a { padding: 0; border: 0; background: none; font-size: 1rem; }
+  .cv-index > ul > li > a:hover { color: var(--grape); }
+  .cv-index ul ul { display: grid; gap: 4px; margin: 6px 0 0; }
+  .cv-index ul ul a { color: var(--muted); font-weight: 600; font-size: .9rem; text-decoration: none; }
+  .cv-index ul ul a:hover { color: var(--grape); text-decoration: underline; }
+}
 .section-body .record { padding-top: 40px; }
 .section-body .record h2 { margin-bottom: 18px; }
-.toc ul { list-style: none; margin: 0; padding: 18px 20px; display: grid; gap: 10px; border: 2.5px solid var(--line); border-radius: 12px; background: var(--surface); }
-.toc li { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
-.toc li > a { font-family: var(--display); font-weight: 700; min-width: 7em; }
-.toc span { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .95rem; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .contact {
