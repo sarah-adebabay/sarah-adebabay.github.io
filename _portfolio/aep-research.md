@@ -2,7 +2,7 @@
 title: "Equity-oriented pedagogy in CS classrooms"
 collection: portfolio
 tab: research
-order: 4
+order: 5
 color: red
 role: "AEP Researcher and Consultant, Design for Equity Lab, UC Berkeley"
 when: "Aug 2018 to May 2019"

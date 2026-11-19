@@ -1,8 +1,8 @@
 ---
 title: "Tech Trek"
 collection: talks
-order: 2
-color: red
+order: 4
+color: green
 role: "Management Leadership for Tomorrow (MLT)"
-when: "April 2024, April 2025"
+when: "April 2024"
 ---
