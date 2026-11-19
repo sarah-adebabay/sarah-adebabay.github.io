@@ -581,9 +581,10 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 }
 
 /* ---------- Profile column (home, top nav) ----------
-   From 1024px a sticky column left of the text holds photo, name, bio, place, school and links,
-   so the top bar drops its CV/Contact buttons. Below 1024px the column hides (the hero shows the same things)
-   and the top bar keeps CV and gains a LinkedIn button. */
+   Laptops and desktops only: 1024px or wider AND a mouse or trackpad (hover + fine pointer), so phones and
+   tablets never get it, even an iPad held sideways. There a sticky column left of the text holds photo, name,
+   bio, place, school and links, and the top bar drops its CV/Contact buttons. Everywhere else the column hides
+   (the hero shows the same things) and the top bar keeps CV and gains a LinkedIn button. */
 .profile { display: none; }
 .nav-btn.li-btn { display: none; }
 .nav-btn.li-btn svg { width: 18px; height: 18px; display: block; }
@@ -600,12 +601,12 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 .profile-list .t-green { --t: #237841; } .profile-list .t-ink { --t: var(--ink); --tc: var(--paper); }
 .profile-list a { color: var(--ink); text-decoration-color: var(--soft); }
 .profile-list a:hover { text-decoration-color: var(--sun); }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
   .has-profile .wrap.no-side { grid-template-columns: 264px minmax(0, 1fr); gap: 48px; }
   .has-profile .profile { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 92px; align-self: start; margin-top: 80px; }
   .has-profile .bar-top .nav-buttons { display: none; }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1023px), (hover: none), (pointer: coarse) {
   .bar-top .nav-btn.li-btn { display: inline-flex; align-items: center; padding-left: 8px; padding-right: 8px; }
 }
 @media print { .profile { display: none; } }
