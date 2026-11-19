@@ -16,6 +16,11 @@
   --display: "Bricolage Grotesque", system-ui, sans-serif;
   --hand: "Caveat", "Comic Sans MS", cursive;
   --body: "Nunito Sans", system-ui, sans-serif;
+  /* Layout: one container, gutter and reading width shared by every page and screen size.
+     Breakpoints: 767px (hero stacks, cards go to one column), 900px (nav bar tightens), 480px (small phones). */
+  --container: 1120px;
+  --gutter: clamp(16px, 3.5vw, 32px);
+  --reading: 740px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -57,12 +62,12 @@ a { color: var(--grape); text-underline-offset: 3px; text-decoration-thickness: 
   overflow: hidden;
 }
 .hero-inner {
-  max-width: 1120px;
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 64px 24px 56px;
+  padding: clamp(44px, 6vw, 72px) var(--gutter) clamp(48px, 5.5vw, 64px);
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: 40px;
+  gap: clamp(28px, 4vw, 56px);
   align-items: center;
 }
 .hello {
@@ -217,15 +222,15 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 
 /* ---------- Layout ---------- */
 .wrap {
-  max-width: 1120px;
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr);
   gap: 56px;
 }
 nav.side { position: sticky; top: 28px; align-self: start; padding-top: 64px; }
-main { max-width: 740px; padding-bottom: 88px; }
+main { max-width: var(--reading); padding-bottom: 88px; }
 section { padding-top: 72px; }
 h2 {
   font-family: var(--display);
@@ -364,7 +369,7 @@ p { margin: 0 0 16px; }
 .contact .doodle { position: absolute; right: -10px; bottom: -14px; width: 150px; opacity: 0.9; }
 
 footer { border-top: 3px solid var(--line); font-family: var(--display); font-weight: 600; color: var(--muted); }
-footer .inner { max-width: 1120px; margin: 0 auto; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+footer .inner { max-width: var(--container); margin: 0 auto; padding: 22px var(--gutter); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 footer .hand { font-size: 1.3rem; }
 .theme-toggle {
   background: var(--surface); border: 2px solid var(--line); color: var(--ink); border-radius: 999px;
@@ -404,14 +409,25 @@ footer .hand { font-size: 1.3rem; }
 .btn:active, .contact .links a:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--line); }
 
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; padding: 44px 16px 48px; gap: 64px; }
+  .wrap { grid-template-columns: 1fr; gap: 0; }
+}
+/* Tablets and up keep the intro and brick stack side by side; below this they stack in one centered column. */
+@media (max-width: 767px) {
+  .hero-inner { grid-template-columns: 1fr; max-width: calc(560px + 2 * var(--gutter)); gap: 64px; }
   .playground { justify-self: center; max-width: 400px; margin-top: 28px; }
   .note { left: 4px; }
-  .wrap { grid-template-columns: 1fr; gap: 0; padding: 0 16px; }
   section { padding-top: 56px; }
   .facts, .two-col, .projects { grid-template-columns: 1fr; }
   .card, .contact { padding: 22px; }
   .contact .doodle { width: 100px; }
+}
+/* Between tablet and laptop the hero columns are narrow, so the name and photo scale down a little. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .name-row { gap: 18px; }
+  .name-row h1 { font-size: clamp(2.2rem, 4.6vw, 3rem); }
+  .me-brick { width: clamp(96px, 12vw, 124px); }
+  .playground { max-width: 360px; }
+  .brick { font-size: 1.05rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -435,7 +451,7 @@ footer .hand { font-size: 1.3rem; }
 /* Top bar on inner pages */
 .topbar { background: var(--surface); }
 .topbar-inner {
-  max-width: 1120px; margin: 0 auto; padding: 16px 24px;
+  max-width: var(--container); margin: 0 auto; padding: 16px var(--gutter);
   display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap;
 }
 .brand { font-family: var(--display); font-weight: 800; font-size: 1.35rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
@@ -447,7 +463,9 @@ footer .hand { font-size: 1.3rem; }
 .topbar nav .tabs a:hover { background: var(--sun); color: #05131D; transform: rotate(-3deg); }
 
 /* Inner page content */
-.page-main { max-width: 760px; margin: 0 auto; padding: 48px 24px 88px; }
+/* Same container as the top bar, so the title lines up under the name; text keeps a reading width. */
+.page-main { max-width: var(--container); margin: 0 auto; padding: 48px var(--gutter) 88px; }
+.page-main > * { max-width: var(--reading); }
 .crumb { margin: 0 0 18px; font-family: var(--display); }
 .page-title {
   font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.2rem);
@@ -464,8 +482,8 @@ footer .hand { font-size: 1.3rem; }
 .prose .btn { display: inline-block; text-decoration: none; }
 
 @media (max-width: 900px) {
-  .page-main { padding: 36px 16px 64px; }
-  .topbar-inner { padding: 14px 16px; }
+  .page-main { padding-top: 36px; padding-bottom: 64px; }
+  .topbar-inner { padding-top: 14px; padding-bottom: 14px; }
 }
 
 /* ---------- Section navigation: six tabs plus CV and Contact ----------
@@ -503,10 +521,10 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 
 /* Top: a sticky bar under the hero */
 .bar-top { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 3px solid var(--line); }
-.bar-inner { max-width: 1120px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.bar-inner { max-width: var(--container); margin: 0 auto; padding: 10px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .sectionnav .bar-inner .tabs { display: flex; gap: 2px; }
 .nav-top section { scroll-margin-top: 64px; }
-.wrap.no-side { grid-template-columns: minmax(0, 1fr); max-width: 788px; }
+.wrap.no-side { grid-template-columns: minmax(0, 1fr); }
 
 /* Bottom: a floating bar pinned to the bottom of the screen */
 .bar-bottom { position: fixed; left: 0; right: 0; bottom: 16px; z-index: 20; pointer-events: none; }
@@ -524,7 +542,7 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   nav.side { position: static; padding-top: 28px; }
   nav.side .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
   nav.side .nav-buttons { flex-direction: row; margin-top: 12px; }
-  .bar-inner { padding: 8px 12px; }
+  .bar-inner { padding-top: 8px; padding-bottom: 8px; }
   .bar-top .tabs { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); mask-image: linear-gradient(to right, #000 88%, transparent); padding-right: 24px; }
   .bar-top .nav-buttons .contact-btn { display: none; }
   .bar-top .tabs a, .bar-bottom .tabs a { padding: 4px 9px; font-size: 0.92rem; }
