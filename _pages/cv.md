@@ -3,6 +3,7 @@ layout: brick-page
 title: "CV"
 permalink: /cv/
 section: cv
+pdf: /files/Sarah-Adebabay-CV.pdf
 redirect_from:
   - /resume
   - /all/
@@ -10,19 +11,20 @@ redirect_from:
 
 {% include base_path %}
 {% assign secs = site.data.tabs | where_exp: "t", "t.id != 'about'" %}
-<p><a class="btn primary" href="{{ base_path }}/files/Sarah-Adebabay-CV.pdf">Download the full CV (PDF)</a></p>
-
-<nav class="toc" aria-label="On this page">
+<div class="cv-grid">
+<nav class="cv-index" aria-label="On this page">
+  <p class="lbl">On this page</p>
   <ul>
     <li><a href="#education">Education</a></li>
-    <li><a href="#research">Research</a><span><a href="#research-experience">Experience</a><a href="#research-programs">Programs</a></span></li>
-    <li><a href="#work">Work</a><span><a href="#industry-experience">Industry experience</a><a href="#projects">Projects</a></span></li>
+    <li><a href="#research">Research</a><ul><li><a href="#research-experience">Experience</a></li><li><a href="#research-programs">Programs</a></li></ul></li>
+    <li><a href="#work">Work</a><ul><li><a href="#industry-experience">Industry experience</a></li><li><a href="#projects">Projects</a></li></ul></li>
     <li><a href="#teaching">Teaching</a></li>
-    <li><a href="#service">Service</a><span><a href="#leadership">Leadership</a><a href="#speaking">Speaking</a></span></li>
-    <li><a href="#awards">Awards</a><span><a href="#awards-and-honors">Awards and honors</a><a href="#fellowships">Fellowships</a></span></li>
+    <li><a href="#service">Service</a><ul><li><a href="#leadership">Leadership</a></li><li><a href="#speaking">Speaking</a></li></ul></li>
+    <li><a href="#awards">Awards</a><ul><li><a href="#awards-and-honors">Awards and honors</a></li><li><a href="#fellowships">Fellowships</a></li></ul></li>
     <li><a href="#skills">Skills and languages</a></li>
   </ul>
 </nav>
+<div class="cv-flow">
 
 <section class="record" id="education">
   <h2>Education</h2>
@@ -48,3 +50,5 @@ redirect_from:
     <li><strong>Languages</strong><small>American Sign Language (Intermediate), Amharic (Intermediate), Spanish (Beginner)</small></li>
   </ul>
 </section>
+</div>
+</div>
