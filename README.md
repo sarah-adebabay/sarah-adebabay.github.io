@@ -6,9 +6,7 @@ Built on the [Academic Pages](https://github.com/academicpages/academicpages.git
 ## How it works
 
 The site uses the Academic Pages **engine** (Jekyll, content in Markdown and YAML files,
-SEO tags, sitemap, RSS feed, and the GitHub deploy workflow) with a **custom layout**: the
-single-page brick design, plus matching pages for each project and the full CV. The original
-template's sidebar layout is no longer used.
+SEO tags, sitemap, RSS feed, and the GitHub deploy workflow) with a **custom layout**
 
 ## Credits
 
