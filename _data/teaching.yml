@@ -1,17 +1,26 @@
-# Teaching, curriculum development, and mentorship, shown in the Teaching section.
-# Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
-- title: "Mentor, LinkedIn Possibilities in Tech Scholarship"
+# Teaching, curriculum development, and mentorship, newest first.
+# Entries marked "top: true" show on the home page (up to 6 per section, first two bullets); every entry is on the CV page.
+- title: "Industry Mentor"
   top: true
-  when: "Since 2024"
+  org: "LinkedIn Possibilities in Tech Scholarship"
+  where: "Mountain View, California"
+  when: "June 2024 to May 2026"
   bullets:
-    - "Mentor scholars entering tech."
-- title: "Intern mentor, LinkedIn"
+    - "Mentored two underrepresented computer science scholars on college and the tech industry, academic stressors and imposter syndrome, and software engineering internship recruitment"
+- title: "Drop-In Ambassador and Lower-Division Math Tutor"
   top: true
-  when: "2022 to 2026"
+  org: "UC Berkeley Student Learning Center, Mathematics & Statistics Program"
+  where: "Berkeley, California"
+  when: "January 2018 to January 2019"
   bullets:
-    - "Mentored a summer intern and wrote the team's first API intern onboarding guide."
-- title: "Math Teacher"
+    - "Supported students on Precalculus and Calculus problem sets and course material"
+    - "Facilitated a collaborative, student-centered learning environment in drop-in tutoring, directing students to Student Learning Center resources"
+- title: "Teaching Fellow"
   top: true
-  when: "[Years]"
+  org: "Breakthrough Collaborative"
+  where: "Minneapolis, Minnesota"
+  when: "June 2018 to August 2018"
   bullets:
-    - "Taught algebra through calculus at the middle school and college levels, including as a Breakthrough Teaching Fellow."
+    - "Designed and taught a geometry course and storytelling elective to 25 Minneapolis Public Schools middle school students using an interdisciplinary, hands-on curriculum"
+    - "Organized school-wide “Problems of the Day” and Academic Olympics to engage 120+ students in learning outside the classroom"
+    - "Mentored four seventh-grade students on college, scholarships, political activism, and current events"

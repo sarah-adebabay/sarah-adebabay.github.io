@@ -1,21 +1,52 @@
-# Experience timeline on the home page, newest first.
-# Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
-- title: "Software Engineer, LinkedIn"
+# Industry experience, newest first.
+# Entries marked "top: true" show on the home page (up to 6 per section, first two bullets); every entry is on the CV page.
+- title: "Software Engineer (API/Backend)"
   top: true
-  when: "Aug 2022 to Sept 2026"
+  org: "LinkedIn, Profile Team"
+  where: "Mountain View, California"
+  when: "August 2022 to September 2026"
   bullets:
-    - "Built APIs and backend services for large-scale profile features."
-    - "Worked on Resume to Profile, an LLM-based feature that extracts skills from uploaded resumes, and expanded it to more parts of the site."
-    - "Delivered the backend for LinkedIn Profile's first third-party integration (Duolingo), plus a data takeout service for the new partner data."
-    - "Evaluated features through A/B experiments, using SQL to analyze results."
-    - "Handled PII and sensitive data and kept GDPR and data compliance standards current."
-    - "Improved the on-call triage process."
-- title: "Software Engineering Intern, Machine Learning Engineering, SurveyMonkey"
+    - "Designed backend APIs for profile features serving 1.2B+ professionals, including creator tools, content-first profiles, and profile completion for new and non-verified members"
+    - "Delivered a reliable backend for Profile’s first third-party integration, with Duolingo, laying the foundation for 25+ more partners"
+    - "Applied in-house LLMs to extract skills from uploaded resumes for Resume to Profile, validating output quality before populating profiles, and expanded the feature to more parts of LinkedIn"
+    - "Triaged and resolved major site incidents as an on-call engineer, representing the team in a company-wide review of a high-severity, multi-day incident, and improved alerts and documentation as prevention"
+    - "Developed a data takeout service for third-party data connected to LinkedIn, compliant with GDPR and privacy standards"
+    - "Mentored a software engineering intern, creating the team’s first API intern onboarding guide, writing their project spec, and holding frequent 1:1s for feedback, code reviews, and technical guidance"
+    - "Led the Profile engineering pillar’s Culture Champs team (member since 2023, lead from 2024-2026), organizing org-wide off-sites, celebrations, and weekly lunches"
+- title: "Software Engineering Intern (API)"
+  org: "LinkedIn, Profile Team"
+  where: "Mountain View, California"
+  when: "June 2021 to August 2021"
+  bullets:
+    - "Built a profile highlight that surfaces shared interests between members and creators to increase creator visibility and encourage follows"
+    - "Implemented impression and click-through tracking for profile creator tools; ran A/B experiments and analyzed downstream revenue impact to guide LinkedIn’s Creators product strategy"
+- title: "Inaugural Student Fellow"
+  org: "Figma, Figma for Education Team"
+  where: "San Francisco, California"
+  when: "July 2020 to September 2020"
+  bullets:
+    - "Invited as one of five undergraduate students to build the foundation of Figma’s education presence"
+    - "Organized and hosted Camp Figma, the first global design jam on using design to spark joy and improve accessibility, with 260 attendees from 8+ countries, growing Virtual Campus by 20% to 1,195 members"
+    - "Co-led hackathon partnerships; compiled a CRM of 100 North American hackathons and created principles, strategy, and budget allocation for the upcoming cycle"
+- title: "Software Engineering Intern"
   top: true
-  when: "June to Aug 2020"
+  org: "SurveyMonkey, Machine Learning Engineering Team"
+  where: "San Mateo, California"
+  when: "June 2020 to August 2020"
   bullets:
-    - "Implemented a pull-based metrics monitoring system for ML models (Python, Pyramid, Docker, Prometheus) and integrated Grafana dashboards."
-- title: "Tech Solutions Consultant, Haas School of Business, UC Berkeley"
+    - "Implemented a pull-based metrics monitoring system for the core platform’s ML models, using Python/Pyramid, Docker, and Prometheus"
+    - "Integrated Grafana dashboards to visualize model health and performance"
+- title: "Facebook University (FBU) Software Engineering Intern"
+  org: "Facebook (now Meta)"
+  where: "Seattle, Washington"
+  when: "June 2019 to August 2019"
+  bullets:
+    - "Developed Penny, a financial literacy Android app for youth to plan and save for purchases, on a team using Parse, Java, and Heroku"
+    - "Designed and built features for goal editing and cancellation with money transfers between goals, automatic payments, badge rewards, and a parent allowance manager"
+    - "Completed four other Android apps individually, including a Twitter client and an Instagram-style app using Parse"
+    - "Studied Android development under the mentorship of Facebook engineers and CodePath instructors"
+- title: "Tech Solutions Consultant"
+  org: "Haas School of Business, UC Berkeley"
   when: "[Dates]"
   bullets:
     - "Resolved client issues with technology equipment and supported software, and provided AV support for classrooms, conferences, and events."
