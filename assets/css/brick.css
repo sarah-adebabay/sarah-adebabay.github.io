@@ -108,7 +108,7 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
   .hello .am { font-size: 1.15rem; }
 }
 .tap-hint { font-family: var(--hand); font-size: 1.35rem; color: var(--ink); opacity: .75; transform: rotate(-3deg); position: relative; }
-.tap-hint svg { position: absolute; left: -16px; top: calc(100% - 4px); pointer-events: none; }
+.tap-hint svg { position: absolute; left: 6px; top: calc(100% - 2px); pointer-events: none; }
 /* The hint wraps under the widest greeting on narrow phones, so the arrow would point at nothing */
 @media (max-width: 369px) { .tap-hint svg { display: none; } }
 /* Wave on the Say hello button */
