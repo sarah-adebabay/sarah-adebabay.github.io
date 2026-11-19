@@ -51,6 +51,14 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Generate link-preview images from the built site
+        # Screenshots each page so link previews always match the current design.
+        # If this step fails, the site still deploys with the last committed preview image.
+        continue-on-error: true
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1
+          npx playwright install --with-deps chromium
+          node scripts/og-images.mjs _site "https://sarah-adebabay.github.io${{ steps.pages.outputs.base_path }}"
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5.0.0
 
