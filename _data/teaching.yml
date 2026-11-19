@@ -1,0 +1,13 @@
+# Teaching, curriculum development, and mentorship, shown in the Teaching section.
+- title: "Math Teacher"
+  when: "[Years]"
+  bullets:
+    - "Taught algebra through calculus at the middle school and college levels, including as a Breakthrough Teaching Fellow."
+- title: "Mentor, LinkedIn Possibilities in Tech Scholarship"
+  when: "Since 2024"
+  bullets:
+    - "Mentor scholars entering tech."
+- title: "Intern mentor, LinkedIn"
+  when: "2022 to 2026"
+  bullets:
+    - "Mentored a summer intern and wrote the team's first API intern onboarding guide."

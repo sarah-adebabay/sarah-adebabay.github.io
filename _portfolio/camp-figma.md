@@ -1,6 +1,7 @@
 ---
 title: "Camp Figma"
 collection: portfolio
+tab: service
 order: 6
 color: red
 role: "Figma Inaugural Student Fellow"

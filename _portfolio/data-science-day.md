@@ -1,6 +1,7 @@
 ---
 title: "Data Science Day"
 collection: portfolio
+tab: teaching
 order: 1
 featured: true
 color: yellow

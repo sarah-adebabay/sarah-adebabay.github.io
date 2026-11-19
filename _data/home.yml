@@ -30,6 +30,23 @@ interests:
   - Critical consciousness
   - Education equity
 
+education:
+  - title: "B.A. Computer Science, minor in Education, UC Berkeley"
+    detail: "2022. Regents' and Chancellor's Scholar."
+  - title: "Year abroad, King's College London"
+    detail: "Aug 2021 to June 2022, UC Education Abroad Program. Coursework in HCI and in education and youth studies."
+
+skills:
+  - title: "Engineering"
+    detail: "Python, SQL, backend APIs, Docker, Prometheus, Grafana, A/B experimentation"
+  - title: "Research"
+    detail: "Qualitative field notes and coding, interviews, user studies, survey design, Stata"
+  - title: "Languages"
+    detail: "American Sign Language (intermediate), Amharic (intermediate), Spanish (beginner)"
+
+# Where the section navigation sits: side (left column), top (sticky bar), or bottom (bar fixed to the bottom of the screen)
+nav_style: side
+
 contact: "I love talking about learning technologies, AI in education, and building tools with schools."
 
 # Your headshot. Put a square photo in images/ (for example images/sarah.jpg) and change this path.
@@ -51,12 +68,12 @@ bricks:
   - label: "Teaching"
     color: red
     text: "Where it started. I've taught algebra through calculus and co-designed Data Science Day with K-12 students."
-    link: "#projects"
+    link: "#teaching"
     link_text: "See Data Science Day"
   - label: "Engineering"
     color: blue
     text: "Four years at LinkedIn building APIs and LLM-powered features used at scale."
-    link: "#experience"
+    link: "#work"
     link_text: "See my experience"
   - label: "Research"
     color: green
@@ -66,8 +83,8 @@ bricks:
   - label: "Community"
     color: yellow
     text: "NSBE External VP, residence hall president, and mentor to scholars entering tech."
-    link: "#leadership"
-    link_text: "See leadership"
+    link: "#service"
+    link_text: "See service"
 
 # Greetings that rotate in the contact block. The first one shows when motion is reduced.
 greetings:

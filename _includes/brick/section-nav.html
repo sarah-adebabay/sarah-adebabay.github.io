@@ -1,0 +1,10 @@
+{% comment %}Section tabs plus the CV and Contact buttons. include.prefix is "" on the home page and the site root elsewhere.{% endcomment %}
+{% include base_path %}
+<ul class="tabs">
+  {% for t in site.data.tabs %}<li><a href="{{ include.prefix }}#{{ t.id }}" data-tab="{{ t.id }}">{{ t.label }}</a></li>
+  {% endfor %}
+</ul>
+<div class="nav-buttons">
+  <a class="nav-btn cv" href="{{ base_path }}/cv/"{% if page.url == '/cv/' %} aria-current="page"{% endif %}>CV</a>
+  <a class="nav-btn contact-btn" href="{{ include.prefix }}#contact">Contact</a>
+</div>

@@ -8,7 +8,7 @@
 <head>
 {% include brick/head.html %}
 </head>
-<body>
+<body class="nav-{{ h.nav_style | default: 'side' }}">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="hero">
@@ -88,42 +88,62 @@
 </header>
 <div class="stud-strip" aria-hidden="true"></div>
 
-<div class="wrap">
-  <nav class="side" aria-label="Sections">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#leadership">Leadership</a></li>
-      <li><a href="#talks">Talks</a></li>
-      <li><a href="{{ base_path }}/cv/">Full CV</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+{% assign navstyle = h.nav_style | default: 'side' %}
+{% if navstyle != 'side' %}
+<nav class="sectionnav bar-{{ navstyle }}" aria-label="Sections">
+  <div class="bar-inner">{% include brick/section-nav.html prefix="" %}</div>
+</nav>
+{% endif %}
+
+<div class="wrap{% if navstyle != 'side' %} no-side{% endif %}">
+  {% if navstyle == 'side' %}
+  <nav class="side sectionnav" aria-label="Sections">
+    {% include brick/section-nav.html prefix="" %}
   </nav>
+  {% endif %}
 
   <main id="main">
+    {% assign projects = site.portfolio | sort: "order" %}
+
     <section id="about">
       <h2>About</h2>
       {% for para in h.about %}<p{% if forloop.first %} class="lede"{% endif %}>{{ para }}</p>
       {% endfor %}
+      <h3 class="sub">Research interests</h3>
       <ul class="stickers" aria-label="Research interests">
         {% for i in h.interests %}<li>{{ i }}</li>{% endfor %}
+      </ul>
+      <h3 class="sub">Education</h3>
+      <ul class="plain">
+        {% for e in h.education %}<li><strong>{{ e.title }}</strong><small>{{ e.detail }}</small></li>
+        {% endfor %}
+      </ul>
+      <h3 class="sub">Skills</h3>
+      <ul class="plain">
+        {% for k in h.skills %}<li><strong>{{ k.title }}</strong><small>{{ k.detail }}</small></li>
+        {% endfor %}
       </ul>
       {{ content }}
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      {% assign projects = site.portfolio | sort: "order" %}
-      {% for item in projects %}{% if item.featured %}{% include brick/project-card.html item=item feature=true %}{% endif %}{% endfor %}
+    <section id="research">
+      <span class="anchor" id="projects"></span>
+      <h2>Research</h2>
+      <h3 class="sub">Research experience</h3>
+      <ul class="plain">
+        {% for r in site.data.research %}<li><strong>{{ r.title }}</strong><small>{{ r.detail }}</small></li>
+        {% endfor %}
+      </ul>
+      <h3 class="sub">Research programs</h3>
       <div class="projects">
-        {% for item in projects %}{% unless item.featured %}{% include brick/project-card.html item=item %}{% endunless %}{% endfor %}
+        {% for item in projects %}{% if item.tab == 'research' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
       </div>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
+    <section id="work">
+      <span class="anchor" id="experience"></span>
+      <h2>Work</h2>
+      <h3 class="sub">Industry experience</h3>
       <ol class="timeline">
         {% for job in site.data.experience %}
         <li>
@@ -133,35 +153,58 @@
         </li>
         {% endfor %}
       </ol>
+      <h3 class="sub">Projects</h3>
+      <div class="projects">
+        {% for item in projects %}{% if item.tab == 'work' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
+      </div>
     </section>
 
-    <section id="research">
-      <h2>Research and fellowships</h2>
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <p class="kicker">Teaching, curriculum development, and mentorship</p>
+      {% for item in projects %}{% if item.tab == 'teaching' and item.featured %}{% include brick/project-card.html item=item feature=true %}{% endif %}{% endfor %}
+      <ol class="timeline">
+        {% for job in site.data.teaching %}
+        <li>
+          <h3>{{ job.title }}</h3>
+          <p class="when">{{ job.when }}</p>
+          <ul>{% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+        </li>
+        {% endfor %}
+      </ol>
+      {% for item in projects %}{% if item.tab == 'teaching' %}{% unless item.featured %}{% include brick/project-card.html item=item %}{% endunless %}{% endif %}{% endfor %}
+    </section>
+
+    <section id="service">
+      <span class="anchor" id="leadership"></span>
+      <h2>Service</h2>
+      <h3 class="sub">Leadership</h3>
+      <ul class="plain two-col">
+        {% for r in site.data.leadership %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      <div class="projects one">
+        {% for item in projects %}{% if item.tab == 'service' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
+      </div>
+      <span class="anchor" id="talks"></span>
+      <h3 class="sub">Speaking</h3>
       <ul class="plain">
-        {% for r in site.data.research %}<li><strong>{{ r.title }}</strong><small>{{ r.detail }}</small></li>
+        {% assign talks = site.talks | sort: "order" %}
+        {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% if t.excerpt %}. {{ t.excerpt | strip_html }}{% endif %}</small></li>
         {% endfor %}
       </ul>
     </section>
 
-    <section id="leadership">
-      <h2>Leadership and community</h2>
-      <div class="two-col">
-        <ul class="plain">
-          {% for r in site.data.leadership.left %}<li><strong>{{ r.title }}</strong><small>{{ r.detail }}</small></li>
-          {% endfor %}
-        </ul>
-        <ul class="plain">
-          {% for r in site.data.leadership.right %}<li><strong>{{ r.title }}</strong><small>{{ r.detail }}</small></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </section>
-
-    <section id="talks">
-      <h2>Talks and panels</h2>
-      <ul class="plain">
-        {% assign talks = site.talks | sort: "order" %}
-        {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% if t.excerpt %}. {{ t.excerpt | strip_html }}{% endif %}</small></li>
+    <section id="awards">
+      <h2>Awards</h2>
+      <h3 class="sub">Awards and honors</h3>
+      <ul class="plain two-col">
+        {% for r in site.data.awards.honors %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      <h3 class="sub">Fellowships and scholarships</h3>
+      <ul class="plain two-col">
+        {% for r in site.data.awards.fellowships %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
         {% endfor %}
       </ul>
     </section>

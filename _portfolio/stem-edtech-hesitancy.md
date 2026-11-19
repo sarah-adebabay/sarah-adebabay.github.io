@@ -1,6 +1,7 @@
 ---
 title: "Teacher hesitancy toward STEM EdTech"
 collection: portfolio
+tab: research
 order: 5
 color: blue
 role: "UC Berkeley x Schmidt Futures Fellowship capstone, team of three"
