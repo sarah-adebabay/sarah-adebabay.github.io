@@ -54,7 +54,7 @@ The full write-up goes here, in Markdown.
 Search the repo for `[` and `YOUR-` to find every one.
 
 - [ ] CV PDF: add `files/Sarah-Adebabay-CV.pdf`
-- [ ] `_config.yml`: `email` and `linkedin` (url, repository, and GitHub are already set)
+- [x] `_config.yml`: `linkedin` set; `email` intentionally left blank so no Email link shows (url, repository, and GitHub are already set)
 - [ ] `_portfolio/data-science-day.md`: optionally link the findings report
 - [ ] `_portfolio/name-recognition-audit.md`: year, method, findings, and a report link
 - [ ] `_talks/`: year and a one-line description for each panel
