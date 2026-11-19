@@ -1,0 +1,10 @@
+{% assign projects = site.portfolio | sort: "order" %}
+<h3 class="sub">Research experience</h3>
+<ul class="plain">
+  {% for r in site.data.research %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong><small>{{ r.detail }}</small></li>
+  {% endif %}{% endfor %}
+</ul>
+<h3 class="sub">Research programs</h3>
+<div class="projects">
+  {% for item in projects %}{% if item.tab == 'research' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
+</div>

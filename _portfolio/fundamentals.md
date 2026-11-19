@@ -1,6 +1,7 @@
 ---
 title: "FUNdamentals"
 collection: portfolio
+top: true
 tab: work
 order: 7
 role: "Google Software Product Sprint (SPS), team project"

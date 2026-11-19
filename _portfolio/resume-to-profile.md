@@ -1,6 +1,7 @@
 ---
 title: "Resume to Profile"
 collection: portfolio
+top: true
 tab: work
 order: 2
 color: blue

@@ -1,6 +1,7 @@
 ---
 title: "Auditing name recognition technology"
 collection: portfolio
+top: true
 tab: research
 order: 9
 color: black

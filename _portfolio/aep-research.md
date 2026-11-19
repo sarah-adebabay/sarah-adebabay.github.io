@@ -1,6 +1,7 @@
 ---
 title: "Equity-oriented pedagogy in CS classrooms"
 collection: portfolio
+top: true
 tab: research
 order: 5
 color: red

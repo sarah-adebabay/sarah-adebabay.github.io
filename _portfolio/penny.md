@@ -1,6 +1,7 @@
 ---
 title: "Penny: financial planning for kids"
 collection: portfolio
+top: true
 tab: work
 order: 8
 role: "Facebook University (FBU), team of three"

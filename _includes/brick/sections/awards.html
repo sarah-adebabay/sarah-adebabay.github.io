@@ -1,0 +1,10 @@
+<h3 class="sub">Awards and honors</h3>
+<ul class="plain two-col">
+  {% for r in site.data.awards.honors %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}{% if include.full and r.about %}<p class="li-about">{{ r.about }}</p>{% endif %}</li>
+  {% endif %}{% endfor %}
+</ul>
+<h3 class="sub">Fellowships</h3>
+<ul class="plain two-col">
+  {% for r in site.data.awards.fellowships %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}{% if include.full and r.about %}<p class="li-about">{{ r.about }}</p>{% endif %}</li>
+  {% endif %}{% endfor %}
+</ul>

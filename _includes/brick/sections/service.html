@@ -1,0 +1,16 @@
+{% assign projects = site.portfolio | sort: "order" %}
+<h3 class="sub">Leadership</h3>
+<ul class="plain two-col">
+  {% for r in site.data.leadership %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
+  {% endif %}{% endfor %}
+</ul>
+<div class="projects one">
+  {% for item in projects %}{% if item.tab == 'service' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
+</div>
+<span class="anchor" id="talks"></span>
+<h3 class="sub">Speaking</h3>
+<ul class="plain">
+  {% assign talks = site.talks | sort: "order" %}
+  {% for t in talks %}{% if include.full or t.top %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
+  {% endif %}{% endfor %}
+</ul>

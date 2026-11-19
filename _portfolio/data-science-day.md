@@ -1,6 +1,7 @@
 ---
 title: "Data Science Day"
 collection: portfolio
+top: true
 tab: teaching
 order: 1
 featured: true

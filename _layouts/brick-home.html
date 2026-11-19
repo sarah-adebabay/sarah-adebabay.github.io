@@ -130,84 +130,34 @@
     <section id="research">
       <span class="anchor" id="projects"></span>
       <h2>Research</h2>
-      <h3 class="sub">Research experience</h3>
-      <ul class="plain">
-        {% for r in site.data.research %}<li><strong>{{ r.title }}</strong><small>{{ r.detail }}</small></li>
-        {% endfor %}
-      </ul>
-      <h3 class="sub">Research programs</h3>
-      <div class="projects">
-        {% for item in projects %}{% if item.tab == 'research' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
-      </div>
+      {% include brick/sections/research.html %}
+      <p class="see-all"><a class="btn" href="{{ base_path }}/research/">See all research</a></p>
     </section>
 
     <section id="work">
       <span class="anchor" id="experience"></span>
       <h2>Work</h2>
-      <h3 class="sub">Industry experience</h3>
-      <ol class="timeline">
-        {% for job in site.data.experience %}
-        <li>
-          <h3>{{ job.title }}</h3>
-          <p class="when">{{ job.when }}</p>
-          <ul>{% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
-        </li>
-        {% endfor %}
-      </ol>
-      <h3 class="sub">Projects</h3>
-      <div class="projects">
-        {% for item in projects %}{% if item.tab == 'work' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
-      </div>
+      {% include brick/sections/work.html %}
+      <p class="see-all"><a class="btn" href="{{ base_path }}/work/">See all work</a></p>
     </section>
 
     <section id="teaching">
       <h2>Teaching</h2>
-      <p class="kicker">Teaching, curriculum development, and mentorship</p>
-      {% for item in projects %}{% if item.tab == 'teaching' and item.featured %}{% include brick/project-card.html item=item feature=true %}{% endif %}{% endfor %}
-      <ol class="timeline">
-        {% for job in site.data.teaching %}
-        <li>
-          <h3>{{ job.title }}</h3>
-          <p class="when">{{ job.when }}</p>
-          <ul>{% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
-        </li>
-        {% endfor %}
-      </ol>
-      {% for item in projects %}{% if item.tab == 'teaching' %}{% unless item.featured %}{% include brick/project-card.html item=item %}{% endunless %}{% endif %}{% endfor %}
+      {% include brick/sections/teaching.html %}
+      <p class="see-all"><a class="btn" href="{{ base_path }}/teaching/">See all teaching</a></p>
     </section>
 
     <section id="service">
       <span class="anchor" id="leadership"></span>
       <h2>Service</h2>
-      <h3 class="sub">Leadership</h3>
-      <ul class="plain two-col">
-        {% for r in site.data.leadership %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
-        {% endfor %}
-      </ul>
-      <div class="projects one">
-        {% for item in projects %}{% if item.tab == 'service' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
-      </div>
-      <span class="anchor" id="talks"></span>
-      <h3 class="sub">Speaking</h3>
-      <ul class="plain">
-        {% assign talks = site.talks | sort: "order" %}
-        {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
-        {% endfor %}
-      </ul>
+      {% include brick/sections/service.html %}
+      <p class="see-all"><a class="btn" href="{{ base_path }}/service/">See all service</a></p>
     </section>
 
     <section id="awards">
       <h2>Awards</h2>
-      <h3 class="sub">Awards and honors</h3>
-      <ul class="plain two-col">
-        {% for r in site.data.awards.honors %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}{% if r.about %}<p class="li-about">{{ r.about }}</p>{% endif %}</li>
-        {% endfor %}
-      </ul>
-      <h3 class="sub">Fellowships</h3>
-      <ul class="plain two-col">
-        {% for r in site.data.awards.fellowships %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}{% if r.about %}<p class="li-about">{{ r.about }}</p>{% endif %}</li>
-        {% endfor %}
-      </ul>
+      {% include brick/sections/awards.html %}
+      <p class="see-all"><a class="btn" href="{{ base_path }}/awards/">See all awards</a></p>
     </section>
 
     <section id="contact">
