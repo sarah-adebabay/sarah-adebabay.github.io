@@ -115,7 +115,7 @@
       </ul>
       <h3 class="sub">Education</h3>
       <ul class="plain">
-        {% for e in h.education %}<li><strong>{{ e.title }}</strong><small>{{ e.detail }}</small></li>
+        {% for e in h.education %}<li><strong>{{ e.title }}</strong><small>{{ e.detail }}</small>{% for n in e.notes %}<small>{{ n }}</small>{% endfor %}</li>
         {% endfor %}
       </ul>
       <h3 class="sub">Skills</h3>

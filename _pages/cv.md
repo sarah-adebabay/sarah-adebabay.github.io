@@ -12,9 +12,9 @@ redirect_from:
 
 ## Education
 
-* **B.A. Computer Science, minor in Education**, University of California, Berkeley, 2022
-  * Regents' and Chancellor's Scholar
-  * Year abroad at King's College London (Aug 2021 to June 2022), UC Education Abroad Program, with coursework in HCI and education and youth studies
+* **University of California, Berkeley**, B.A. in Computer Science, minor in Education <span class="cv-when">August 2017 - May 2022</span>
+  * Regents’ and Chancellor’s Scholarship - awarded to approximately the top 2% of incoming undergraduate students
+* **King’s College London**, University of California Education Abroad Program <span class="cv-when">August 2021 - June 2022</span>
   * Selected as a Benjamin A. Gilman Scholar
 
 ## Experience
@@ -77,7 +77,8 @@ redirect_from:
 
 ## Skills and languages
 
-* **Engineering:** Python, SQL, backend APIs, Docker, Prometheus, Grafana, A/B experimentation
-* **Research:** qualitative field notes and coding, interviews, user studies, survey design, Stata
-* **Languages:** American Sign Language (intermediate), Amharic (intermediate), Spanish (beginner)
+* **Data & Analytics:** Pandas, NumPy, scikit-learn, PyTorch, Stata, Jupyter, matplotlib, seaborn, Spark, Kafka, Grafana
+* **Programming & Design:** Python, SQL, Java, JavaScript, REST APIs, Docker, Git, Figma
+* **AI Tools:** Claude Code, Cursor, Windsurf, Replit
+* **Languages:** American Sign Language (Intermediate), Amharic (Intermediate), Spanish (Beginner)
 
