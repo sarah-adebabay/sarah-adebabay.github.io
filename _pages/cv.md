@@ -15,6 +15,7 @@ redirect_from:
 * **University of California, Berkeley**, B.A. in Computer Science, minor in Education <span class="cv-when">August 2017 - May 2022</span>
   * Regents’ and Chancellor’s Scholarship - awarded to approximately the top 2% of incoming undergraduate students
 * **King’s College London**, University of California Education Abroad Program <span class="cv-when">August 2021 - June 2022</span>
+  * Selected as a Benjamin A. Gilman Scholar
 
 ## Experience
 
