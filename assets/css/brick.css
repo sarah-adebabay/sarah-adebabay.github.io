@@ -521,7 +521,7 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   nav.side .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
   nav.side .nav-buttons { flex-direction: row; margin-top: 12px; }
   .bar-inner { padding: 8px 12px; }
-  .bar-top .tabs { overflow-x: auto; scrollbar-width: none; }
+  .bar-top .tabs { overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); mask-image: linear-gradient(to right, #000 88%, transparent); padding-right: 24px; }
   .bar-top .nav-buttons .contact-btn { display: none; }
   .bar-top .tabs a, .bar-bottom .tabs a { padding: 4px 9px; font-size: 0.92rem; }
 }

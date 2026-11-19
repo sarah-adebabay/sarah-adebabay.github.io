@@ -45,7 +45,7 @@ skills:
     detail: "American Sign Language (intermediate), Amharic (intermediate), Spanish (beginner)"
 
 # Where the section navigation sits: side (left column), top (sticky bar), or bottom (bar fixed to the bottom of the screen)
-nav_style: side
+nav_style: top
 
 contact: "I love talking about learning technologies, AI in education, and building tools with schools."
 
