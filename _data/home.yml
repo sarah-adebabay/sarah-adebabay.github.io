@@ -31,18 +31,22 @@ interests:
   - Education equity
 
 education:
-  - title: "B.A. Computer Science, minor in Education, UC Berkeley"
-    detail: "2022. Regents' and Chancellor's Scholar."
-  - title: "Year abroad, King's College London"
-    detail: "Aug 2021 to June 2022, UC Education Abroad Program. Coursework in HCI and in education and youth studies."
+  - title: "University of California, Berkeley, B.A. in Computer Science, minor in Education"
+    detail: "August 2017 - May 2022"
+    notes:
+      - "Regents’ and Chancellor’s Scholarship - awarded to approximately the top 2% of incoming undergraduate students"
+  - title: "King’s College London, University of California Education Abroad Program"
+    detail: "August 2021 - June 2022"
 
 skills:
-  - title: "Engineering"
-    detail: "Python, SQL, backend APIs, Docker, Prometheus, Grafana, A/B experimentation"
-  - title: "Research"
-    detail: "Qualitative field notes and coding, interviews, user studies, survey design, Stata"
+  - title: "Data & Analytics"
+    detail: "Pandas, NumPy, scikit-learn, PyTorch, Stata, Jupyter, matplotlib, seaborn, Spark, Kafka, Grafana"
+  - title: "Programming & Design"
+    detail: "Python, SQL, Java, JavaScript, REST APIs, Docker, Git, Figma"
+  - title: "AI Tools"
+    detail: "Claude Code, Cursor, Windsurf, Replit"
   - title: "Languages"
-    detail: "American Sign Language (intermediate), Amharic (intermediate), Spanish (beginner)"
+    detail: "American Sign Language (Intermediate), Amharic (Intermediate), Spanish (Beginner)"
 
 # Where the section navigation sits: side (left column), top (sticky bar), or bottom (bar fixed to the bottom of the screen)
 nav_style: top
