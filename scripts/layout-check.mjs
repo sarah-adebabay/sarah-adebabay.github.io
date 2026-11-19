@@ -19,7 +19,7 @@ const LIVE = (process.argv[4] || 'https://sarah-adebabay.github.io').replace(/\/
 
 // Phone, tablet, small laptop, laptop, large desktop.
 const WIDTHS = [375, 768, 1024, 1440, 1920];
-const PAGES = [['home', '/'], ['cv', '/cv/'], ['research', '/research/'], ['work', '/work/'], ['teaching', '/teaching/'], ['service', '/service/'], ['awards', '/awards/']];
+const PAGES = [['home', '/'], ['cv', '/cv/'], ['all', '/all/']];
 const SHOT_HEIGHT = 1100;
 
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml',

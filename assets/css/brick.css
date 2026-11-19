@@ -354,6 +354,13 @@ p { margin: 0 0 16px; }
 .see-all .btn { display: inline-block; text-decoration: none; }
 .page-main > .section-body { max-width: none; margin-top: 12px; }
 .section-body > h3.sub:first-child, .section-body > .kicker:first-child { margin-top: 0; }
+.section-body [id] { scroll-margin-top: 96px; }
+.section-body .record { padding-top: 40px; }
+.section-body .record h2 { margin-bottom: 18px; }
+.toc ul { list-style: none; margin: 0; padding: 18px 20px; display: grid; gap: 10px; border: 2.5px solid var(--line); border-radius: 12px; background: var(--surface); }
+.toc li { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+.toc li > a { font-family: var(--display); font-weight: 700; min-width: 7em; }
+.toc span { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .95rem; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .contact {
