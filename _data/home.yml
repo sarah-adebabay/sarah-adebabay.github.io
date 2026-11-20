@@ -34,6 +34,18 @@ education:
   # school, degree and dates each show on their own line. scholarship shows as a pill; tapping it stretches the pill across the card
   # to show that award's "about" text from _data/awards.yml (award must match its title there).
   # coursework shows as one line of text on the CV page.
+  - school: "King’s College London"
+    degree: "University of California Education Abroad Program"
+    dates: "August 2021 - June 2022"
+    scholarship:
+      name: "Benjamin A. Gilman Scholar"
+      award: "Benjamin A. Gilman International Scholar, U.S. Department of State"
+    coursework:
+      - "Education for the 21st Century: A Global Perspective"
+      - "Human Computer Interaction"
+      - "Global Childhood and Youth: Past and Present"
+      - "Transition to Adulthood: A Multi-Disciplinary Perspective"
+      - "Youth Cultures"
   - school: "University of California, Berkeley"
     degree: "B.A. in Computer Science, minor in Education"
     dates: "August 2017 - May 2022"
@@ -51,18 +63,6 @@ education:
       - "Foundations of Data Science"
       - "Principles and Techniques of Data Science"
       - "Data Engineering"
-  - school: "King’s College London"
-    degree: "University of California Education Abroad Program"
-    dates: "August 2021 - June 2022"
-    scholarship:
-      name: "Benjamin A. Gilman Scholar"
-      award: "Benjamin A. Gilman International Scholar, U.S. Department of State"
-    coursework:
-      - "Education for the 21st Century: A Global Perspective"
-      - "Human Computer Interaction"
-      - "Global Childhood and Youth: Past and Present"
-      - "Transition to Adulthood: A Multi-Disciplinary Perspective"
-      - "Youth Cultures"
 
 skills:
   - title: "Data & Analytics"
@@ -103,7 +103,7 @@ bricks:
   - label: "Teaching"
     color: red
     text: "Where it started. I've taught algebra through calculus and co-designed Data Science Day with K-12 students."
-    link: "#teaching"
+    link: "#research"
     link_text: "See Data Science Day"
   - label: "Engineering"
     color: blue
