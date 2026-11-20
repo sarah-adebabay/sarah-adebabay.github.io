@@ -29,8 +29,8 @@ redirect_from:
 <section class="record" id="education">
   <h2>Education</h2>
   <ul class="plain">
-    <li><strong>University of California, Berkeley</strong><small>B.A. in Computer Science, minor in Education, August 2017 to May 2022</small><p class="li-about">Regents’ and Chancellor’s Scholarship, awarded to approximately the top 2% of incoming undergraduate students</p></li>
-    <li><strong>King’s College London</strong><small>University of California Education Abroad Program, August 2021 to June 2022</small><p class="li-about">Selected as a Benjamin A. Gilman Scholar</p></li>
+    <li><strong>University of California, Berkeley</strong><small>B.A. in Computer Science, minor in Education, August 2017 - May 2022</small><p class="li-about">Regents’ and Chancellor’s Scholarship, awarded to approximately the top 2% of incoming undergraduate students</p></li>
+    <li><strong>King’s College London</strong><small>University of California Education Abroad Program, August 2021 - June 2022</small><p class="li-about">Selected as a Benjamin A. Gilman Scholar</p></li>
   </ul>
 </section>
 

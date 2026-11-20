@@ -6,7 +6,7 @@ tab: work
 order: 3
 color: green
 role: "Software Engineer, LinkedIn"
-when: "2022 to 2026"
+when: "2022 - 2026"
 excerpt: "Delivered the backend for LinkedIn Profile's first third-party integration, with Duolingo, plus a data takeout service for the new partner data."
 topics: ["Backend", "APIs", "Privacy and compliance"]
 ---

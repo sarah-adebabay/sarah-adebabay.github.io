@@ -6,7 +6,7 @@ tab: work
 order: 2
 color: blue
 role: "Software Engineer, LinkedIn"
-when: "2022 to 2026"
+when: "2022 - 2026"
 excerpt: "An LLM-based feature that extracts skills from uploaded resumes to help members build their profiles, later expanded to more parts of the site."
 topics: ["Generative AI", "Backend", "A/B testing"]
 ---

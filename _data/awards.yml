@@ -4,11 +4,11 @@
 honors:
   - title: "Regents’ and Chancellor’s Scholar, University of California, Berkeley"
     top: true
-    detail: "2017 to 2022"
+    detail: "2017 - 2022"
     about: "Most prestigious merit award, given to approximately the top 2% of incoming undergraduates, covering full need"
   - title: "The Achievement Award Program (TAAP) Scholar, Cal Alumni Association"
     top: true
-    detail: "2017 to 2022"
+    detail: "2017 - 2022"
     about: "One of 25 high-achieving, community-minded students from low-income and first-generation backgrounds selected"
   - title: "Benjamin A. Gilman International Scholar, U.S. Department of State"
     top: true
@@ -39,21 +39,21 @@ honors:
 fellowships:
   - title: "Career Prep Fellow - Software Engineering Track, Management Leadership for Tomorrow"
     top: true
-    detail: "2020 to 2022"
+    detail: "2020 - 2022"
     about: "Selected for a career development program for Black, Latinx, and Indigenous student leaders, building skills in user needs analysis, application development, and project management"
   - title: "Accel Scholar, UC Berkeley EECS"
     top: true
-    detail: "2019 to 2022"
+    detail: "2019 - 2022"
     about: "One of 30 selected from 500+ applicants for EECS’s program with venture capital firm Accel, offering mentorship from startup leaders and training in engineering careers and startups"
   - title: "Computer Science Scholar, UC Berkeley EECS Center for Student Affairs"
-    detail: "2018 to 2022"
+    detail: "2018 - 2022"
     about: "Selected for a cohort program supporting students from under-resourced and low-opportunity communities in computer science"
   - title: "Rewriting the Code Fellow"
-    detail: "2020 to 2021"
+    detail: "2020 - 2021"
     about: "Selected for a year-long fellowship for undergraduate women in tech, providing mentorship, networking, and community building"
   - title: "Google Software Product Sprint (SPS)"
     detail: "2020"
     about: "Invited to Google’s program for high-potential aspiring technologists; designed and implemented FUNdamentals, a web application for learning early education concepts, with a team of peers"
   - title: "Apple Women in Science & Engineering Mentorship Program"
-    detail: "2018 to 2019"
+    detail: "2018 - 2019"
     about: "Selected for a mentorship program that seeks to connect undergraduate women pursuing careers in engineering and technology with mentors at Apple"

@@ -6,7 +6,7 @@ tab: service
 order: 6
 color: red
 role: "Inaugural Student Fellow, Figma for Education Team"
-when: "July 2020 to September 2020"
+when: "July 2020 - September 2020"
 excerpt: "Organized and hosted Camp Figma, the first global design jam on using design to spark joy and improve accessibility, with 260 attendees from 8+ countries."
 topics: ["Design education", "Community", "Events"]
 ---

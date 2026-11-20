@@ -16,7 +16,7 @@ hero_greetings:
     text: "Hola, soy Sarah"
     label: "Hola, soy Sarah, in Spanish"
 thesis: "I design learning technologies that help K&#8209;12 students in under-resourced communities build epistemic agency in STEM, and I partner with schools so those tools last."
-role: "Software engineer (LinkedIn, 2022 to 2026) working on APIs, backend systems, and LLM-powered features. UC Berkeley Computer Science, minor in Education."
+role: "Software engineer (LinkedIn, 2022 - 2026) working on APIs, backend systems, and LLM-powered features. UC Berkeley Computer Science, minor in Education."
 
 about:
   - "I work where software engineering meets the learning sciences. I spent four years as a backend engineer at LinkedIn, building APIs and LLM-powered features used at scale. My longer arc is education: designing generative AI tools that help young people ask their own questions, test their own ideas, and use data to speak up about their world, and working with schools so those tools are adopted and sustained."

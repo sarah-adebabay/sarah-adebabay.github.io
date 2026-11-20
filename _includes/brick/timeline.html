@@ -1,11 +1,13 @@
-{% comment %} One timeline list. include.items = entries with title, org, where, when, note, bullets.
+{% comment %} One timeline list. include.items = entries with title (role), org, where (location), when (dates), note, bullets.
 On the home page (include.full not set) only entries marked top: true show, with their first two bullets. {% endcomment %}
 <ol class="timeline">
   {% for job in include.items %}{% if include.full or job.top %}
   <li>
-    <h3>{{ job.title }}</h3>
-    {% if job.org %}<p class="org">{{ job.org }}{% if job.where %}<span>{{ job.where }}</span>{% endif %}</p>{% endif %}
-    <p class="when">{{ job.when }}</p>
+    {% comment %} Laptop and up: two rows, organization | location, then role | dates.
+    Phones: one line each, in the order organization, role, location, dates (see .tl-head in brick.css). {% endcomment %}
+    <div class="tl-head">{% if job.org %}<div class="tl-row tl-org"><h3>{{ job.org }}</h3>{% if job.where %}<p class="where">{{ job.where }}</p>{% endif %}</div>
+    <div class="tl-row tl-role"><p class="role">{{ job.title }}</p>{% if job.when %}<p class="when">{{ job.when }}</p>{% endif %}</div>
+    {% else %}<div class="tl-row tl-org"><h3>{{ job.title }}</h3>{% if job.when %}<p class="when">{{ job.when }}</p>{% endif %}</div>{% endif %}</div>
     {% if job.note and include.full %}<p class="tl-note">{{ job.note }}</p>{% endif %}
     {% if job.bullets %}<ul>{% for b in job.bullets %}{% if include.full or forloop.index <= 2 %}<li>{{ b }}</li>{% endif %}{% endfor %}</ul>{% endif %}
   </li>
