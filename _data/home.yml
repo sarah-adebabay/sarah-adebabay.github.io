@@ -126,7 +126,7 @@ bricks:
     link_text: "See my research"
   - label: "Community"
     color: yellow
-    text: "NSBE External VP, residence hall president, and mentor to scholars entering tech."
+    text: "I’ve worked to make STEM more inclusive, from advocating for Black students as an NSBE chapter leader to mentoring underrepresented CS scholars."
     link: "#service"
     link_text: "See service"
 
