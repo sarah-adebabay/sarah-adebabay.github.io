@@ -278,7 +278,9 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
   transform: rotate(-7deg); pointer-events: none;
 }
 .note svg { display: block; margin: 2px 0 0 54px; }
-.note { top: -58px; left: -10px; }
+/* The top brick starts 7.1% in from the playground's left edge (78% wide, centered, nudged left 5%),
+   so the note tracks that edge and the arrow tip lands just above the top brick's left end at every width. */
+.note { top: -58px; left: calc(7.1% - 52px); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---------- Layout ---------- */
@@ -578,6 +580,7 @@ footer .hand { font-size: 1.3rem; }
   .hero-inner { grid-template-columns: 1fr; max-width: calc(560px + 2 * var(--gutter)); gap: 64px; }
   .playground { justify-self: center; max-width: 400px; margin-top: 28px; }
   .note { left: 4px; }
+  .note svg { margin-left: 24px; }
   section { padding-top: 56px; }
   .facts, .two-col, .projects { grid-template-columns: 1fr; }
   .card, .contact { padding: 22px; }
