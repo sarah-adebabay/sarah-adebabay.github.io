@@ -397,6 +397,9 @@ p { margin: 0 0 16px; }
 .sch[aria-expanded="true"] .sch-txt { flex: 1; }
 .sch[aria-expanded="true"] .sch-about { display: block; margin-top: 2px; }
 .sch-ic { width: 16px; height: 16px; flex: none; }
+/* Open pill: the icon grows to match the two-line block (name + description) */
+.sch[aria-expanded="true"] { gap: 12px; }
+.sch[aria-expanded="true"] .sch-ic { width: 34px; height: 34px; }
 .sch-plus { width: 11px; height: 11px; flex: none; margin-left: 2px; }
 .sch[aria-expanded="true"] .sch-plus { transform: rotate(45deg); }
 .see-all { margin: 30px 0 0; }
