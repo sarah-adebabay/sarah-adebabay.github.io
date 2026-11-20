@@ -31,7 +31,7 @@ interests:
   - Education equity
 
 education:
-  # school, degree and dates each show on their own line. coursework shows as pills on the CV page.
+  # school, degree and dates each show on their own line. coursework shows as one line of text on the CV page.
   - school: "University of California, Berkeley"
     degree: "B.A. in Computer Science, minor in Education"
     dates: "August 2017 - May 2022"

@@ -371,14 +371,9 @@ p { margin: 0 0 16px; }
 .plain strong { font-family: var(--display); font-weight: 700; font-size: 1.05rem; display: block; line-height: 1.35; }
 .plain small { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
 .plain .li-about { margin: 6px 0 0; font-size: 0.95rem; line-height: 1.5; }
-/* Education: school, degree and dates each on their own line; CV entries add coursework pills (sticker style, same color cycle) */
-.plain .edu-lbl { margin: 14px 0 0; font: 700 .8rem var(--display); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-.stickers.coursework { margin-top: 10px; gap: 12px 10px; }
-/* Course names are long, so the tilt is gentler than the interest stickers' or the pills would overlap */
-.stickers.coursework li { max-width: 100%; border-radius: 18px; }
-.stickers.coursework li:nth-child(odd) { transform: rotate(-.6deg); }
-.stickers.coursework li:nth-child(even) { transform: rotate(.6deg); }
-.stickers.coursework li:hover { transform: rotate(0) scale(1.03); }
+/* Education: school, degree and dates each on their own line; CV entries add a coursework line */
+.plain .edu-courses { margin-top: 10px; }
+.plain .edu-lbl { font-weight: 700; }
 .see-all { margin: 30px 0 0; }
 .see-all .btn { display: inline-block; text-decoration: none; }
 /* "See all N things" link under each home subsection, underlined in the section's stud color. */

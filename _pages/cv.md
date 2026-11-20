@@ -30,8 +30,7 @@ redirect_from:
   <h2>Education</h2>
   <ul class="plain">
     {% for e in site.data.home.education %}<li class="edu"><strong>{{ e.school }}</strong><small>{{ e.degree }}</small><small>{{ e.dates }}</small>{% for n in e.notes %}<p class="li-about">{{ n }}</p>{% endfor %}
-      {% if e.coursework %}<p class="edu-lbl">Relevant coursework</p>
-      <ul class="stickers small coursework" aria-label="Relevant coursework at {{ e.school }}">{% for c in e.coursework %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}</li>
+      {% if e.coursework %}<p class="li-about edu-courses"><span class="edu-lbl">Relevant coursework:</span> {{ e.coursework | join: ", " }}</p>{% endif %}</li>
     {% endfor %}
   </ul>
 </section>
