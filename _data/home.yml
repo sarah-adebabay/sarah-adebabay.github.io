@@ -111,7 +111,7 @@ brick_caption: "Four pieces of my story. Clink one to learn more!"
 bricks:
   - label: "Teaching"
     color: red
-    text: "Where it started. I've taught algebra through calculus and co-designed Data Science Day with K-12 students."
+    text: "I’ve taught math from middle school algebra to college calculus. I also co-led and designed the curriculum for All About STEM: Data Science Day, which reached 98 K-12 students."
     link: "#research"
     link_text: "See Data Science Day"
   - label: "Engineering"
