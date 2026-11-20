@@ -382,14 +382,13 @@ p { margin: 0 0 16px; }
 .plain .edu-courses { margin-top: 10px; }
 .plain .edu-lbl { font-weight: 700; }
 /* Scholarship pill: flat sticker (no tilt). Tapping stretches it across the card, with the award's description
-   on its own line under the name. Colors cycle by school (yellow, red, blue, green) so neighboring cards never match. */
+   on its own line under the name. Colors cycle by school (blue, red, green; no yellow so every pill has white text) so neighboring cards never match. */
 .sch-wrap { margin: 12px 0 0; }
 .sch { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 4px 12px; cursor: pointer; text-align: left;
   border: 2.5px solid var(--line); border-radius: 18px; box-shadow: 3px 3px 0 var(--line);
-  background: #F2CD37; color: #05131D; font: 400 .9rem/1.35 var(--body); }
-.edu:nth-child(4n+2) .sch { background: #C91A09; color: #fff; }
-.edu:nth-child(4n+3) .sch { background: #0055BF; color: #fff; }
-.edu:nth-child(4n+4) .sch { background: #237841; color: #fff; }
+  background: #0055BF; color: #fff; font: 400 .9rem/1.35 var(--body); }
+.edu:nth-child(3n+2) .sch { background: #C91A09; }
+.edu:nth-child(3n+3) .sch { background: #237841; }
 .sch:focus-visible { outline: 3px solid var(--grape); outline-offset: 3px; }
 .sch b { font-family: var(--display); font-weight: 700; }
 .sch-about { display: none; }
