@@ -15,7 +15,7 @@ hero_greetings:
   - kind: text
     text: "Hola, soy Sarah"
     label: "Hola, soy Sarah, in Spanish"
-# Short tagline under your name. Each phrase gets its own colored period and wraps as a whole.
+# Short tagline under your name, shown in small capitals with dots between the phrases.
 tagline:
   - Technologist
   - Researcher
