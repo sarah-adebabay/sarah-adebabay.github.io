@@ -121,7 +121,7 @@ bricks:
     link_text: "See my experience"
   - label: "Research"
     color: green
-    text: "Equity-oriented teaching in CS classrooms, and why teachers hesitate to adopt STEM EdTech."
+    text: "I’ve studied adaptive equity-oriented pedagogy in higher education, K-12 teacher hesitancy toward STEM edtech, and the impact of a justice-centered data science curriculum I co-designed."
     link: "#research"
     link_text: "See my research"
   - label: "Community"
