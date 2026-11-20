@@ -31,12 +31,14 @@ interests:
   - Education equity
 
 education:
-  # school, degree and dates each show on their own line. coursework shows as one line of text on the CV page.
+  # school, degree and dates each show on their own line. scholarship shows as a pill that opens to its "about" text when tapped.
+  # coursework shows as one line of text on the CV page.
   - school: "University of California, Berkeley"
     degree: "B.A. in Computer Science, minor in Education"
     dates: "August 2017 - May 2022"
-    notes:
-      - "Regents’ and Chancellor’s Scholarship, awarded to approximately the top 2% of incoming undergraduate students"
+    scholarship:
+      name: "Regents’ and Chancellor’s Scholar"
+      about: "Awarded to approximately the top 2% of incoming undergraduate students"
     coursework:
       - "Digital Learning Environments"
       - "K-12 Computing and Data Science Education"
@@ -51,8 +53,9 @@ education:
   - school: "King’s College London"
     degree: "University of California Education Abroad Program"
     dates: "August 2021 - June 2022"
-    notes:
-      - "Selected as a Benjamin A. Gilman Scholar"
+    scholarship:
+      name: "Benjamin A. Gilman Scholar"
+      about: "A U.S. Department of State scholarship for undergraduates with limited financial means to study abroad"
     coursework:
       - "Education for the 21st Century: A Global Perspective"
       - "Human Computer Interaction"

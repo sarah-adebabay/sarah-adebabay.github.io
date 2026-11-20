@@ -29,7 +29,7 @@ redirect_from:
 <section class="record" id="education">
   <h2>Education</h2>
   <ul class="plain">
-    {% for e in site.data.home.education %}<li class="edu"><strong>{{ e.school }}</strong><small>{{ e.degree }}</small><small>{{ e.dates }}</small>{% for n in e.notes %}<p class="li-about">{{ n }}</p>{% endfor %}
+    {% for e in site.data.home.education %}<li class="edu"><strong>{{ e.school }}</strong><small>{{ e.degree }}</small><small>{{ e.dates }}</small>{% include brick/scholarship.html s=e.scholarship %}
       {% if e.coursework %}<p class="li-about edu-courses"><span class="edu-lbl">Relevant coursework:</span> {{ e.coursework | join: ", " }}</p>{% endif %}</li>
     {% endfor %}
   </ul>

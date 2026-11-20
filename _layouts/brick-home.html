@@ -116,7 +116,7 @@
       </ul>
       <h3 class="sub">Education</h3>
       <ul class="plain">
-        {% for e in h.education %}<li class="edu"><strong>{{ e.school }}</strong><small>{{ e.degree }}</small><small>{{ e.dates }}</small>{% for n in e.notes %}<small>{{ n }}</small>{% endfor %}</li>
+        {% for e in h.education %}<li class="edu"><strong>{{ e.school }}</strong><small>{{ e.degree }}</small><small>{{ e.dates }}</small>{% include brick/scholarship.html s=e.scholarship %}</li>
         {% endfor %}
       </ul>
       {% include brick/see-more.html anchor="education" count=h.education.size noun="schools" %}
