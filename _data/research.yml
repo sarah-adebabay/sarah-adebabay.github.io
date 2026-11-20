@@ -2,6 +2,7 @@
 # Entries marked "top: true" show on the home page (up to 6 per section); every entry is on the CV page.
 experience:
   - title: "Co-Lead Organizer and Curriculum Designer"
+    top: true
     org: "Education Research Capstone - All About STEM: Data Science Day"
     where: "Berkeley, California"
     when: "November 2020 - May 2021"
