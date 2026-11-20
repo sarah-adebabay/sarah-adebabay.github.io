@@ -3,18 +3,18 @@
 # kind: text (plain words), amharic (Ge'ez script), or asl (fingerspelled with assets/asl/ hands)
 hero_greetings:
   - kind: text
-    text: "Hello, I'm Sarah"
-    label: "Hello, I'm Sarah"
+    text: "Hello, I'm Sarah!"
+    label: "Hello, I'm Sarah!"
   - kind: amharic
-    text: "ሰላም፣ ሳራ ነኝ"
-    label: "Selam, I'm Sarah, in Amharic"
+    text: "ሰላም፣ ሳራ ነኝ!"
+    label: "Selam, I'm Sarah!, in Amharic"
   - kind: asl
     letters: [h, e, l, l, o]
-    after: ", I'm Sarah"
-    label: "H-E-L-L-O fingerspelled in ASL, I'm Sarah"
+    after: ", I'm Sarah!"
+    label: "H-E-L-L-O fingerspelled in ASL, I'm Sarah!"
   - kind: text
-    text: "Hola, soy Sarah"
-    label: "Hola, soy Sarah, in Spanish"
+    text: "Hola, soy Sarah!"
+    label: "Hola, soy Sarah, in Spanish!"
 # Short tagline under your name, shown in small capitals with dots between the phrases.
 tagline:
   - Technologist
