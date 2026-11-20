@@ -20,18 +20,23 @@
     });
   });
 
-  // ----- Intro paragraph lines up with the name -----
-  // The paragraph under the photo and name ends where "Adebabay" ends, so the block reads as one squared-off
-  // column. The name's width depends on the font and screen size, so it's measured rather than guessed.
+  // ----- Intro paragraph and buttons line up with the name -----
+  // The paragraph and the button row under the photo and name end where "Adebabay" ends, so the block reads
+  // as one squared-off column. The name's width depends on the font and screen size, so it's measured rather than guessed.
   // Without JavaScript the paragraph keeps its CSS width.
   (function () {
     var name = document.querySelector('.name-row h1 span:last-child');
     var thesis = document.querySelector('.hero .thesis');
+    var actions = document.querySelector('.hero .actions');
     if (!name || !thesis) return;
     function fit() {
       thesis.style.maxWidth = '';
       var w = name.getBoundingClientRect().right - thesis.getBoundingClientRect().left;
-      if (w > 200) { thesis.style.maxWidth = Math.ceil(w) + 'px'; thesis.classList.add('to-name'); }
+      if (w > 200) {
+        w = Math.ceil(w) + 'px';
+        thesis.style.maxWidth = w; thesis.classList.add('to-name');
+        if (actions) { actions.style.maxWidth = w; actions.classList.add('to-name'); }
+      }
     }
     fit();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
