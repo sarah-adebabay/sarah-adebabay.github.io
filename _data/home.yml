@@ -103,6 +103,9 @@ me:
   link: "#about"
   link_text: "More about me"
 
+# Text in the white box under the hero brick stack, shown before a brick is tapped.
+brick_caption: "Four pieces of my story. Clink one to learn more!"
+
 # Hero bricks, listed from the bottom of the stack (the foundation) to the top.
 # color: red, blue, green, or yellow. link: where "Read more" goes.
 bricks:
