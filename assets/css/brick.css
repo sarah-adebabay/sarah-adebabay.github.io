@@ -746,3 +746,63 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   .mnav-bottom footer { padding-bottom: 64px; }
   .mnav-bottom section { scroll-margin-top: 0; }
 }
+
+/* Project carousel (home page Projects and Research projects). Native scroll-snap does the swiping, so it works
+   without JS; brick-site.js adds the prev/next buttons and position dots. Two cards per view from 768px, one card
+   plus a peek of the next on phones. Padding inside the track leaves room for the tilted cards and their shadows. */
+.carousel { --car-gap: 26px; position: relative; }
+.car-track {
+  list-style: none; margin: -10px -12px 0; padding: 10px 12px 18px;
+  display: flex; gap: var(--car-gap); overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-padding-inline: 12px; scroll-behavior: smooth; scrollbar-width: none;
+}
+.car-track::-webkit-scrollbar { display: none; }
+.car-track:focus-visible { outline: 3px solid var(--grape); outline-offset: -3px; border-radius: 10px; }
+.car-slide { flex: 0 0 calc((100% - var(--car-gap)) / 2); min-width: 0; scroll-snap-align: start; display: flex; }
+.car-slide > .card { flex: 1; margin: 0; padding: 22px; transition: transform .2s cubic-bezier(.3,1.6,.5,1), box-shadow .2s ease; }
+.car-slide:nth-child(odd) > .card { transform: rotate(-0.8deg); }
+.car-slide:nth-child(even) > .card { transform: rotate(0.8deg); }
+.car-slide > .card:hover { transform: rotate(0) translate(-3px, -3px); box-shadow: 9px 9px 0 var(--line); }
+/* End card: a dashed "ghost brick" with four studs (red, yellow, blue, green) that links to the full list. */
+.car-end {
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px;
+  border-style: dashed; box-shadow: none; background: transparent; color: var(--ink); text-decoration: none; min-height: 200px;
+}
+.car-end:hover, .car-end:focus-visible { background: var(--surface); }
+.car-studs { display: flex; gap: 8px; margin-bottom: 8px; }
+.car-studs i { width: 22px; height: 14px; border: 2px solid var(--line); border-radius: 4px 4px 2px 2px; }
+.car-studs i:nth-child(1) { background: #C91A09; } .car-studs i:nth-child(2) { background: #F2CD37; }
+.car-studs i:nth-child(3) { background: #0055BF; } .car-studs i:nth-child(4) { background: #237841; }
+.car-end-title { font: 700 1.35rem/1.2 var(--display); border-bottom: 3px solid var(--acc, var(--sky)); padding-bottom: 2px; }
+.car-end-note { color: var(--muted); font-size: .98rem; }
+.car-end-arw { font: 700 1.6rem var(--display); transition: transform .15s ease; }
+.car-end:hover .car-end-arw, .car-end:focus-visible .car-end-arw { transform: translateX(5px); }
+/* Controls: round brick buttons either side of the position dots. Dots cycle red, yellow, blue, green so no two
+   neighbors match; the ones in view are filled, the rest are outlines. */
+.car-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 6px; }
+.car-controls[hidden] { display: none; }
+.car-btn {
+  width: 44px; height: 44px; border-radius: 50%; border: 2.5px solid var(--line); background: var(--surface); color: var(--ink);
+  font: 700 1.2rem var(--display); cursor: pointer; box-shadow: 3px 3px 0 var(--line);
+  display: inline-flex; align-items: center; justify-content: center; transition: transform .12s ease, box-shadow .12s ease;
+}
+.car-btn:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--line); }
+.car-btn:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--line); }
+.car-btn:focus-visible { outline: 3px solid var(--grape); outline-offset: 3px; }
+.car-btn:disabled { opacity: .35; cursor: default; box-shadow: none; }
+.car-dots { display: flex; gap: 8px; }
+.car-dots i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--line); background: transparent; transition: transform .15s ease; }
+.car-dots i.on { transform: scale(1.15); }
+.car-dots i.on:nth-child(4n+1) { background: #C91A09; }
+.car-dots i.on:nth-child(4n+2) { background: #F2CD37; }
+.car-dots i.on:nth-child(4n+3) { background: #0055BF; }
+.car-dots i.on:nth-child(4n+4) { background: #237841; }
+@media (max-width: 767px) {
+  .carousel { --car-gap: 18px; }
+  .car-slide { flex-basis: 86%; }
+}
+@media (prefers-reduced-motion: reduce) { .car-track { scroll-behavior: auto; } }
+@media print {
+  .car-track { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
+  .car-controls { display: none; }
+}

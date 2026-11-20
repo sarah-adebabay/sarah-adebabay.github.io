@@ -3,7 +3,8 @@
 {% include brick/timeline.html items=site.data.experience full=include.full %}
 {% include brick/see-more.html full=include.full anchor="industry-experience" count=site.data.experience.size noun="experiences" %}
 <h3 class="sub"{% if include.full %} id="projects"{% endif %}>Projects</h3>
-<div class="projects">
+{% if include.full %}<div class="projects">
   {% for item in projects %}{% if item.tab == 'work' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
 </div>
-{% assign n = projects | where: "tab", "work" | size %}{% include brick/see-more.html full=include.full anchor="projects" count=n noun="projects" %}
+{% else %}{% include brick/project-carousel.html tab="work" anchor="projects" label="Projects" %}
+{% endif %}{% assign n = projects | where: "tab", "work" | size %}{% include brick/see-more.html full=include.full anchor="projects" count=n noun="projects" %}
