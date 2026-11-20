@@ -188,6 +188,13 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 /* Photo brick beside the name */
 .name-row { display: flex; align-items: center; gap: 26px; margin: 4px 0 22px; }
 .name-row h1 { margin: 0; font-size: clamp(2.4rem, 5.4vw, 4.3rem); }
+/* Name on one line beside the photo */
+.name-row h1 { white-space: nowrap; }
+/* The name fills the space beside the photo: the size follows the column width, capped at the old desktop size */
+.name-row .name-block { flex: 1; container-type: inline-size; }
+.name-row .name-block h1 { font-size: min(4.3rem, 13cqi); }
+.name-row h1 span { display: inline; }
+.name-row h1 span + span { padding-left: 0; margin-left: 0.25em; }
 .name-block { min-width: 0; display: flex; flex-direction: column; align-items: center; }
 /* Tagline under the name: phrases wrap as whole units, so narrow screens stack them cleanly */
 .tagline {
