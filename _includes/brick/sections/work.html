@@ -7,4 +7,4 @@
   {% for item in projects %}{% if item.tab == 'work' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
 </div>
 {% else %}{% include brick/project-carousel.html tab="work" anchor="projects" label="Projects" %}
-{% endif %}{% assign n = projects | where: "tab", "work" | size %}{% include brick/see-more.html full=include.full anchor="projects" count=n noun="projects" %}
+{% endif %}
