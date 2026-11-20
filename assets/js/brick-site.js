@@ -48,6 +48,7 @@
   var i = 0, paused = false;
   var box = greet.closest('.contact');
   var spell = document.querySelector('.contact .spell');
+  var gbox = document.querySelector('.contact .greet-box');
   var hands = spell ? Array.prototype.slice.call(spell.querySelectorAll('img')) : [];
   box.addEventListener('mouseenter', function () { paused = true; });
   box.addEventListener('mouseleave', function () { paused = false; });
@@ -82,6 +83,8 @@
     var item = list[i];
     var signed = !!(item.fingerspell && spell);
     greet.textContent = item.text;
+    // A greeting with no subtext grows to fill both rows, so the frame doesn't look bare.
+    if (gbox) gbox.classList.toggle('solo', !signed && !item.note);
     greet.hidden = signed;
     if (spell) spell.hidden = !signed;
     var shown = signed ? spell : greet;
