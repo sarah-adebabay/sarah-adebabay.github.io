@@ -364,13 +364,43 @@ p { margin: 0 0 16px; }
 .timeline ul li::marker { color: var(--grape); }
 
 .plain { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-.plain li {
+.plain > li {
   background: var(--surface); border: 2px solid var(--line); border-radius: 8px;
   padding: 14px 18px; box-shadow: 4px 4px 0 var(--line);
 }
 .plain strong { font-family: var(--display); font-weight: 700; font-size: 1.05rem; display: block; line-height: 1.35; }
 .plain small { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
 .plain .li-about { margin: 6px 0 0; font-size: 0.95rem; line-height: 1.5; }
+/* Education: school and dates share a line from 768px, degree below; CV entries add a coursework line */
+/* From 768px the dates sit right-aligned on the school's line; phones stack school, degree, dates (like role entries) */
+@media (min-width: 768px) {
+  .edu-top { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; align-items: baseline; }
+  .edu-top strong { grid-column: 1; grid-row: 1; }
+  .edu-top .edu-when { grid-column: 2; grid-row: 1; margin-top: 0; text-align: right; white-space: nowrap; }
+  .edu-top small:not(.edu-when) { grid-column: 1 / -1; grid-row: 2; }
+}
+.plain .edu-courses { margin-top: 10px; }
+.plain .edu-lbl { font-weight: 700; }
+/* Scholarship pill: flat sticker (no tilt). Tapping stretches it across the card, with the award's description
+   on its own line under the name. Colors cycle by school (blue, red, green; no yellow so every pill has white text) so neighboring cards never match. */
+.sch-wrap { margin: 12px 0 0; }
+.sch { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 4px 12px; cursor: pointer; text-align: left;
+  border: 2.5px solid var(--line); border-radius: 18px; box-shadow: 3px 3px 0 var(--line);
+  background: #0055BF; color: #fff; font: 400 .9rem/1.35 var(--body); }
+.edu:nth-child(3n+2) .sch { background: #C91A09; }
+.edu:nth-child(3n+3) .sch { background: #237841; }
+.sch:focus-visible { outline: 3px solid var(--grape); outline-offset: 3px; }
+.sch b { font-family: var(--display); font-weight: 700; }
+.sch-about { display: none; }
+.sch[aria-expanded="true"] { display: flex; width: 100%; padding: 6px 14px; }
+.sch[aria-expanded="true"] .sch-txt { flex: 1; }
+.sch[aria-expanded="true"] .sch-about { display: block; margin-top: 2px; }
+.sch-ic { width: 16px; height: 16px; flex: none; }
+/* Open pill: the icon grows to match the two-line block (name + description) */
+.sch[aria-expanded="true"] { gap: 12px; }
+.sch[aria-expanded="true"] .sch-ic { width: 34px; height: 34px; }
+.sch-plus { width: 11px; height: 11px; flex: none; margin-left: 2px; }
+.sch[aria-expanded="true"] .sch-plus { transform: rotate(45deg); }
 .see-all { margin: 30px 0 0; }
 .see-all .btn { display: inline-block; text-decoration: none; }
 /* "See all N things" link under each home subsection, underlined in the section's stud color. */
@@ -526,7 +556,7 @@ footer .hand { font-size: 1.3rem; }
   .hero { background: none; }
   .sectionnav, .theme-toggle, .actions, .playground { display: none; }
   .wrap { grid-template-columns: 1fr; }
-  .card, .plain li, .contact { box-shadow: none; }
+  .card, .plain > li, .contact { box-shadow: none; }
 }
 
 /* ---------- Additions for the multi-page site ---------- */

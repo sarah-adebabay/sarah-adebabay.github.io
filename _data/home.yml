@@ -31,14 +31,38 @@ interests:
   - Education equity
 
 education:
-  - title: "University of California, Berkeley, B.A. in Computer Science, minor in Education"
-    detail: "August 2017 - May 2022"
-    notes:
-      - "Regents’ and Chancellor’s Scholarship - awarded to approximately the top 2% of incoming undergraduate students"
-  - title: "King’s College London, University of California Education Abroad Program"
-    detail: "August 2021 - June 2022"
-    notes:
-      - "Selected as a Benjamin A. Gilman Scholar"
+  # school, degree and dates each show on their own line. scholarship shows as a pill; tapping it stretches the pill across the card
+  # to show that award's "about" text from _data/awards.yml (award must match its title there).
+  # coursework shows as one line of text on the CV page.
+  - school: "University of California, Berkeley"
+    degree: "B.A. in Computer Science, minor in Education"
+    dates: "August 2017 - May 2022"
+    scholarship:
+      name: "Regents’ and Chancellor’s Scholar"
+      award: "Regents’ and Chancellor’s Scholar, University of California, Berkeley"
+    coursework:
+      - "Digital Learning Environments"
+      - "K-12 Computing and Data Science Education"
+      - "Critical Studies in Education"
+      - "From Macro to Micro: Experiencing Education (In)equality in and Beyond Schools"
+      - "Electrical Engineering and Computer Science (EECS) for All: Social Justice in EECS"
+      - "Social Implications of Computer Technology"
+      - "User Interface Design and Development"
+      - "Foundations of Data Science"
+      - "Principles and Techniques of Data Science"
+      - "Data Engineering"
+  - school: "King’s College London"
+    degree: "University of California Education Abroad Program"
+    dates: "August 2021 - June 2022"
+    scholarship:
+      name: "Benjamin A. Gilman Scholar"
+      award: "Benjamin A. Gilman International Scholar, U.S. Department of State"
+    coursework:
+      - "Education for the 21st Century: A Global Perspective"
+      - "Human Computer Interaction"
+      - "Global Childhood and Youth: Past and Present"
+      - "Transition to Adulthood: A Multi-Disciplinary Perspective"
+      - "Youth Cultures"
 
 skills:
   - title: "Data & Analytics"
