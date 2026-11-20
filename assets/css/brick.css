@@ -199,7 +199,7 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 .name-block { min-width: 0; display: flex; flex-direction: column; align-items: center; }
 /* Tagline under the name: small capitals with little brick studs between the phrases, so all four read as equals.
    Studs alternate red and green (blue and yellow fade into the yellow hero and dark mode).
-   Below full desktop it splits into two even lines of two; from 1280px it is one line, sized to the name's width. */
+   Always two even lines of two. */
 .tagline {
   display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: 4px;
   font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
@@ -219,12 +219,9 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 .tagline span:nth-child(3)::before { display: none; }
 .tagline span:nth-child(4)::before { background: #237841; }
 @media (max-width: 480px) { .tagline { font-size: .7rem; letter-spacing: .04em; } }
-@media (min-width: 1280px) {
-  .name-row .name-block .tagline { flex-wrap: nowrap; letter-spacing: .04em; font-size: min(.82rem, 2.5cqi); }
-  .tagline::before { content: none; }
-  .tagline span:nth-child(3)::before { display: inline-block; }
-  .tagline span:nth-child(4)::before { background: #C91A09; }
-}
+/* Wider screens: still two lines of two, scaled up with the name's column so it stays in proportion */
+@media (min-width: 900px) { .name-row .name-block .tagline { font-size: max(.76rem, min(.98rem, 4.3cqi)); } }
+
 .me-brick {
   position: relative; flex: none; width: clamp(104px, 13vw, 168px); aspect-ratio: 1; margin-top: 12px;
   background: #C91A09; border: 3px solid #05131D; border-radius: 6px; box-shadow: 6px 6px 0 #05131D;
