@@ -103,27 +103,30 @@ me:
   link: "#about"
   link_text: "More about me"
 
+# Text in the white box under the hero brick stack, shown before a brick is tapped.
+brick_caption: "Four pieces of my story. Clink one to learn more!"
+
 # Hero bricks, listed from the bottom of the stack (the foundation) to the top.
 # color: red, blue, green, or yellow. link: where "Read more" goes.
 bricks:
   - label: "Teaching"
     color: red
-    text: "Where it started. I've taught algebra through calculus and co-designed Data Science Day with K-12 students."
+    text: "I’ve taught math from middle school algebra to college calculus. I also co-led and designed the curriculum for All About STEM: Data Science Day, which reached 98 K-12 students."
     link: "#research"
     link_text: "See Data Science Day"
   - label: "Engineering"
     color: blue
-    text: "Four years at LinkedIn building APIs and LLM-powered features used at scale."
+    text: "I’ve spent over four years building at LinkedIn, and before that at Facebook and SurveyMonkey."
     link: "#work"
     link_text: "See my experience"
   - label: "Research"
     color: green
-    text: "Equity-oriented teaching in CS classrooms, and why teachers hesitate to adopt STEM EdTech."
+    text: "I’ve studied adaptive equity-oriented pedagogy in higher education, K-12 teacher hesitancy toward STEM edtech, and the impact of a justice-centered data science curriculum I co-designed."
     link: "#research"
     link_text: "See my research"
   - label: "Community"
     color: yellow
-    text: "NSBE External VP, residence hall president, and mentor to scholars entering tech."
+    text: "I’ve worked to make STEM more inclusive, from advocating for Black students as an NSBE chapter leader to mentoring underrepresented CS scholars."
     link: "#service"
     link_text: "See service"
 

@@ -71,7 +71,7 @@
         </div>
         <div class="brick-info" aria-live="polite">
           <div class="brick-panel" data-panel="intro">
-            <p class="hand">Four parts of my path, built from the ground up. Tap one to open it.</p>
+            <p class="hand">{{ h.brick_caption | default: "Four pieces of my story. Clink one to learn more!" }}</p>
           </div>
           <div class="brick-panel" id="brick-info-me" data-panel="me" hidden>
             <h3>{{ h.me.label }}</h3>
