@@ -20,6 +20,37 @@
     });
   });
 
+  // ----- Start the build only when someone can see it -----
+  // The stack waits (paused by .hold-build in brick.css) until the tab is visible and focused and the
+  // stack is on screen. On desktop it waits 5 more seconds, so it doesn't play while the visitor is
+  // still up in the browser's address bar.
+  (function () {
+    var root = document.documentElement;
+    var stack = document.querySelector('.stack');
+    if (!root.classList.contains('hold-build')) return;
+    if (!stack || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { root.classList.remove('hold-build'); return; }
+    var DESKTOP_WAIT_MS = 5000;
+    var desktop = window.matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)').matches;
+    var onScreen = false, started = false;
+    function release() { root.classList.remove('hold-build'); }
+    function check() {
+      if (started || !onScreen || document.visibilityState !== 'visible' || !document.hasFocus()) return;
+      started = true;
+      if (io) io.disconnect();
+      if (desktop) setTimeout(release, DESKTOP_WAIT_MS); else release();
+    }
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+      onScreen = entries.some(function (e) { return e.isIntersecting; });
+      check();
+    }, { threshold: 0.5 }) : null;
+    if (io) io.observe(stack); else onScreen = true;
+    document.addEventListener('visibilitychange', check);
+    window.addEventListener('focus', check);
+    // Tapping a brick means they're looking, so don't keep them waiting.
+    stack.addEventListener('click', function () { started = true; release(); });
+    check();
+  })();
+
   // ----- Tappable hero greeting -----
   var sticker = document.querySelector('button.hello');
   if (sticker) {
