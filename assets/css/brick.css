@@ -136,6 +136,8 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
   max-width: 36ch;
   margin: 0 0 14px;
 }
+/* With the name on screen, brick-site.js sets the width so the paragraph ends where the name ends */
+.thesis.to-name { max-width: none; }
 .role { color: var(--ink); opacity: 0.8; margin: 0 0 26px; max-width: 46ch; }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .btn {

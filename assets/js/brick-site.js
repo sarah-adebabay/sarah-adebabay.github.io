@@ -20,6 +20,25 @@
     });
   });
 
+  // ----- Intro paragraph lines up with the name -----
+  // The paragraph under the photo and name ends where "Adebabay" ends, so the block reads as one squared-off
+  // column. The name's width depends on the font and screen size, so it's measured rather than guessed.
+  // Without JavaScript the paragraph keeps its CSS width.
+  (function () {
+    var name = document.querySelector('.name-row h1 span:last-child');
+    var thesis = document.querySelector('.hero .thesis');
+    if (!name || !thesis) return;
+    function fit() {
+      thesis.style.maxWidth = '';
+      var w = name.getBoundingClientRect().right - thesis.getBoundingClientRect().left;
+      if (w > 200) { thesis.style.maxWidth = Math.ceil(w) + 'px'; thesis.classList.add('to-name'); }
+    }
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(document.querySelector('.name-row'));
+    else window.addEventListener('resize', fit);
+  })();
+
   // ----- Start the build only when someone can see it -----
   // The stack waits (paused by .hold-build in brick.css) until the tab is visible and the stack is on
   // screen. On desktop it then waits up to 5 more seconds, so it doesn't play while the visitor is still
