@@ -113,7 +113,8 @@ greetings:
 # site.author in _config.yml; the photo is `photo` above. Each education line shows on its own row.
 profile:
   bio: "Learning technologies, generative AI, and education equity."
-  education:
-    - "University of California, Berkeley"
+  # School and degree get their own rows. Each degree line shows on its own line.
+  school: "University of California, Berkeley"
+  degree:
     - "B.A. in Computer Science"
-    - "Minor in Education"
+    - "(Minor in Education)"
