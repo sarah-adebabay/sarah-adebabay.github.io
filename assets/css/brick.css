@@ -286,7 +286,7 @@ p { margin: 0 0 16px; }
 .stickers li:nth-child(6n+3) { background: #0055BF; color: #fff; transform: rotate(-1.5deg); }
 .stickers li:nth-child(6n+4) { background: #237841; color: #fff; transform: rotate(2.5deg); }
 .stickers li:nth-child(6n+5) { background: #05131D; color: #fff; transform: rotate(-2deg); }
-.stickers li:nth-child(6n+6) { background: #F2CD37; transform: rotate(1.5deg); }
+.stickers li:nth-child(6n+6) { background: #C91A09; color: #fff; transform: rotate(1.5deg); } /* not yellow: the next sticker (6n+1) is yellow */
 .stickers li:hover { transform: rotate(0) scale(1.08); }
 
 /* Cards */
@@ -334,9 +334,10 @@ p { margin: 0 0 16px; }
   width: 22px; height: 22px; border-radius: 50%;
   border: 2.5px solid var(--line); background: var(--sun);
 }
-.timeline > li:nth-child(2)::before { background: var(--pink); }
-.timeline > li:nth-child(3)::before { background: var(--mint); }
-.timeline > li:nth-child(4)::before { background: var(--sky); }
+/* Dots cycle yellow, red, green, blue all the way down, so neighbors never share a color. */
+.timeline > li:nth-child(4n+2)::before { background: var(--pink); }
+.timeline > li:nth-child(4n+3)::before { background: var(--mint); }
+.timeline > li:nth-child(4n+4)::before { background: var(--sky); }
 .when { font-family: var(--hand); font-size: 1.35rem; color: var(--muted); margin: 0 0 6px; line-height: 1.2; }
 .timeline ul { margin: 0; padding-left: 20px; }
 .timeline .org { margin: 2px 0 0; font-weight: 700; font-size: .98rem; color: var(--ink); }
@@ -518,7 +519,6 @@ footer .hand { font-size: 1.3rem; }
 .more { margin: 16px 0 0; }
 .stickers.small { margin-top: 14px; gap: 8px; }
 .stickers.small li { font-size: 0.8rem; padding: 3px 10px; box-shadow: 2px 2px 0 var(--line); }
-.timeline > li:nth-child(4n+5)::before { background: var(--sun); }
 
 /* Top bar on inner pages */
 .topbar { background: var(--surface); }
@@ -647,8 +647,9 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 .profile-list .line { display: block; }
 .profile-list .tile { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border: 2px solid var(--line); border-radius: 6px; background: var(--t); color: var(--tc, #fff); }
 .profile-list .tile svg { width: 17px; height: 17px; }
-.profile-list .t-red { --t: #C91A09; } .profile-list .t-yellow { --t: #F2CD37; --tc: #05131D; } .profile-list .t-blue { --t: #0055BF; }
-.profile-list .t-green { --t: #237841; } .profile-list .t-ink { --t: var(--ink); --tc: var(--paper); }
+/* Tiles cycle red, yellow, blue, green down the list, so neighbors never share a color. */
+.profile-list li:nth-child(4n+1) { --t: #C91A09; } .profile-list li:nth-child(4n+2) { --t: #F2CD37; --tc: #05131D; }
+.profile-list li:nth-child(4n+3) { --t: #0055BF; } .profile-list li:nth-child(4n) { --t: #237841; }
 .profile-list a { color: var(--ink); text-decoration-color: var(--soft); }
 .profile-list a:hover { text-decoration-color: var(--sun); }
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
