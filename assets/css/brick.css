@@ -18,7 +18,7 @@
   --body: "Nunito Sans", system-ui, sans-serif;
   /* Layout: one container, gutter and reading width shared by every page and screen size.
      Breakpoints: 767px (hero stacks, cards go to one column), 900px (nav bar tightens), 480px (small phones). */
-  --container: 1120px;
+  --container: 1280px;
   --gutter: clamp(16px, 3.5vw, 32px);
   --reading: 740px;
 }
@@ -671,6 +671,9 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 .profile-list a:hover { text-decoration-color: var(--sun); }
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
   .has-profile .wrap.no-side { grid-template-columns: 264px minmax(0, 1fr); gap: 48px; }
+  /* With the profile column beside it, the main column fills the rest of the container instead of stopping at
+     --reading, so long organization names and roles fit on one line. */
+  .has-profile .wrap.no-side > main { max-width: none; }
   .has-profile .profile { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 92px; align-self: start; margin-top: 80px; }
   .has-profile .bar-top .nav-buttons { display: none; }
 }
