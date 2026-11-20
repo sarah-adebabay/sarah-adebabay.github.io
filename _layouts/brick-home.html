@@ -30,10 +30,14 @@
       {% if h.photo_spot == 'left' %}
       <div class="name-row">
         <div class="me-brick"><span class="stud" aria-hidden="true"></span><span class="stud" aria-hidden="true"></span><img src="{{ base_path }}{{ h.photo }}" alt="{{ h.photo_alt }}"></div>
-        <h1><span>Sarah</span><span>Adebabay</span></h1>
+        <div class="name-block">
+          <h1><span>Sarah</span><span>Adebabay</span></h1>
+          {% if h.tagline %}<p class="tagline">{% for t in h.tagline %}<span>{{ t }}</span> {% endfor %}</p>{% endif %}
+        </div>
       </div>
       {% else %}
       <h1><span>Sarah</span><span>Adebabay</span></h1>
+      {% if h.tagline %}<p class="tagline">{% for t in h.tagline %}<span>{{ t }}</span> {% endfor %}</p>{% endif %}
       {% endif %}
       <p class="thesis">{{ h.thesis }}</p>
       <p class="role">{{ h.role }}</p>

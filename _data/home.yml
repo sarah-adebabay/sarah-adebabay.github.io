@@ -15,6 +15,12 @@ hero_greetings:
   - kind: text
     text: "Hola, soy Sarah"
     label: "Hola, soy Sarah, in Spanish"
+# Short tagline under your name, shown in small capitals with dots between the phrases.
+tagline:
+  - Technologist
+  - Researcher
+  - Educator
+  - Community Builder
 thesis: "I design learning technologies that help K&#8209;12 students in under-resourced communities build epistemic agency in STEM, and I partner with schools so those tools last."
 role: "Software engineer (LinkedIn, 2022 - 2026) working on APIs, backend systems, and LLM-powered features. UC Berkeley Computer Science, minor in Education."
 

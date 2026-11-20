@@ -188,6 +188,43 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 /* Photo brick beside the name */
 .name-row { display: flex; align-items: center; gap: 26px; margin: 4px 0 22px; }
 .name-row h1 { margin: 0; font-size: clamp(2.4rem, 5.4vw, 4.3rem); }
+/* Name on one line beside the photo */
+.name-row h1 { white-space: nowrap; }
+/* The name fills the space beside the photo: the size follows the column width, capped at the old desktop size */
+.name-row .name-block { flex: 1; container-type: inline-size; }
+.name-row .name-block h1 { font-size: min(4.3rem, 13cqi); }
+
+.name-row h1 span { display: inline; }
+.name-row h1 span + span { padding-left: 0; margin-left: 0.25em; }
+.name-block { min-width: 0; display: flex; flex-direction: column; align-items: center; }
+/* Tagline under the name: small capitals with little brick studs between the phrases, so all four read as equals.
+   Studs alternate red and green (blue and yellow fade into the yellow hero and dark mode).
+   Below full desktop it splits into two even lines of two; from 1280px it is one line, sized to the name's width. */
+.tagline {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: 4px;
+  font-family: var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: .06em;
+  font-size: .76rem; line-height: 1.4; text-align: center;
+  color: var(--ink); margin: 16px 0 0;
+}
+.hero-inner > div > .tagline { margin: -8px 0 22px; }
+.tagline span { white-space: nowrap; display: inline-flex; align-items: center; }
+.tagline span + span::before {
+  content: ""; display: inline-block; width: .62em; height: .62em; margin: 0 .7em 0 .64em;
+  background: #C91A09; border: 1.5px solid var(--ink); border-radius: 2px; box-sizing: border-box; position: relative; top: -0.08em;
+}
+.tagline span:nth-child(3)::before { background: #237841; }
+.tagline::before { content: ""; flex-basis: 100%; order: 2; }
+.tagline span:nth-child(-n+2) { order: 1; }
+.tagline span:nth-child(n+3) { order: 3; }
+.tagline span:nth-child(3)::before { display: none; }
+.tagline span:nth-child(4)::before { background: #237841; }
+@media (max-width: 480px) { .tagline { font-size: .7rem; letter-spacing: .04em; } }
+@media (min-width: 1280px) {
+  .name-row .name-block .tagline { flex-wrap: nowrap; letter-spacing: .04em; font-size: min(.82rem, 2.5cqi); }
+  .tagline::before { content: none; }
+  .tagline span:nth-child(3)::before { display: inline-block; }
+  .tagline span:nth-child(4)::before { background: #C91A09; }
+}
 .me-brick {
   position: relative; flex: none; width: clamp(104px, 13vw, 168px); aspect-ratio: 1; margin-top: 12px;
   background: #C91A09; border: 3px solid #05131D; border-radius: 6px; box-shadow: 6px 6px 0 #05131D;
