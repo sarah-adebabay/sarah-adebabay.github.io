@@ -116,7 +116,7 @@ bricks:
     link_text: "See Data Science Day"
   - label: "Engineering"
     color: blue
-    text: "Over 4 years of experience at LinkedIn. Previously at Facebook and SurveyMonkey."
+    text: "Over 4 years of experience building at LinkedIn. Previously at Facebook and SurveyMonkey."
     link: "#work"
     link_text: "See my experience"
   - label: "Research"
