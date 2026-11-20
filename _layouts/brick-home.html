@@ -165,11 +165,14 @@
       <div class="contact">
         <img class="contact-photo" src="{{ base_path }}{{ h.photo }}" alt="{{ h.photo_alt }}">
         <div class="contact-body">
+        {% assign g0 = h.greetings[0] %}
+        <div class="greet-box{% if g0.note == nil or g0.note == "" %} solo{% endif %}">
         <h2 aria-label="Say hello">
           <span class="greet" aria-hidden="true">{{ h.greetings[0].text }}</span>
           {% for g in h.greetings %}{% if g.fingerspell %}<span class="spell" aria-hidden="true" hidden>{% for c in g.fingerspell %}<img src="{{ base_path }}/assets/asl/{{ c }}.png" alt="" class="hand-{{ c }}">{% endfor %}</span>{% endif %}{% endfor %}
         </h2>
-        <p class="greet-note" aria-hidden="true">&nbsp;</p>
+        <p class="greet-note" aria-hidden="true">{% if g0.note and g0.note != "" %}{{ g0.note }}{% else %}&nbsp;{% endif %}</p>
+        </div>
         <script type="application/json" id="greetings">{{ h.greetings | jsonify }}</script>
         <p>{{ h.contact }}</p>
         <div class="links">
