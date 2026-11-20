@@ -15,5 +15,11 @@
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) {}
     });
+    // Scholarship pills on the Education cards: tapping one stretches it across the card to show the award's description.
+    document.querySelectorAll('.sch').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btn.setAttribute('aria-expanded', String(btn.getAttribute('aria-expanded') !== 'true'));
+      });
+    });
   })();
 </script>

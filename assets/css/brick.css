@@ -374,21 +374,25 @@ p { margin: 0 0 16px; }
 /* Education: school, degree and dates each on their own line; CV entries add a coursework line */
 .plain .edu-courses { margin-top: 10px; }
 .plain .edu-lbl { font-weight: 700; }
-/* Scholarship pill: flat sticker (no tilt). Tapping opens it to show what the award is.
-   Colors cycle by school (yellow, red, blue, green) so neighboring cards never match. */
-.sch { display: inline-block; max-width: 100%; margin: 12px 0 0; border: 2.5px solid var(--line); border-radius: 18px;
-  box-shadow: 3px 3px 0 var(--line); background: #F2CD37; color: #05131D; }
+/* Scholarship pill: flat sticker (no tilt). Tapping stretches it across the card, with the award's description
+   after the name on the same line. Colors cycle by school (yellow, red, blue, green) so neighboring cards never match. */
+.sch-wrap { margin: 12px 0 0; }
+.sch { display: inline-flex; align-items: center; gap: 7px; max-width: 100%; padding: 4px 12px; cursor: pointer; text-align: left;
+  border: 2.5px solid var(--line); border-radius: 18px; box-shadow: 3px 3px 0 var(--line);
+  background: #F2CD37; color: #05131D; font: 400 .9rem/1.35 var(--body); }
 .edu:nth-child(4n+2) .sch { background: #C91A09; color: #fff; }
 .edu:nth-child(4n+3) .sch { background: #0055BF; color: #fff; }
 .edu:nth-child(4n+4) .sch { background: #237841; color: #fff; }
-.sch summary { display: flex; align-items: center; gap: 7px; padding: 4px 12px; cursor: pointer; list-style: none;
-  font-family: var(--display); font-weight: 700; font-size: .9rem; line-height: 1.3; }
-.sch summary::-webkit-details-marker { display: none; }
-.sch summary:focus-visible { outline: 3px solid var(--grape); outline-offset: 3px; border-radius: 16px; }
+.sch:focus-visible { outline: 3px solid var(--grape); outline-offset: 3px; }
+.sch b { font-family: var(--display); font-weight: 700; }
+.sch-about { display: none; }
+.sch[aria-expanded="true"] { display: flex; width: 100%; padding: 6px 14px; }
+.sch[aria-expanded="true"] .sch-txt { flex: 1; }
+.sch[aria-expanded="true"] .sch-about { display: inline; }
+.sch[aria-expanded="true"] .sch-about::before { content: " \00b7  "; font-weight: 700; }
 .sch-ic { width: 16px; height: 16px; flex: none; }
 .sch-plus { width: 11px; height: 11px; flex: none; margin-left: 2px; }
-.sch[open] .sch-plus { transform: rotate(45deg); }
-.sch p { margin: 0; padding: 0 14px 9px 35px; font-size: .9rem; line-height: 1.45; }
+.sch[aria-expanded="true"] .sch-plus { transform: rotate(45deg); }
 .see-all { margin: 30px 0 0; }
 .see-all .btn { display: inline-block; text-decoration: none; }
 /* "See all N things" link under each home subsection, underlined in the section's stud color. */
