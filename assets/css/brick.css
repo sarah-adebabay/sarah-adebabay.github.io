@@ -662,10 +662,6 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 }
 @media (max-width: 1023px), (hover: none), (pointer: coarse) {
   .bar-top .nav-btn.li-btn { display: inline-flex; align-items: center; padding-left: 8px; padding-right: 8px; }
-  /* One brick prong on top of each bar button, in the button's own color. */
-  .bar-top .nav-btn { position: relative; }
-  .bar-top .nav-btn::before { content: ""; position: absolute; left: 50%; top: -8.5px; width: 14px; height: 6px; translate: -50% 0;
-    background: inherit; border: 2.5px solid var(--line); border-bottom: 0; border-radius: 3px 3px 0 0; }
 }
 @media print { .profile { display: none; } }
 
