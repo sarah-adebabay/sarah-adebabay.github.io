@@ -1,0 +1,24 @@
+{% comment %} Home page only: a carousel of up to 5 projects in a tab, two cards at a time on tablets and up,
+one at a time on phones, then an end card that links to the full list on the CV.
+include.tab = portfolio tab ("work", "research"), include.anchor = CV anchor, include.label = name read by screen readers. {% endcomment %}{% include base_path %}
+{% comment %} Order: projects with a number in "carousel:" first (1, 2, 3...), then the rest in CV order (newest first).
+"carousel: false" leaves a project out of the carousel (it stays on the CV). {% endcomment %}
+{% assign all = site.portfolio | where: "tab", include.tab | sort: "order" %}{% assign pinned = all | where_exp: "p", "p.carousel and p.carousel != true" | sort: "carousel" %}{% assign rest = all | where_exp: "p", "p.carousel == nil" %}{% assign shown = pinned | concat: rest | slice: 0, 5 %}{% assign total = shown.size | plus: 1 %}
+<div class="carousel" role="region" aria-roledescription="carousel" aria-label="{{ include.label }}">
+  <ul class="car-track" id="car-{{ include.tab }}" tabindex="0" aria-label="{{ include.label }}, use the arrow keys or swipe to see more">
+    {% for item in shown %}<li class="car-slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ total }}">{% include brick/project-card.html item=item %}</li>
+    {% endfor %}<li class="car-slide" role="group" aria-roledescription="slide" aria-label="{{ total }} of {{ total }}">
+      <a class="card car-end" href="{{ base_path }}/cv/#{{ include.anchor }}">
+        <span class="car-studs" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="car-end-title">See all {{ all.size }} projects</span>
+        <span class="car-end-note">Every project with its full details, on the CV</span>
+        <span class="car-end-arw" aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ul>
+  <div class="car-controls" hidden>
+    <button type="button" class="car-btn car-prev" aria-controls="car-{{ include.tab }}" aria-label="Previous projects"><span aria-hidden="true">←</span></button>
+    <div class="car-dots" aria-hidden="true">{% for i in (1..total) %}<i></i>{% endfor %}</div>
+    <button type="button" class="car-btn car-next" aria-controls="car-{{ include.tab }}" aria-label="Next projects"><span aria-hidden="true">→</span></button>
+  </div>
+</div>

@@ -153,3 +153,51 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
   }
 })();
+
+// ----- Project carousels -----
+// The track scrolls natively (swipe, trackpad, keyboard). This adds prev/next buttons that move one view at a time,
+// arrow keys on the focused track, and dots that show which cards are in view.
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  Array.prototype.forEach.call(document.querySelectorAll('.carousel'), function (car) {
+    var track = car.querySelector('.car-track');
+    var slides = Array.prototype.slice.call(track.children);
+    var controls = car.querySelector('.car-controls');
+    var prev = car.querySelector('.car-prev');
+    var next = car.querySelector('.car-next');
+    var dots = Array.prototype.slice.call(car.querySelectorAll('.car-dots i'));
+    if (!slides.length || !controls) return;
+    controls.hidden = false;
+
+    function step() { return slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth; }
+    function perView() { return Math.max(1, Math.round((track.clientWidth + 1) / step())); }
+    function go(dir) {
+      var by = step() * (perView() > 1 ? perView() : 1);
+      track.scrollBy({ left: dir * by, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function update() {
+      var first = Math.round(track.scrollLeft / step());
+      var max = track.scrollWidth - track.clientWidth - 2;
+      var atEnd = track.scrollLeft >= max;
+      var n = perView();
+      if (atEnd) first = Math.max(0, slides.length - n);
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = atEnd;
+      dots.forEach(function (d, i) { d.classList.toggle('on', i >= first && i < first + n); });
+      // Cards out of view stay reachable by Tab (focusing one scrolls it in), so nothing is hidden from screen readers.
+    }
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.target !== track) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      else if (e.key === 'Home') { e.preventDefault(); track.scrollTo({ left: 0 }); }
+      else if (e.key === 'End') { e.preventDefault(); track.scrollTo({ left: track.scrollWidth }); }
+    });
+    var raf = 0;
+    track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+})();
