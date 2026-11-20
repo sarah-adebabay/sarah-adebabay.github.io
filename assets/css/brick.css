@@ -507,10 +507,10 @@ p { margin: 0 0 16px; }
 @keyframes flip { from { transform: translateY(14px) rotate(3deg); opacity: .2; } to { transform: none; opacity: 1; } }
 .greet-note { font-family: var(--hand); font-size: 1.3rem; line-height: 1.2; margin: 2px 0 12px; min-height: 1.2em; opacity: .9; }
 /* The greeting and its subtext share one fixed-height box, so the block never shifts between frames.
-   A greeting with no subtext (English) grows to fill both rows, centered over the paragraph below (same 44ch width). */
-.greet-box { display: flex; flex-direction: column; max-width: 44ch; height: calc(64px + 2px + 1.56rem); margin-bottom: 12px; }
+   A greeting with no subtext (English) grows to fill both rows. */
+.greet-box { display: flex; flex-direction: column; height: calc(64px + 2px + 1.56rem); margin-bottom: 12px; }
 .greet-box .greet-note { margin-bottom: 0; }
-.greet-box.solo h2 { flex: 1 1 auto; justify-content: center; text-align: center; font-size: clamp(2.4rem, 14vw, 3.6rem); line-height: 1; }
+.greet-box.solo h2 { flex: 1 1 auto; font-size: clamp(2.4rem, 14vw, 3.6rem); line-height: 1; }
 .greet-box.solo .greet-note { display: none; }
 .contact p { max-width: 44ch; }
 .contact .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
