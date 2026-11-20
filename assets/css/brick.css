@@ -257,6 +257,10 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 @keyframes snap-l { 0% { opacity: 0; translate: 6px 0; } 35% { opacity: .85; } 100% { opacity: 0; translate: -4px 0; } }
 @keyframes snap-r { 0% { opacity: 0; translate: -6px 0; } 35% { opacity: .85; } 100% { opacity: 0; translate: 4px 0; } }
 .playground .note { animation: note-in .35s ease-out backwards 1.15s; }
+/* The build waits, frozen on its first frame, until the stack is on screen (brick-site.js removes
+   .hold-build), so it never plays unseen while the visitor is still in the address bar. */
+.hold-build .stack .brick, .hold-build .stack .brick::before, .hold-build .stack .brick::after,
+.hold-build .playground .note { animation-play-state: paused; }
 @keyframes note-in { from { opacity: 0; translate: 0 6px; } }
 .brick-info {
   background: var(--surface); border: 3px solid var(--line); border-radius: 10px;

@@ -20,6 +20,45 @@
     });
   });
 
+  // ----- Start the build only when someone can see it -----
+  // The stack waits (paused by .hold-build in brick.css) until the tab is visible and the stack is on
+  // screen. On desktop it then waits up to 5 more seconds, so it doesn't play while the visitor is still
+  // up in the browser's address bar; moving the mouse over the page, scrolling, or a key press ends the
+  // wait early. It always fails open: it never needs focus, so it plays in previews and iframes too.
+  (function () {
+    var root = document.documentElement;
+    var stack = document.querySelector('.stack');
+    if (!root.classList.contains('hold-build')) return;
+    if (!stack || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { root.classList.remove('hold-build'); return; }
+    var DESKTOP_WAIT_MS = 5000;
+    var desktop = window.matchMedia('(min-width: 1024px) and (hover: hover) and (pointer: fine)').matches;
+    var onScreen = false, ready = false, done = false, timer = null;
+    var cues = ['pointermove', 'pointerdown', 'wheel', 'keydown', 'touchstart'];
+    function release() {
+      if (done) return;
+      done = true; clearTimeout(timer);
+      root.classList.remove('hold-build');
+      if (io) io.disconnect();
+      cues.forEach(function (ev) { window.removeEventListener(ev, cue, true); });
+    }
+    function check() {
+      if (ready || !onScreen || document.visibilityState === 'hidden') return;
+      ready = true;
+      if (desktop) timer = setTimeout(release, DESKTOP_WAIT_MS); else release();
+    }
+    // A sign the visitor is on the page: start now (once the stack is visible).
+    function cue() { if (ready) release(); }
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
+      onScreen = entries.some(function (e) { return e.isIntersecting; });
+      check();
+    }, { threshold: 0.3 }) : null;
+    if (io) io.observe(stack); else onScreen = true;
+    document.addEventListener('visibilitychange', check);
+    cues.forEach(function (ev) { window.addEventListener(ev, cue, { capture: true, passive: true }); });
+    stack.addEventListener('click', release);
+    check();
+  })();
+
   // ----- Tappable hero greeting -----
   var sticker = document.querySelector('button.hello');
   if (sticker) {
