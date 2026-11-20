@@ -642,9 +642,9 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 .profile-name { font-family: var(--display); font-weight: 800; font-size: 1.45rem; line-height: 1.15; letter-spacing: -.01em; margin: 0; }
 .profile-bio { margin: 6px 0 0; font-size: .95rem; line-height: 1.5; color: var(--muted); }
 .profile-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: .95rem; line-height: 1.35; }
-.profile-list li { display: flex; align-items: flex-start; gap: 12px; }
-.profile-list li > span:last-child, .profile-list li > a { padding-top: 5px; }
+.profile-list li { display: flex; align-items: center; gap: 12px; min-height: 30px; }
 .profile-list .line { display: block; }
+.profile-list .line + .line { font-size: .88em; color: var(--muted); }
 .profile-list .tile { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border: 2px solid var(--line); border-radius: 6px; background: var(--t); color: var(--tc, #fff); }
 .profile-list .tile svg { width: 17px; height: 17px; }
 /* Tiles cycle red, yellow, blue, green down the list, so neighbors never share a color. */
