@@ -32,8 +32,8 @@
         <div class="me-brick"><span class="stud" aria-hidden="true"></span><span class="stud" aria-hidden="true"></span><img src="{{ base_path }}{{ h.photo }}" alt="{{ h.photo_alt }}"></div>
         <div class="name-block">
           <h1><span>Sarah</span><span>Adebabay</span></h1>
-          {% if h.tagline %}<p class="tagline">{% for t in h.tagline %}<span>{{ t }}.</span> {% endfor %}</p>{% endif %}
         </div>
+        {% if h.tagline %}<p class="tagline">{% for t in h.tagline %}<span>{{ t }}.</span> {% endfor %}</p>{% endif %}
       </div>
       {% else %}
       <h1><span>Sarah</span><span>Adebabay</span></h1>
