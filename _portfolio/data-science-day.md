@@ -8,7 +8,7 @@ featured: true
 color: yellow
 badge: "co-founded!"
 role: "Co-Lead Organizer and Curriculum Designer"
-when: "November 2020 to May 2021"
+when: "November 2020 - May 2021"
 excerpt: "An ethics-centered data science curriculum for K-12 students in the Bay Area, co-designed with students and evaluated with a pre/post study."
 facts:
   - label: "98 students"

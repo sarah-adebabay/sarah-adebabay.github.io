@@ -6,7 +6,7 @@ tab: research
 order: 5
 color: red
 role: "Adaptive Equity-Oriented Pedagogy (AEP) Researcher and Consultant, Design for Equity (D4E) Lab, UC Berkeley"
-when: "August 2018 to May 2019"
+when: "August 2018 - May 2019"
 excerpt: "Mixed-methods research on Adaptive Equity-Oriented Pedagogy (AEP) in computer science courses, from classroom field notes to significance testing in Stata."
 topics: ["Learning sciences", "Mixed methods", "Equity"]
 ---

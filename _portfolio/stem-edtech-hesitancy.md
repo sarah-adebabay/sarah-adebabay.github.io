@@ -6,7 +6,7 @@ tab: research
 order: 4
 color: blue
 role: "Educational Data Science and Learning Engineering Fellowship capstone, team of three"
-when: "January 2021 to August 2021"
+when: "January 2021 - August 2021"
 excerpt: "Pitched YedTech, a teacher review and recommendation platform for edtech products and companies, to Schmidt Futures, drawing on interviews with K-12 teachers and administrators."
 topics: ["EdTech adoption", "Research", "Pitch"]
 ---

@@ -4,7 +4,7 @@
   top: true
   org: "LinkedIn, Profile Team"
   where: "Mountain View, California"
-  when: "August 2022 to September 2026"
+  when: "August 2022 - September 2026"
   bullets:
     - "Designed backend APIs for profile features serving 1.2B+ professionals, including creator tools, content-first profiles, and profile completion for new and non-verified members"
     - "Delivered a reliable backend for Profile’s first third-party integration, with Duolingo, laying the foundation for 25+ more partners"
@@ -16,14 +16,14 @@
 - title: "Software Engineering Intern (API)"
   org: "LinkedIn, Profile Team"
   where: "Mountain View, California"
-  when: "June 2021 to August 2021"
+  when: "June 2021 - August 2021"
   bullets:
     - "Built a profile highlight that surfaces shared interests between members and creators to increase creator visibility and encourage follows"
     - "Implemented impression and click-through tracking for profile creator tools; ran A/B experiments and analyzed downstream revenue impact to guide LinkedIn’s Creators product strategy"
 - title: "Inaugural Student Fellow"
   org: "Figma, Figma for Education Team"
   where: "San Francisco, California"
-  when: "July 2020 to September 2020"
+  when: "July 2020 - September 2020"
   bullets:
     - "Invited as one of five undergraduate students to build the foundation of Figma’s education presence"
     - "Organized and hosted Camp Figma, the first global design jam on using design to spark joy and improve accessibility, with 260 attendees from 8+ countries, growing Virtual Campus by 20% to 1,195 members"
@@ -32,14 +32,14 @@
   top: true
   org: "SurveyMonkey, Machine Learning Engineering Team"
   where: "San Mateo, California"
-  when: "June 2020 to August 2020"
+  when: "June 2020 - August 2020"
   bullets:
     - "Implemented a pull-based metrics monitoring system for the core platform’s ML models, using Python/Pyramid, Docker, and Prometheus"
     - "Integrated Grafana dashboards to visualize model health and performance"
 - title: "Facebook University (FBU) Software Engineering Intern"
   org: "Facebook (now Meta)"
   where: "Seattle, Washington"
-  when: "June 2019 to August 2019"
+  when: "June 2019 - August 2019"
   bullets:
     - "Developed Penny, a financial literacy Android app for youth to plan and save for purchases, on a team using Parse, Java, and Heroku"
     - "Designed and built features for goal editing and cancellation with money transfers between goals, automatic payments, badge rewards, and a parent allowance manager"
