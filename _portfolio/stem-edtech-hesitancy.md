@@ -2,6 +2,7 @@
 title: "YedTech: STEM edtech hesitancy"
 collection: portfolio
 top: true
+carousel: 2
 tab: research
 order: 4
 color: blue

@@ -1,6 +1,7 @@
 ---
 title: "Redesigning KEATS: Developing the Ideal Academic Dashboard"
 collection: portfolio
+carousel: 1
 tab: research
 order: 10
 color: green

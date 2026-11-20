@@ -2,6 +2,7 @@
 title: "Names Matter: An Audit of Name Recognition Technology"
 collection: portfolio
 top: true
+carousel: 3
 tab: research
 order: 9
 color: black

@@ -1,7 +1,9 @@
-{% comment %} Home page only: a carousel of the first 5 projects in a tab (by "order"), two cards at a time on tablets and up,
+{% comment %} Home page only: a carousel of up to 5 projects in a tab, two cards at a time on tablets and up,
 one at a time on phones, then an end card that links to the full list on the CV.
 include.tab = portfolio tab ("work", "research"), include.anchor = CV anchor, include.label = name read by screen readers. {% endcomment %}{% include base_path %}
-{% assign all = site.portfolio | where: "tab", include.tab | sort: "order" %}{% assign shown = all | slice: 0, 5 %}{% assign total = shown.size | plus: 1 %}
+{% comment %} Order: projects with a number in "carousel:" first (1, 2, 3...), then the rest in CV order (newest first).
+"carousel: false" leaves a project out of the carousel (it stays on the CV). {% endcomment %}
+{% assign all = site.portfolio | where: "tab", include.tab | sort: "order" %}{% assign pinned = all | where_exp: "p", "p.carousel and p.carousel != true" | sort: "carousel" %}{% assign rest = all | where_exp: "p", "p.carousel == nil" %}{% assign shown = pinned | concat: rest | slice: 0, 5 %}{% assign total = shown.size | plus: 1 %}
 <div class="carousel" role="region" aria-roledescription="carousel" aria-label="{{ include.label }}">
   <ul class="car-track" id="car-{{ include.tab }}" tabindex="0" aria-label="{{ include.label }}, use the arrow keys or swipe to see more">
     {% for item in shown %}<li class="car-slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ total }}">{% include brick/project-card.html item=item %}</li>
