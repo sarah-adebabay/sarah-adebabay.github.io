@@ -266,9 +266,7 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 @keyframes note-in { from { opacity: 0; translate: 0 6px; } }
 .brick-info {
   background: var(--surface); border: 3px solid var(--line); border-radius: 10px;
-  box-shadow: 6px 6px 0 var(--line); padding: 14px 18px; transform: rotate(-1deg); min-height: 112px;
-  /* Column flex so the short intro caption sits in the middle of the box; longer brick cards fill it anyway. */
-  display: flex; flex-direction: column; justify-content: center;
+  box-shadow: 6px 6px 0 var(--line); padding: 14px 18px; transform: rotate(-1deg);
 }
 .brick-panel h3 { margin: 0 0 4px; font-size: 1.25rem; }
 .brick-panel p { margin: 0 0 8px; font-size: 1rem; line-height: 1.5; }
