@@ -647,9 +647,10 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
 .profile-list .line + .line { font-size: .88em; color: var(--muted); }
 .profile-list .tile { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border: 2px solid var(--line); border-radius: 6px; background: var(--t); color: var(--tc, #fff); }
 .profile-list .tile svg { width: 17px; height: 17px; }
-/* Tiles cycle red, yellow, blue, green down the list, so neighbors never share a color. */
+/* Tiles cycle red, yellow, green, blue down the list, so neighbors never share a color
+   and LinkedIn (4th row) lands on blue. */
 .profile-list li:nth-child(4n+1) { --t: #C91A09; } .profile-list li:nth-child(4n+2) { --t: #F2CD37; --tc: #05131D; }
-.profile-list li:nth-child(4n+3) { --t: #0055BF; } .profile-list li:nth-child(4n) { --t: #237841; }
+.profile-list li:nth-child(4n+3) { --t: #237841; } .profile-list li:nth-child(4n) { --t: #0055BF; }
 .profile-list a { color: var(--ink); text-decoration-color: var(--soft); }
 .profile-list a:hover { text-decoration-color: var(--sun); }
 @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
