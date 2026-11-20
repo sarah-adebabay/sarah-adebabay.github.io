@@ -5,9 +5,9 @@
 <h3 class="sub"{% if include.full %} id="research-programs"{% endif %}>Research programs</h3>
 {% include brick/timeline.html items=site.data.research.programs full=include.full %}
 {% include brick/see-more.html full=include.full anchor="research-programs" count=site.data.research.programs.size noun="programs" %}
-<h3 class="sub"{% if include.full %} id="research-projects"{% endif %}>{% if include.full %}Research projects{% else %}Selected projects{% endif %}</h3>
+<h3 class="sub"{% if include.full %} id="research-projects"{% endif %}>{% if include.full %}Research projects{% else %}Selected research projects{% endif %}</h3>
 {% if include.full %}<div class="projects">
   {% for item in projects %}{% if item.tab == 'research' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
 </div>
-{% else %}{% include brick/project-carousel.html tab="research" anchor="research-projects" label="Selected projects" %}
+{% else %}{% include brick/project-carousel.html tab="research" anchor="research-projects" label="Selected research projects" %}
 {% endif %}{% assign n = projects | where: "tab", "research" | size %}{% include brick/see-more.html full=include.full anchor="research-projects" count=n noun="projects" %}
