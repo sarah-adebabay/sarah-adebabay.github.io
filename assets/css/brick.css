@@ -574,8 +574,7 @@ footer .hand { font-size: 1.3rem; }
   padding: 5px 14px; border: 2.5px solid var(--line); border-radius: 8px; box-shadow: 3px 3px 0 var(--line);
   background: var(--surface); color: var(--ink); transition: transform .15s ease, box-shadow .15s ease;
 }
-/* CV red, LinkedIn blue: the two bar buttons sit side by side, so they never share a color. */
-.nav-btn.cv { background: #C91A09; color: #fff; }
+.nav-btn.cv { background: #0055BF; color: #fff; }
 .nav-btn[aria-current="page"] { background: var(--sun); color: #05131D; }
 .nav-btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--line); }
 .nav-btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--line); }
@@ -638,7 +637,6 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
    (the hero shows the same things) and the top bar keeps CV and gains a LinkedIn button. */
 .profile { display: none; }
 .nav-btn.li-btn { display: none; }
-.nav-btn.li-btn { background: #0055BF; color: #fff; }
 .nav-btn.li-btn svg { width: 18px; height: 18px; display: block; }
 .profile-photo { display: block; width: 176px; height: 176px; object-fit: cover; border-radius: 50%; border: 3px solid var(--line); box-shadow: 5px 5px 0 var(--line); background: #fff; }
 .profile-name { font-family: var(--display); font-weight: 800; font-size: 1.45rem; line-height: 1.15; letter-spacing: -.01em; margin: 0; }
