@@ -140,8 +140,6 @@ button.hello:active { transform: rotate(-4deg) scale(.97); }
 .thesis.to-name { max-width: none; }
 .role { color: var(--ink); opacity: 0.8; margin: 0 0 26px; max-width: 46ch; }
 .actions { display: flex; flex-wrap: wrap; gap: 14px; }
-/* Lined up with the name: the two buttons share the row evenly so it ends where the name ends */
-.actions.to-name .btn { flex: 1 1 0; text-align: center; white-space: nowrap; }
 .btn {
   font-family: var(--display);
   font-weight: 700;
