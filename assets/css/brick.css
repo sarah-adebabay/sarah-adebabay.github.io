@@ -371,7 +371,14 @@ p { margin: 0 0 16px; }
 .plain strong { font-family: var(--display); font-weight: 700; font-size: 1.05rem; display: block; line-height: 1.35; }
 .plain small { display: block; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
 .plain .li-about { margin: 6px 0 0; font-size: 0.95rem; line-height: 1.5; }
-/* Education: school, degree and dates each on their own line; CV entries add a coursework line */
+/* Education: school and dates share a line from 768px, degree below; CV entries add a coursework line */
+/* From 768px the dates sit right-aligned on the school's line; phones stack school, degree, dates (like role entries) */
+@media (min-width: 768px) {
+  .edu-top { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; align-items: baseline; }
+  .edu-top strong { grid-column: 1; grid-row: 1; }
+  .edu-top .edu-when { grid-column: 2; grid-row: 1; margin-top: 0; text-align: right; white-space: nowrap; }
+  .edu-top small:not(.edu-when) { grid-column: 1 / -1; grid-row: 2; }
+}
 .plain .edu-courses { margin-top: 10px; }
 .plain .edu-lbl { font-weight: 700; }
 /* Scholarship pill: flat sticker (no tilt). Tapping stretches it across the card, with the award's description
