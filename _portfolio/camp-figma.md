@@ -2,7 +2,7 @@
 title: "Camp Figma"
 collection: portfolio
 top: true
-tab: service
+tab: work
 order: 6
 color: red
 role: "Inaugural Student Fellow, Figma for Education Team"
