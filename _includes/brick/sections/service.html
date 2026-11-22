@@ -1,7 +1,7 @@
 {% assign projects = site.portfolio | sort: "order" %}
 <h3 class="sub"{% if include.full %} id="leadership"{% endif %}>Leadership</h3>
 {% include brick/timeline.html items=site.data.leadership.leadership full=include.full %}
-{% include brick/see-more.html full=include.full anchor="leadership" count=site.data.leadership.leadership.size noun="roles" %}
+{% assign lead_top = site.data.leadership.leadership | where: "top", true %}{% if lead_top.size < site.data.leadership.leadership.size %}{% include brick/see-more.html full=include.full anchor="leadership" count=site.data.leadership.leadership.size noun="roles" %}{% endif %}
 <h3 class="sub"{% if include.full %} id="other-leadership"{% endif %}>Other leadership</h3>
 <ul class="plain two-col">
   {% for r in site.data.leadership.other %}{% if include.full or r.top %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>
