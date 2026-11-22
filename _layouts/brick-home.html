@@ -124,12 +124,6 @@
         {% endfor %}
       </ul>
       {% include brick/see-more.html anchor="education" count=h.education.size noun="schools" %}
-      <h3 class="sub">Skills</h3>
-      <ul class="plain">
-        {% for k in h.skills %}<li><strong>{{ k.title }}</strong><small>{{ k.detail }}</small></li>
-        {% endfor %}
-      </ul>
-      {% include brick/see-more.html anchor="skills" count=h.skills.size noun="skill areas" %}
       {{ content }}
     </section>
 
@@ -159,6 +153,15 @@
     <section id="awards">
       <h2>Awards</h2>
       {% include brick/sections/awards.html %}
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="plain">
+        {% for k in h.skills %}<li><strong>{{ k.title }}</strong><small>{{ k.detail }}</small></li>
+        {% endfor %}
+      </ul>
+      {% include brick/see-more.html anchor="skills" count=h.skills.size noun="skill areas" %}
     </section>
 
     <section id="contact">

@@ -308,7 +308,7 @@ h2 {
   padding-bottom: 22px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23C91A09' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%23C91A09' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%23C91A09' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%23C91A09' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E") left bottom / 100px 16px no-repeat;
 }
-#research h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
+#research h2, #skills h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
 #work h2, #awards h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
 #teaching h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
 h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; margin: 0; line-height: 1.3; }
@@ -448,7 +448,7 @@ p { margin: 0 0 16px; }
 .sch-plus { width: 11px; height: 11px; flex: none; margin-left: 2px; }
 .sch[aria-expanded="true"] .sch-plus { transform: rotate(45deg); }
 /* "See all N things" link under each home subsection, underlined in the section's stud color. */
-#about, #service { --acc: var(--pink); } #research { --acc: var(--mint); } #work, #awards { --acc: var(--sky); } #teaching { --acc: var(--sun); }
+#about, #service { --acc: var(--pink); } #research, #skills { --acc: var(--mint); } #work, #awards { --acc: var(--sky); } #teaching { --acc: var(--sun); }
 .sub-more { margin: 16px 0 0; }
 .timeline + .sub-more { margin-top: 4px; }
 .sub-more a { font: 700 .98rem var(--display); color: var(--ink); text-decoration: none; border-bottom: 3px solid var(--acc); padding-bottom: 1px; }
@@ -457,11 +457,11 @@ p { margin: 0 0 16px; }
 .sub-more a:hover .arw, .sub-more a:focus-visible .arw { transform: translateX(3px); }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) #about, :root:not([data-theme="light"]) #service { --acc: #FF7A6B; }
-  :root:not([data-theme="light"]) #research { --acc: #6FCB8D; }
+  :root:not([data-theme="light"]) #research, :root:not([data-theme="light"]) #skills { --acc: #6FCB8D; }
   :root:not([data-theme="light"]) #work, :root:not([data-theme="light"]) #awards { --acc: #6FA8FF; }
 }
 :root[data-theme="dark"] #about, :root[data-theme="dark"] #service { --acc: #FF7A6B; }
-:root[data-theme="dark"] #research { --acc: #6FCB8D; }
+:root[data-theme="dark"] #research, :root[data-theme="dark"] #skills { --acc: #6FCB8D; }
 :root[data-theme="dark"] #work, :root[data-theme="dark"] #awards { --acc: #6FA8FF; }
 .page-main > .section-body { max-width: none; margin-top: 12px; }
 .section-body > h3.sub:first-child, .section-body > .kicker:first-child { margin-top: 0; }
