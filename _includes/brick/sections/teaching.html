@@ -1,5 +1,4 @@
 {% assign projects = site.portfolio | sort: "order" %}
-<p class="kicker">Teaching, curriculum development, and mentorship</p>
 {% for item in projects %}{% if item.tab == 'teaching' and item.featured %}{% if include.full or item.top %}{% include brick/project-card.html item=item feature=true %}{% endif %}{% endif %}{% endfor %}
 <h3 class="sub"{% if include.full %} id="mentorship"{% endif %}>Mentorship</h3>
 {% include brick/timeline.html items=site.data.teaching.mentorship full=include.full %}
