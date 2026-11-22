@@ -1,6 +1,6 @@
 {% comment %} One timeline list. include.items = entries with title (role), org, where (location), when (dates), note, bullets.
 On the home page (include.full not set) only entries marked top: true show, with all their details (note and every bullet). {% endcomment %}
-<ol class="timeline">
+<ol class="timeline{% if include.dots_from %} dots-from-{{ include.dots_from }}{% endif %}">
   {% for job in include.items %}{% if include.full or job.top %}
   <li>
     {% comment %} Laptop and up: two rows, organization | location, then role | dates.

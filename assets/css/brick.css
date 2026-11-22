@@ -380,6 +380,10 @@ p { margin: 0 0 16px; }
 .timeline > li:nth-child(4n+2)::before { background: var(--pink); }
 .timeline > li:nth-child(4n+3)::before { background: var(--mint); }
 .timeline > li:nth-child(4n+4)::before { background: var(--sky); }
+/* A timeline that continues another one under the next subheader starts where the last left off (dots-from-1..3), so the cycle carries across. */
+.timeline.dots-from-1 > li:nth-child(4n+1)::before { background: var(--pink); } .timeline.dots-from-1 > li:nth-child(4n+2)::before { background: var(--mint); } .timeline.dots-from-1 > li:nth-child(4n+3)::before { background: var(--sky); } .timeline.dots-from-1 > li:nth-child(4n+4)::before { background: var(--sun); }
+.timeline.dots-from-2 > li:nth-child(4n+1)::before { background: var(--mint); } .timeline.dots-from-2 > li:nth-child(4n+2)::before { background: var(--sky); } .timeline.dots-from-2 > li:nth-child(4n+3)::before { background: var(--sun); } .timeline.dots-from-2 > li:nth-child(4n+4)::before { background: var(--pink); }
+.timeline.dots-from-3 > li:nth-child(4n+1)::before { background: var(--sky); } .timeline.dots-from-3 > li:nth-child(4n+2)::before { background: var(--sun); } .timeline.dots-from-3 > li:nth-child(4n+3)::before { background: var(--pink); } .timeline.dots-from-3 > li:nth-child(4n+4)::before { background: var(--mint); }
 .when { font-family: var(--hand); font-size: 1.35rem; color: var(--muted); margin: 0 0 6px; line-height: 1.2; }
 .timeline ul { margin: 0; padding-left: 20px; }
 /* Entry header: organization | location, then role | dates. The left side takes the room it needs and the right
