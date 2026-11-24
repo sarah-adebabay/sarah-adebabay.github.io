@@ -11,11 +11,11 @@
   {% for item in projects %}{% if item.tab == 'service' %}{% if include.full or item.top %}{% include brick/project-card.html item=item %}{% endif %}{% endif %}{% endfor %}
 </div>
 {% assign n = projects | where: "tab", "service" | size %}{% assign n = site.data.leadership.other.size | plus: n %}{% include brick/see-more.html full=include.full anchor="other-leadership" count=n noun="roles" %}
-<span class="anchor" id="talks"></span>
-<h3 class="sub"{% if include.full %} id="speaking"{% endif %}>Speaking</h3>
+{% if include.full %}<span class="anchor" id="speaking"></span>{% comment %} old anchor, kept so earlier links still land here {% endcomment %}{% else %}<span class="anchor" id="talks"></span>{% endif %}
+<h3 class="sub"{% if include.full %} id="talks"{% endif %}>Talks</h3>
 <ul class="plain">
   {% assign talks = site.talks | sort: "order" %}
   {% for t in talks %}{% if include.full or t.top %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
   {% endif %}{% endfor %}
 </ul>
-{% include brick/see-more.html full=include.full anchor="speaking" count=talks.size noun="talks" %}
+{% include brick/see-more.html full=include.full anchor="talks" count=talks.size noun="talks" %}
