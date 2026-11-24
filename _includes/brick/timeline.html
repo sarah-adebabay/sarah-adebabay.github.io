@@ -5,11 +5,20 @@ On the home page (include.full not set) only entries marked top: true show, with
   <li>
     {% comment %} Laptop and up: two rows, organization | location, then role | dates.
     Phones: one line each, in the order organization, role, location, dates (see .tl-head in brick.css). {% endcomment %}
+    {% if job.roles %}{% comment %} Several roles at one organization: organization | location once, then each role | dates with its bullets. {% endcomment %}
+    <div class="tl-head"><div class="tl-row tl-org"><h3>{{ job.org }}</h3>{% if job.where %}<p class="where">{{ job.where }}</p>{% endif %}</div></div>
+    {% for r in job.roles %}<div class="tl-sub">
+      <div class="tl-head"><div class="tl-row tl-role"><p class="role">{{ r.title }}</p>{% if r.when %}<p class="when">{{ r.when }}</p>{% endif %}</div></div>
+      {% if r.note %}<p class="tl-note">{{ r.note }}</p>{% endif %}
+      {% if r.bullets %}<ul>{% for b in r.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+    </div>{% endfor %}
+    {% else %}
     <div class="tl-head">{% if job.org %}<div class="tl-row tl-org"><h3>{{ job.org }}</h3>{% if job.where %}<p class="where">{{ job.where }}</p>{% endif %}</div>
     <div class="tl-row tl-role"><p class="role">{{ job.title }}</p>{% if job.when %}<p class="when">{{ job.when }}</p>{% endif %}</div>
     {% else %}<div class="tl-row tl-org"><h3>{{ job.title }}</h3>{% if job.when %}<p class="when">{{ job.when }}</p>{% endif %}</div>{% endif %}</div>
     {% if job.note %}<p class="tl-note">{{ job.note }}</p>{% endif %}
     {% if job.bullets %}<ul>{% for b in job.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+    {% endif %}
   </li>
   {% endif %}{% endfor %}
 </ol>

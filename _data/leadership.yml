@@ -1,30 +1,26 @@
 # Leadership experience and other leadership, newest first. Shown in the Service section.
+# An entry with "roles" groups several roles under one organization.
 # Entries marked "top: true" show on the home page (up to 6 per section, with every bullet); every entry is on the CV page.
 leadership:
-  - title: "External Vice President and NSBE Region 6 Senator"
+  - org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
     top: true
-    org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
     where: "Berkeley, California"
-    when: "May 2020 - May 2021"
-    bullets:
-      - "Created a sponsorship packet and raised over $16,000 from 12 companies, including Microsoft, Salesforce, Goldman Sachs, and Disney; hosted professional development and recruiting events with sponsors"
-      - "Served as point of contact for NSBE Region 6 and Berkeley’s Black graduate and alumni organizations, representing the chapter and voting on regional decisions as a Region 6 Senator"
-  - title: "Events Chair"
-    top: true
-    org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
-    where: "Berkeley, California"
-    when: "May 2019 - May 2020"
-    bullets:
-      - "Organized social, academic, and professional development events supporting BESSA members’ success and retention, including Dinners of the Month with Black STEM faculty and study jams"
-      - "Assisted Pre-Collegiate Initiative Chairs with Bay Area K-12 community outreach events"
-  - title: "Pre-Collegiate Initiative Chair"
-    top: true
-    org: "Black Engineering and Science Student Association (BESSA), UC Berkeley’s NSBE Chapter"
-    where: "Berkeley, California"
-    when: "May 2018 - May 2019"
-    bullets:
-      - "Coordinated an outreach event per semester for Bay Area K-12 students, exposing them to higher education and STEM fields"
-      - "Advised Berkeley High School’s NSBE Jr. chapter and arranged academic support such as after-school tutoring and mentorship from UC Berkeley students"
+    roles:
+      - title: "External Vice President and NSBE Region 6 Senator"
+        when: "May 2020 - May 2021"
+        bullets:
+          - "Created a sponsorship packet and raised over $16,000 from 12 companies, including Microsoft, Salesforce, Goldman Sachs, and Disney; hosted professional development and recruiting events with sponsors"
+          - "Served as point of contact for NSBE Region 6 and Berkeley’s Black graduate and alumni organizations, representing the chapter and voting on regional decisions as a Region 6 Senator"
+      - title: "Events Chair"
+        when: "May 2019 - May 2020"
+        bullets:
+          - "Organized social, academic, and professional development events supporting BESSA members’ success and retention, including Dinners of the Month with Black STEM faculty and study jams"
+          - "Assisted Pre-Collegiate Initiative Chairs with Bay Area K-12 community outreach events"
+      - title: "Pre-Collegiate Initiative Chair"
+        when: "May 2018 - May 2019"
+        bullets:
+          - "Coordinated an outreach event per semester for Bay Area K-12 students, exposing them to higher education and STEM fields"
+          - "Advised Berkeley High School’s NSBE Jr. chapter and arranged academic support such as after-school tutoring and mentorship from UC Berkeley students"
 other:
   - title: "Games Production Assistant, SUPERB Productions"
     detail: "2019 - 2021"

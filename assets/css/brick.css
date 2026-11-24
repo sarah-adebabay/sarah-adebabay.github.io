@@ -405,6 +405,9 @@ p { margin: 0 0 16px; }
   .timeline .tl-head .where { order: 3; margin-top: 2px; }
   .timeline .tl-head .when { order: 4; }
 }
+/* Several roles under one organization (e.g. BESSA): each role block gets a little space above it. */
+.timeline .tl-sub + .tl-sub { margin-top: 14px; }
+.timeline .tl-sub .tl-head { margin-bottom: 4px; }
 .timeline .tl-note { margin: 0 0 8px; color: var(--muted); font-style: italic; }
 .timeline ul li { margin-bottom: 6px; }
 .timeline ul li::marker { color: var(--grape); }
