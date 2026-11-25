@@ -110,6 +110,11 @@
   <main id="main">
     {% assign projects = site.portfolio | sort: "order" %}
 
+    {% comment %}
+    ABOUT SECTION HIDDEN (2026-11-25) until Sarah rewrites her bio. See TODO.md.
+    To restore: delete this comment wrapper, uncomment `about:` and `interests:` in _data/home.yml,
+    and uncomment the About entry in _data/tabs.yml.
+    Education lives inside this section, so it is hidden on the home page too (the CV still shows it).
     <section id="about">
       <h2>About</h2>
       {% for para in h.about %}<p{% if forloop.first %} class="lede"{% endif %}>{{ para }}</p>
@@ -126,6 +131,7 @@
       {% include brick/see-more.html anchor="education" count=h.education.size noun="schools" %}
       {{ content }}
     </section>
+    {% endcomment %}
 
     <section id="research">
       <span class="anchor" id="projects"></span>

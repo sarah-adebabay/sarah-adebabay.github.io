@@ -24,17 +24,19 @@ tagline:
 thesis: "I'm a UC Berkeley Computer Science graduate (minor in Education) with four years of experience as a software engineer at LinkedIn, building backend APIs and LLM integrations, and a background in education research, user design, teaching, mentoring, and curriculum development."
 role: ""
 
-about:
-  - "I work where software engineering meets the learning sciences. I spent four years as a backend engineer at LinkedIn, building APIs and LLM-powered features used at scale. My longer arc is education: designing generative AI tools that help young people ask their own questions, test their own ideas, and use data to speak up about their world, and working with schools so those tools are adopted and sustained."
-  - "That interest started in classrooms. I have taught algebra through calculus to middle school and college students, including as a Breakthrough Teaching Fellow, co-founded an ethics-centered data science program for K&#8209;12 students in the Bay Area, and studied equity-oriented teaching with UC Berkeley's Design for Equity Lab. I earned a B.A. in Computer Science with a minor in Education from UC Berkeley as a Regents' and Chancellor's Scholar, and spent a year at King's College London studying HCI and youth education."
+# About section text, hidden until Sarah rewrites her bio (see TODO.md).
+# Used only by the About section in _layouts/brick-home.html. Uncomment both lists to restore.
+# about:
+#   - "I work where software engineering meets the learning sciences. I spent four years as a backend engineer at LinkedIn, building APIs and LLM-powered features used at scale. My longer arc is education: designing generative AI tools that help young people ask their own questions, test their own ideas, and use data to speak up about their world, and working with schools so those tools are adopted and sustained."
+#   - "That interest started in classrooms. I have taught algebra through calculus to middle school and college students, including as a Breakthrough Teaching Fellow, co-founded an ethics-centered data science program for K&#8209;12 students in the Bay Area, and studied equity-oriented teaching with UC Berkeley's Design for Equity Lab. I earned a B.A. in Computer Science with a minor in Education from UC Berkeley as a Regents' and Chancellor's Scholar, and spent a year at King's College London studying HCI and youth education."
 
-interests:
-  - Learning sciences
-  - Generative AI in education
-  - Human-computer interaction
-  - Epistemic agency
-  - Critical consciousness
-  - Education equity
+# interests:
+#   - Learning sciences
+#   - Generative AI in education
+#   - Human-computer interaction
+#   - Epistemic agency
+#   - Critical consciousness
+#   - Education equity
 
 education:
   # school, degree and dates each show on their own line. scholarship shows as a pill; tapping it stretches the pill across the card

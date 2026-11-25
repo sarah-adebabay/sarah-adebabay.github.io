@@ -1,6 +1,7 @@
 # The six sections in the site navigation, in order. id is the anchor on the home page.
-- id: about
-  label: "About"
+# About is hidden until Sarah rewrites her bio (see TODO.md). Uncomment to restore.
+# - id: about
+#   label: "About"
 - id: research
   label: "Research"
 - id: work
