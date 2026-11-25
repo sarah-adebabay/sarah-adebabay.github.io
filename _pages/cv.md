@@ -17,7 +17,7 @@ redirect_from:
   <ul>
     <li><a href="#education">Education</a></li>
     <li><a href="#research">Research</a><ul><li><a href="#research-experience">Experience</a></li><li><a href="#research-programs">Programs</a></li><li><a href="#research-projects">Projects</a></li></ul></li>
-    <li><a href="#work">Work</a><ul><li><a href="#industry-experience">Industry experience</a></li><li><a href="#projects">Projects</a></li></ul></li>
+    <li><a href="#industry-experience">Industry Experience</a><ul><li><a href="#industry-roles">Experience</a></li><li><a href="#projects">Projects</a></li></ul></li>
     <li><a href="#teaching">Teaching</a><ul><li><a href="#mentorship">Mentorship</a></li><li><a href="#teaching-curriculum">Teaching &amp; curriculum</a></li></ul></li>
     <li><a href="#service">Service</a><ul><li><a href="#leadership">Leadership</a></li><li><a href="#other-leadership">Other leadership</a></li><li><a href="#talks">Talks</a></li></ul></li>
     <li><a href="#awards">Awards</a><ul><li><a href="#awards-and-honors">Awards and honors</a></li><li><a href="#fellowships">Fellowships</a></li></ul></li>

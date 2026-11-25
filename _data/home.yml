@@ -119,7 +119,7 @@ bricks:
   - label: "Engineering"
     color: blue
     text: "I’ve spent over four years building at LinkedIn, and before that at Facebook and SurveyMonkey."
-    link: "#work"
+    link: "#industry-experience"
     link_text: "See my experience"
   - label: "Research"
     color: green
