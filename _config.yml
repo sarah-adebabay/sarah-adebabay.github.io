@@ -181,6 +181,7 @@ exclude:
   - config
   - Dockerfile
   - Gemfile
+  - TODO.md
   - Gruntfile.js
   - gulpfile.js
   - LICENSE
