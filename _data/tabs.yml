@@ -4,8 +4,8 @@
 #   label: "About"
 - id: research
   label: "Research"
-- id: work
-  label: "Work"
+- id: industry-experience
+  label: "Industry Experience"
 - id: teaching
   label: "Teaching"
 - id: service
