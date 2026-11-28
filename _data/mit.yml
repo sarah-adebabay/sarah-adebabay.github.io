@@ -70,7 +70,8 @@ featured:
 background:
   - title: "MIT Online Science, Technology, and Engineering Community (MOSTEC)"
     org: "MIT Office of Engineering Outreach Programs, high school student"
-    when: ""
+    when: "Summer 2016"
+    detail: "Tracks: Combinatorics and Science Writing"
 
 # Extra sections. groups puts that group's chip above the section.
 leadership:
