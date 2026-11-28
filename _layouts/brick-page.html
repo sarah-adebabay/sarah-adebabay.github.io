@@ -30,7 +30,7 @@
   {% if page.facts %}
   <div class="facts">{% for f in page.facts %}<div><strong>{{ f.label }}</strong><span>{{ f.text }}</span></div>{% endfor %}</div>
   {% endif %}
-  {% if page.section %}
+  {% if page.section or page.full_width %}
   <div class="section-body">
     {{ content }}
   </div>
