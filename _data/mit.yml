@@ -66,6 +66,12 @@ featured:
     why: "A high-fidelity prototype of an app that helps young adults make friends across the world, with AI real-time translation removing the language barrier. It asks what a genuine connection feels like when AI sits in the middle of it."
     read: "A design prototype, not a shipped product."
 
+# Extra Background lines, shown first under Background. when and detail are optional.
+background:
+  - title: "MIT Online Science, Technology, and Engineering Community (MOSTEC)"
+    org: "MIT Office of Engineering Outreach Programs, high school student"
+    when: ""
+
 # Extra sections. groups puts that group's chip above the section.
 leadership:
   groups: [social-algorithms]
