@@ -87,14 +87,18 @@ full_width: true
 
 <section class="record" id="background">
   <h2>Background</h2>
+  <h3 class="sub">Education</h3>
   <ul class="plain">
-    {% for b in mit.background %}<li><strong>{{ b.title }}</strong><small>{{ b.org }}{% if b.when != "" %}, {{ b.when }}{% endif %}</small>{% if b.detail %}<p class="li-about">{{ b.detail }}</p>{% endif %}</li>
-    {% endfor %}
     {% for e in site.data.home.education %}<li><strong>{{ e.school }}</strong><small>{{ e.degree }}, {{ e.dates }}</small></li>
     {% endfor %}
+  </ul>
+  <h3 class="sub">Programs and work</h3>
+  <ul class="plain">
+    {% assign j = site.data.experience | first %}<li><strong>{{ j.title }}</strong><small>{{ j.org }}, {{ j.when }}</small></li>
     {% for r in site.data.research.programs %}<li><strong>{{ r.title }}</strong><small>{{ r.org }}, {{ r.when }}</small></li>
     {% endfor %}
-    {% assign j = site.data.experience | first %}<li><strong>{{ j.title }}</strong><small>{{ j.org }}, {{ j.when }}</small></li>
+    {% for b in mit.background %}<li><strong>{{ b.title }}</strong><small>{{ b.org }}{% if b.when != "" %}, {{ b.when }}{% endif %}</small>{% if b.detail %}<p class="li-about">{{ b.detail }}</p>{% endif %}</li>
+    {% endfor %}
   </ul>
   <p class="sub-more"><a href="{{ base_path }}/cv/">See the full CV</a></p>
 </section>
