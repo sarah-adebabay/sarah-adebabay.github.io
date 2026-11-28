@@ -45,6 +45,11 @@ featured:
     draft: true
     why: "An LLM feature at LinkedIn that reads a member's resume and writes skills onto their profile, later expanded to more parts of the site. It raised the questions I want to study: when people let AI describe them, what do they accept, what do they correct, and what changes in how they see themselves?"
     read: "Shipped industry work, built on the backend and evaluated through A/B experiments."
+  - slug: third-party-profile-integration
+    groups: [social-algorithms, personal-robots]
+    draft: true
+    why: "The backend for LinkedIn Profile's first third-party integration, bringing members' Duolingo language learning onto their profiles, plus a data takeout service for that partner data. It sits where learning, identity and platform data meet: what a learning app knows about you becomes part of how employers see you, and members need control over that data."
+    read: "Shipped industry work. The integration laid the groundwork for 25+ more partners; the takeout service and GDPR compliance are the privacy side of the same project."
   - slug: aep-research
     groups: [personal-robots, cyborg-psychology]
     draft: true
