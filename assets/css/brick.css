@@ -891,3 +891,36 @@ nav.side .nav-buttons { flex-direction: column; align-items: flex-start; gap: 12
   .car-track { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
   .car-controls { display: none; }
 }
+
+/* Unlisted MIT Media Lab portfolio page (/mit/) */
+.mit-for { font: 700 1rem var(--display); color: var(--muted); margin: -6px 0 8px; }
+.mit-todo { border: 2.5px dashed var(--line); border-radius: 8px; padding: 20px 22px; }
+.mit-todo p { margin: 6px 0 0; }
+#featured h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%23237841' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
+#background h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%230055BF' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
+.c-yellow { --g: #F2CD37; --g-ink: #05131D; }
+.c-red { --g: #C91A09; --g-ink: #fff; }
+.c-blue { --g: #0055BF; --g-ink: #fff; }
+.c-green { --g: #237841; --g-ink: #fff; }
+.mit-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.mit-group { position: relative; padding-top: 34px; overflow: hidden; }
+.mit-band { position: absolute; top: 0; left: 0; right: 0; height: 14px; background: var(--g); border-bottom: 2.5px solid var(--line); }
+.mit-group .meta { margin-bottom: 10px; }
+.mit-start { font: 700 .9rem var(--display); margin: 4px 0 6px; }
+.mit-links { margin: 0; padding-left: 18px; }
+.mit-links li { margin: 4px 0; }
+.mit-links a { color: var(--ink); }
+.mit-draft { display: inline-block; font: 700 .78rem var(--display); letter-spacing: .06em; text-transform: uppercase;
+  border: 2px dashed var(--line); border-radius: 999px; padding: 2px 10px; margin: 0 0 10px; color: var(--muted); }
+.mit-work { display: grid; gap: 26px; }
+.mit-item { scroll-margin-top: 90px; }
+.mit-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 12px; }
+.mit-chips li { font: 700 .85rem var(--display); background: var(--g); color: var(--g-ink);
+  border: 2px solid var(--line); border-radius: 999px; padding: 3px 12px; }
+.mit-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.mit-notes strong { font-family: var(--display); display: block; margin-bottom: 4px; }
+.mit-notes p { margin: 0; line-height: 1.55; }
+@media (max-width: 900px) { .mit-groups { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .mit-notes { grid-template-columns: 1fr; gap: 14px; } }
+#leadership h2 { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='30' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='52' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3Ccircle cx='74' cy='8' r='6' fill='%23F2CD37' stroke='%2305131D' stroke-width='2'/%3E%3C/svg%3E"); }
+.mit-more { margin-top: 22px; }

@@ -1,6 +1,7 @@
 {% include base_path %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
 {% include seo.html %}
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg">
 <link rel="alternate" type="application/atom+xml" href="{{ base_path }}/feed.xml" title="{{ site.title }}">
