@@ -62,6 +62,29 @@ full_width: true
   </div>
 </section>
 
+<section class="record" id="leadership">
+  <h2>Community leadership</h2>
+  <ul class="mit-chips" aria-label="Relevant to">
+    {% for gid in mit.leadership.groups %}{% assign g = mit.groups | where: "id", gid | first %}<li class="c-{{ g.color }}">{{ g.name }}</li>{% endfor %}
+  </ul>
+  {% include brick/timeline.html items=site.data.leadership.leadership full=true %}
+  <ul class="plain two-col mit-more">
+    {% for r in site.data.leadership.other %}{% for key in mit.leadership.other %}{% if r.title contains key %}<li><strong>{{ r.title }}</strong>{% if r.detail != "" %}<small>{{ r.detail }}</small>{% endif %}</li>{% endif %}{% endfor %}{% endfor %}
+  </ul>
+</section>
+
+<section class="record" id="talks">
+  <h2>Talks</h2>
+  <ul class="mit-chips" aria-label="Relevant to">
+    {% for gid in mit.talks.groups %}{% assign g = mit.groups | where: "id", gid | first %}<li class="c-{{ g.color }}">{{ g.name }}</li>{% endfor %}
+  </ul>
+  <ul class="plain">
+    {% assign talks = site.talks | sort: "order" %}
+    {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
+    {% endfor %}
+  </ul>
+</section>
+
 <section class="record" id="background">
   <h2>Background</h2>
   <ul class="plain">

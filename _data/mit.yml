@@ -65,3 +65,11 @@ featured:
     draft: true
     why: "A high-fidelity prototype of an app that helps young adults make friends across the world, with AI real-time translation removing the language barrier. It asks what a genuine connection feels like when AI sits in the middle of it."
     read: "A design prototype, not a shipped product."
+
+# Extra sections. groups puts that group's chip above the section.
+leadership:
+  groups: [social-algorithms]
+  # Other leadership roles to show, matched by text in the title (from _data/leadership.yml).
+  other: ["Diversity in STEM", "SEESSA", "SWENext"]
+talks:
+  groups: [cyborg-psychology]
