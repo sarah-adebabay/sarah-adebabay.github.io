@@ -2,53 +2,74 @@
 layout: brick-page
 title: "Portfolio"
 permalink: /mit/
-# Unlisted page for MIT. Nothing on the site links here: share the URL directly.
+# Unlisted page for the MIT Media Lab application. Nothing on the site links here: share the URL directly.
 # noindex asks search engines not to list it; sitemap: false keeps it out of sitemap.xml.
-# Anyone with the URL can still open it.
+# Anyone with the URL can still open it. Content lives in _data/mit.yml.
 noindex: true
 sitemap: false
 full_width: true
 ---
 
 {% include base_path %}
-{% assign projects = site.portfolio | sort: "order" %}
+{% assign mit = site.data.mit %}
+<p class="mit-for">Prepared for the MIT Media Lab</p>
 
 <section class="record mit-intro" id="intro">
-  {% if site.data.home.mit_intro %}
-  <p class="lede">{{ site.data.home.mit_intro }}</p>
+  {% if mit.intro and mit.intro != "" %}
+  <p class="lede">{{ mit.intro }}</p>
   {% else %}
-  <div class="projects"><article class="card todo"><h3>Intro goes here</h3><p>Sarah to write: a few sentences for MIT on who you are and what you want to work on. Set <code>mit_intro</code> in <code>_data/home.yml</code> and this box is replaced.</p></article></div>
+  <div class="mit-todo"><h3>Intro goes here</h3><p>Sarah to write: who you are and what you want to work on at the Media Lab. Set <code>intro</code> in <code>_data/mit.yml</code> and this box is replaced.</p></div>
   {% endif %}
 </section>
 
-<section class="record" id="education">
-  <h2>Education</h2>
-  <ul class="plain">
-    {% for e in site.data.home.education %}<li class="edu"><div class="edu-top"><strong>{{ e.school }}</strong><small>{{ e.degree }}</small><small class="edu-when">{{ e.dates }}</small></div>{% include brick/scholarship.html s=e.scholarship %}
-      {% if e.coursework %}<p class="li-about edu-courses"><span class="edu-lbl">Relevant coursework:</span> {{ e.coursework | join: ", " }}</p>{% endif %}</li>
+<section class="record" id="groups">
+  <h2>Groups I'm applying to</h2>
+  <div class="mit-groups">
+    {% for g in mit.groups %}
+    <article class="card mit-group c-{{ g.color }}" id="group-{{ g.id }}">
+      <span class="mit-band" aria-hidden="true"></span>
+      <h3>{{ g.name }}</h3>
+      <p class="meta">{{ g.pi }}</p>
+      {% if g.draft %}<p class="mit-draft">Draft</p>{% endif %}
+      <p>{{ g.fit }}</p>
+      <p class="mit-start">Start with:</p>
+      <ul class="mit-links">
+        {% for f in mit.featured %}{% if f.groups contains g.id %}{% assign item = site.portfolio | where: "slug", f.slug | first %}<li><a href="#work-{{ f.slug }}">{{ item.title }}</a></li>{% endif %}{% endfor %}
+      </ul>
+    </article>
     {% endfor %}
-  </ul>
-</section>
-
-<section class="record" id="research">
-  <h2>Research</h2>
-  {% include brick/sections/research.html full=true %}
-</section>
-
-<section class="record" id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    {% for item in projects %}{% if item.tab == 'work' %}{% include brick/project-card.html item=item %}{% endif %}{% endfor %}
   </div>
 </section>
 
-<section class="record" id="talks">
-  <h2>Talks</h2>
-  <ul class="plain">
-    {% assign talks = site.talks | sort: "order" %}
-    {% for t in talks %}<li><strong>{{ t.title }}</strong><small>{{ t.role }}, {{ t.when }}{% assign ex = t.excerpt | strip_html | strip %}{% if ex != "" %}. {{ ex }}{% endif %}</small></li>
+<section class="record" id="featured">
+  <h2>Featured work</h2>
+  <div class="mit-work">
+    {% for f in mit.featured %}{% assign item = site.portfolio | where: "slug", f.slug | first %}
+    <article class="card mit-item" id="work-{{ f.slug }}">
+      <ul class="mit-chips" aria-label="Relevant to">
+        {% for gid in f.groups %}{% assign g = mit.groups | where: "id", gid | first %}<li class="c-{{ g.color }}">{{ g.name }}</li>{% endfor %}
+      </ul>
+      <h3><a class="card-link" href="{{ base_path }}{{ item.url }}">{{ item.title }}</a></h3>
+      <p class="meta">{{ item.role }}{% if item.when %}, {{ item.when }}{% endif %}</p>
+      {% if f.draft %}<p class="mit-draft">Draft</p>{% endif %}
+      <div class="mit-notes">
+        <div><strong>Why it's relevant</strong><p>{{ f.why }}</p></div>
+        {% if f.read %}<div><strong>How to read it</strong><p>{{ f.read }}</p></div>{% endif %}
+      </div>
+      <p class="more"><a href="{{ base_path }}{{ item.url }}">See the project</a></p>
+    </article>
     {% endfor %}
-  </ul>
+  </div>
 </section>
 
-<p class="more"><a href="{{ base_path }}/cv/">See the full CV</a></p>
+<section class="record" id="background">
+  <h2>Background</h2>
+  <ul class="plain">
+    {% for e in site.data.home.education %}<li><strong>{{ e.school }}</strong><small>{{ e.degree }}, {{ e.dates }}</small></li>
+    {% endfor %}
+    {% for r in site.data.research.programs %}<li><strong>{{ r.title }}</strong><small>{{ r.org }}, {{ r.when }}</small></li>
+    {% endfor %}
+    {% assign j = site.data.experience | first %}<li><strong>{{ j.title }}</strong><small>{{ j.org }}, {{ j.when }}</small></li>
+  </ul>
+  <p class="sub-more"><a href="{{ base_path }}/cv/">See the full CV</a></p>
+</section>

@@ -1,0 +1,62 @@
+# Content for the unlisted /mit/ page (MIT Media Lab application portfolio).
+# Entries with draft: true were drafted by Claude from Sarah's CV and show a "Draft" label on the page.
+# Sarah: edit the wording, then delete the draft: true line so the label goes away.
+
+# Your intro, in your words. Leave empty to show the placeholder box.
+intro: ""
+
+# The research groups you are applying to, in order of preference.
+# id is used in the project list below; color is the group's color on the page (keep neighbors different).
+groups:
+  - id: personal-robots
+    name: "Personal Robots"
+    pi: "Cynthia Breazeal"
+    color: yellow
+    draft: true
+    fit: "How children and teachers learn with, and about, AI. My K-12 data science and machine learning curriculum, classroom research on stereotype threat, and work on why teachers hesitate to adopt edtech all point here."
+  - id: social-algorithms
+    name: "Social Algorithms"
+    pi: "Karrie Karahalios"
+    color: red
+    draft: true
+    fit: "Auditing the algorithms that shape how people are seen. I have audited name recognition across five major products, and spent four years building AI features on a social platform used by millions."
+  - id: cyborg-psychology
+    name: "Cyborg Psychology"
+    pi: "Pat Pataranutaporn"
+    color: blue
+    draft: true
+    fit: "What happens to people when AI speaks for them or helps them connect. At LinkedIn I shipped an LLM feature that writes part of a member's professional identity, and I designed an app for AI-mediated friendships across languages."
+
+# Featured work, in the order it appears. slug is the file name in _portfolio/ (without .md).
+# groups lists which of the groups above it is relevant to.
+featured:
+  - slug: data-science-day
+    groups: [personal-robots, social-algorithms]
+    draft: true
+    why: "A justice-centered data science and machine learning curriculum for 98 Black K-12 students, co-designed with two high school students. It is my closest work to AI literacy for young learners: students worked with real data, tested their own hypotheses, and asked whether the data behind a claim is fair."
+    read: "The curriculum and the pre/post study are the work. The event was the delivery, not the outcome."
+  - slug: name-recognition-audit
+    groups: [social-algorithms, cyborg-psychology]
+    draft: true
+    why: "An audit of name recognition in products from Microsoft, Google, Grammarly, IBM, and Apple, with a survey of 101 people. The technology favors names of Western European and Biblical origin, so the same product works worse for the people least often in the training data."
+    read: "A class group project. The full report is linked on the project page."
+  - slug: resume-to-profile
+    groups: [cyborg-psychology, social-algorithms]
+    draft: true
+    why: "An LLM feature at LinkedIn that reads a member's resume and writes skills onto their profile, later expanded to more parts of the site. It raised the questions I want to study: when people let AI describe them, what do they accept, what do they correct, and what changes in how they see themselves?"
+    read: "Shipped industry work, built on the backend and evaluated through A/B experiments."
+  - slug: aep-research
+    groups: [personal-robots, cyborg-psychology]
+    draft: true
+    why: "Mixed-methods research with UC Berkeley's Design for Equity Lab on whether Adaptive Equity-Oriented Pedagogy reduces stereotype threat in computer science classes. I coded classroom field notes and ran the statistical comparisons in Stata."
+    read: "This is where I learned to study learners' psychology in real classrooms, with both qualitative coding and statistics."
+  - slug: stem-edtech-hesitancy
+    groups: [personal-robots]
+    draft: true
+    why: "Interviews with K-12 teachers and administrators on why they hesitate to adopt STEM edtech, which became YedTech, a teacher review platform we pitched to Schmidt Futures. Any learning companion or classroom robot has to get past these same teachers."
+    read: "A fellowship capstone on a team of three. The interviews are the research; the pitch is what we did with them."
+  - slug: penpal
+    groups: [cyborg-psychology]
+    draft: true
+    why: "A high-fidelity prototype of an app that helps young adults make friends across the world, with AI real-time translation removing the language barrier. It asks what a genuine connection feels like when AI sits in the middle of it."
+    read: "A design prototype, not a shipped product."
